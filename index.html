@@ -1,56 +1,1255 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<html>
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.15" />
+    
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="UTF-8">
 
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Symposium on Intelligent Information Processing 2016, Beijing</title>
+    <!-- for social media preview stuff -->
+    
+    <meta content="The SIIP 2016 will be held at the campus of Tsinghua University, Beijing, China."
+          name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href="bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet">
+    <link href="user.css" media="screen" rel="stylesheet">
+    <!-- code to make the TalkTable sortable using http://tablesorter.com/docs/ -->
+    <!-- <script type="text/javascript" src="tablesorter/jquery-latest.js"></script> -->
+    <!-- <script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script> -->
+    <!-- <script type="text/javascript"> -->
+    <!-- $(document).ready(function() -->
+    <!--     { -->
+    <!--         $("#TalkTable").tablesorter(); -->
+    <!--     } -->
+    <!-- ); -->
+    <!-- </script> -->
+    <style type="text/css">
+        @import url('http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
-  <title> My New Hugo Site &middot; My New Hugo Site </title>
+        .accordion-toggle:after {
+            font-family: 'FontAwesome';
+            content: "\f078";
+            float: right;
+            position: relative;
+            margin-top: 1%;
+        }
 
-  
-  <link rel="stylesheet" href="http://chansigit.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://chansigit.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://chansigit.github.io/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+        .accordion-opened .accordion-toggle:after {
+            content: "\f054";
+        }
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
-
-  
-  <link href="http://chansigit.github.io/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+        .accordion-h1 {
+            display: inline;
+            color: #333;
+        }
+    </style>
+    <!--引用百度地图API-->
+    <style type="text/css">
+        html,body{margin:0;padding:0;}
+        .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+        .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 </head>
 
-<body class=" ">
+<body data-offset="50" data-spy="scroll" data-target=".sidebar">
+    <div id="wrap">
+        <header class="subhead" id="topheader">
+            <div class="container">
+                <h1>Symposium on Intelligent Information Processing 2016</h1>
 
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="http://chansigit.github.io/"><h1>My New Hugo Site</h1></a>
-      <p class="lead">
-      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
-      </p>
+                <p class="lead">
+                    Oct. 15 - Oct. 16 2016<br>
+                    Tsinghua University, Beijing, China
+                </p>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="span3 sidebar">
+                    <!--可隐藏框 Latest News -->
+                    <div id="logodiv">
+                        <img alt="logo" src="images/logo_608x300.png"><br>
+                        <br>
+                        <!-- Social Network 
+                        <a href="https://weibo.com/XXXXXX" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @user_stanford</a>
+                        -->
+                        <!--
+                        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+                        -->
+                        <br><br>
+                    </div>
+
+                    <div class="affixdiv" data-clampedwidth=".sidebar"
+                         data-offset-top="400" data-spy="affix">
+                        <div class="well" style="padding: 8px 0;">
+                            <ul class="nav nav-list usermenu">
+                                <li class="nav-header">Conference</li>
+                                <!--
+                                <li>
+                                    <a class="no-section" href="https://xxxxxxxxx">
+                                      <i class="icon-hand-right"></i>
+                                      Conference Pictures
+                                    </a>
+                                </li>
+                                -->
+
+                                <!--
+                                <li>
+                                    <a class="no-section" href="https://xxxxxxxxxx">
+                                      <i class="icon-hand-right"></i>
+                                      Searchable Video Archive
+                                    </a>
+                                </li>
+                                -->
+
+                                <li class="active">
+                                    <a href="#latest">
+                                        <i class="icon-bullhorn icon-white"></i> Latest News
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#about">
+                                        <i class="icon-info-sign"></i> About the
+                                        Conference
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#sponsors">
+                                        <i class="icon-star"></i> Sponsors
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#dates">
+                                        <i class="icon-calendar"></i> Important Dates
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#registration">
+                                        <i class="icon-th-list"></i> Registration
+                                    </a>
+                                </li>
+                                <!--<li>
+                                    <a href="#abstract-submission">
+                                        <i class="icon-th-list"></i>
+                                        Submit abstract (closed)
+                                    </a>
+                                </li>-->
+
+                                <li>
+                                    <a class="no-section" href="faq.html">
+                                        <i class="icon-th-list"></i> FAQ
+                                    </a>
+                                </li>
+
+                                <li class="divider"></li>
+                                <li class="nav-header">Program</li>
+
+                                <li>
+                                    <a class="no-section" href="files/abs-book.pdf">
+                                        <i class="icon-info-sign"></i> Abstract Book
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#invited_speakers">
+                                        <i class="icon-info-sign"></i> Invited Speakers &amp; Abstracts
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#schedule">
+                                        <i class="icon-calendar"></i>
+                                        Schedule
+                                    </a>
+                                <li>
+                                    <a href="#tutorials">
+                                        <i class="icon-th"></i> Tutorials
+                                    </a>
+                                </li>
+                                <!-- <ul> -->
+                                <!--   <li> -->
+                                <!--     <a href="#tutorial_prop"><i class= -->
+                                <!-- 				"icon-folder-open"></i> Proposal Templates</a> -->
+                                <!--   </li> -->
+                                <!-- </ul> -->
+
+
+
+
+                                <li class="divider"></li>
+                                <li class="nav-header">Venue</li>
+                                <li>
+                                  <i class="icon-info-sign"></i>
+                                  <a href="know-before-you-go.html" style="display: inline;" class="no-section">Know before you go</a>
+                                </li>
+                                <li>
+                                    <a href="#location">
+                                        <i class="icon-map-marker"></i> location
+                                    </a>
+                                </li>
+                                <!--<li>
+                                    <ul class="nav nav-list usermenu">
+                                        <li>
+                                            <a href="#alumni-center">
+                                                <i class="icon-folder-open"></i>
+                                                Conference Facililty
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#accessibility">
+                                                <i class="icon-folder-open"></i>
+                                                Accessibility
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>-->
+
+
+                                <li>
+                                    <a href="#lodging">
+                                        <i class="icon-home"></i> Lodging Information
+                                    </a>
+                                </li>
+
+                                <li class="divider"></li>
+                                <li class="nav-header">Information</li>
+                                <!--<li>
+                                    <a class="no-section">
+                                         href="http://user2016.org/diversity-scholarships"
+                                        <i class="icon-info-sign"></i>
+                                        Diversity Scholarships (closed)
+                                    </a>
+                                </li>-->
+
+                                <li>
+                                    <a href="#behavioR">
+                                        <i class="icon-info-sign"></i> Code of Conduct
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#flyer">
+                                        <i class="icon-folder-open"></i> Conference flyer
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="icon-question-sign"></i>Questions? See <a href="faq.html" style="display: inline;" class="no-section">FAQ</a> or email <code>joanzhang</code>AT<code>tsinghua.edu.cn</code>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span9 content">
+
+                    <div class="accordion" id="accordion2">
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Latest News                                 |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="latest" style="display: inline;">
+                                <!-- title -->
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                        <h3 class="accordion-h1">Latest News</h3>
+                                    </a>
+                                </div>
+                                <!-- context-->
+                                <div id="collapseOne" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <div class="media">
+                                          <a class="pull-left" href="#"> <img class="media-object" src="images/news.png" alt="newsicon"> </a>
+
+                                            <h4 class="media-heading">SIIP 2016 Pics now online</h4>
+                                            <p>
+                                                Please see sidebar.
+                                            </p>
+
+                                            <h4 class="media-heading"> News 1</h4>
+                                            <p>
+                                                You can now follow the conference day by day 
+                                                <a href="XXXX.html">here!</a>.
+                                            </p>
+
+                                            <h4 class="media-heading"> News 2</h4>
+                                            <p>
+                                                The full program of the conference has been released 
+                                                <a href="XXXX.html">here!</a>.
+                                            </p>
+
+                                            <h4 class="media-heading"> News 3</h4>
+                                            <p>
+                                                Now you can find information about how to access the 
+                                                conference venue and the hotels from the airport
+                                                <a href="XXXX.html">here!</a>.
+                                            </p>
+
+                                            <div class="media-body">
+                                                <p>
+                                                    <i>
+                                                        To learn about how to become a sponsor,
+                                                        types of sponsorship, etc, download the
+                                                        sponsor brochure:
+                                                        [<a href="attachment/sponsor.pdf">pdf</a>]
+                                                    </i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: About the Conference                        |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="about" style="display: inline;">
+                                <!-- title -->
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                        <h3 class="accordion-h1">About the Conference</h3>
+                                    </a>
+                                </div>
+                                <!-- context -->
+                                <div id="collapseTwo" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            SIIP 2016 will take place in beautiful Beijing from 
+                                            on October 15-16, 2016. The conference aims at blah
+                                            blah blah and procedding blah blah blah. As usual, 
+                                            authors of accepted papers will be invited to submit 
+                                            an edited verison of the manuscripot to the Journal
+                                            of blah blah blah for the publication of a special 
+                                            issue.
+
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                DETAILED INFO: Lorem ipsum dolor sit amet, 
+                                                consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. 
+                                            </li>
+                                            <li>
+                                                DETAILED INFO: Ut enim ad minim veniam, quis 
+                                                nostrud exercitation ullamco laboris nisi ut 
+                                                aliquip ex ea commodo consequat. Duis aute irure
+                                                dolor in reprehenderit in voluptate velit esse 
+                                                cillum dolore eu fugiat nulla pariatur. Excepteur 
+                                                sint occaecat cupidatat non proident, sunt in culpa 
+                                                qui officia deserunt mollit anim id est laborum.
+                                            </li>
+                                        </ul>
+
+                                        <p>
+                                            This year the conference will be held at the campus
+                                            of <a href="http://www.tsinghua.edu.cn/">Tsinghua University</a> in Beijing, China. The
+                                            conference is being organized with support from the
+                                            <a href="https://www.au.tsinghua.edu.cn/">
+                                                Department of Automation, Tsinghua University
+                                            </a> 
+                                        </p>
+                                        <p>
+                                            The program will cover topics such as
+                                            <ul>
+                                                <li>智能信息处理的新理论与新方法</li>
+                                                <li>智能信息处理与大数据的结合</li>
+                                                <li>智能信息处理在医疗健康等领域的应用</li>
+                                            </ul>
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, 
+                                            consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua.
+                                        </p>
+
+                                        <h2>Organizing committee</h2>
+                                        <ul>
+                                            <li>
+                                                <a href="http://bioinfo.au.tsinghua.edu.cn/member/xzhang/XZhang_English.html">
+                                                    Xuegong Zhang
+                                                </a>, Tsinghua University
+                                            </li>
+                                            <li>
+                                                <a href="http://bioinfo.au.tsinghua.edu.cn/member/jgu/">
+                                                    Jin Gu
+                                                </a>, Tsinghua University
+                                            </li>
+                                            
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Sponsors                                    |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="sponsors" style="display: inline;">
+                                <!-- title -->
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                        <h3 class="accordion-h1">Sponsors</h3>
+                                    </a>
+                                </div>
+                                <!-- context -->
+                                <div id="collapseThree" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                    <table cellpadding="0" cellspacing="15" border="0" width="95%">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top" width="25%">
+                                                <img src="images/sponsor_logos/tsinghua_logo.png" alt="Tsinghua University" height="40" width="120">
+                                            </td>
+                                            <td align="left" valign="middle" width="81%">Tsinghua University 
+                                                <br>
+                                                <a href="http://www.tsinghua.edu.cn/publish/then/index.html" target="_blank">http://www.tsinghua.edu.cn/publish/then/index.html</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <img src="images/sponsor_logos/tnlist_logo.jpg" alt="TNList" height="40" width="120">
+                                            </td>
+                                            <td class="body_text" align="left" valign="middle">Tsinghua National Laboratory for Information Science and Technology
+                                                <br>
+                                                <a href="http://www.tnlist.org.cn/pages/english.jsp" target="_blank">http://www.tnlist.org.cn/pages/english.jsp</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Important Dates                             |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="dates" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                                        <h3 class="accordion-h1">Important Dates</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseFour" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Event</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Open submissions of abstracts</td>
+                                                    <td>January 5, 2016</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Open Registration</td>
+                                                    <td>January 5, 2016</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tutorial Submissions Deadline</td>
+                                                    <td>January 10, 2016</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Abstract Submissions Deadline</td>
+                                                    <td>
+                                                        March 25,
+                                                        2016
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>Notification of Acceptance</td>
+                                                    <td>
+                                                        <strike>
+                                                            March
+                                                            29
+                                                        </strike> April 6, 2016
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        Early
+                                                        Registration
+                                                        Deadline<sup><a href="#reg-note">**</a></sup>
+                                                    </td>
+                                                    <td>
+                                                        <strike>
+                                                            April
+                                                            8, 2016
+                                                        </strike> FULL
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Regular Registration Deadline<sup><a href="#reg-note">**</a></sup></td>
+                                                    <td>
+                                                        <strike>
+                                                            May
+                                                            25, 2016
+                                                        </strike> FULL
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Late registration Deadline<sup><a href="#reg-note">**</a></sup>
+                                                    </td>
+                                                    <td>
+                                                        <strike>
+                                                            June
+                                                            20, 2016
+                                                        </strike> FULL
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tutorials</td>
+                                                    <td>June 27, 2016</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Conference Start</td>
+                                                    <td>June 28, 2016</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Conference End</td>
+                                                    <td>June 30, 2016</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>
+                                            <a id="reg-note"><sup>**</sup></a>
+                                            Conference is full now!
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Registration                                |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="registration" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                                        <h3 class="accordion-h1">Registration</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseFive" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <!--
+                                        <p style="font-weight: bold">
+                                            <em>
+                                                Due to overwhelming
+                                                demand, registration is now
+                                                closed.
+                                            </em> We regret that even
+                                            a wait list is not feasible at
+                                            this point and it is
+                                            highly unlikely that any
+                                            slots will open up at the
+                                            last minute.
+                                        </p>
+                                        <p>
+                                            However, we are actively
+                                            exploring several
+                                            possibilities including
+                                            videotaping parts of the
+                                            conference. Details will be
+                                            posted as soon as they are
+                                            available.
+                                        </p>
+
+                                        <p>
+                                            We appreciate your interest
+                                            and thank you for your
+                                            understanding.
+                                        </p>
+                                        -->
+                                        <p style="font-weight: bold; font-size: 19px">How To Register?</p>
+                                        <p>
+                                            You are kindly requested to make registration via our online e-mail. 
+                                            Please fill in the <a href="attachment/registration_form.docx">registration form</a> and send it to 
+                                            <code>registration@xxx.edu.cn</code>
+                                        </p>
+                                        <br>
+
+
+                                        <p style="font-weight: bold; font-size: 19px">Registration Fee</p>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Student</th>
+                                                    <th>
+                                                        Academic /
+                                                        Govt.
+                                                    </th>
+                                                    <th>Industry / Other </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><th>Early (before 2016-04-01) </th><td>$125</td><td>$250</td><td>$450</td></tr>
+                                                <tr><th>Regular (before 2016-05-25) </th><td>$150</td><td>$300</td><td>$500</td></tr>
+                                                <tr>
+                                                    <th>
+                                                        Late (<strike>before
+							2016-06-20</strike>
+							closed)
+                                                    </th>
+                                                    <td>$175</td>
+                                                    <td>$350</td>
+                                                    <td>$550</td>
+                                                </tr>
+                                                <tr><th>On-Site (closed)</th><td>$250</td><td>$400</td><td>$600</td></tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+
+
+                                        <p style="font-weight: bold; font-size: 19px">Payment and Cancellation</p>
+                                        <p>Full payment should accompany registration forms to complete the registration. All price quotes are in Chinese RMB Yuan (CNY).</p>
+                                        <br>
+
+
+                                        <p>
+                                            Tutorials are included in the
+                                            registration!
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Submit an abstract                          |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="abstract-submission" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+                                        <h3 class="accordion-h1">Submit an abstract for a presentation</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseSix" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            Abstract submission is now
+                                            closed.-->
+                                            <!-- You may -->
+                                            <!-- submit your abstracts for presentations -->
+                                            <!-- (15-20 min), lightning talks (5 min) and -->
+                                            <!-- posters. -->
+                                        </p>
+                                         <p> 
+                                             <a href="http://XXXXXX.html" 
+                                                target="_blank"><b>Submit Abstracts Here.</b></a> 
+                                        </p> 
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Invited Speakers                            |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="invited_speakers" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+                                        <h3 class="accordion-h1">Invited Speakers</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseSeven" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/invited_speakers/expected.jpg" alt="Fa-Long Luo" style="height:100px;">
+                                                </td>
+                                                <td valign="top">
+                                                    <big><b>Fa-Long Luo (罗发龙)</b></big>
+                                                    <br>
+                                                    Chief Wireless Consultant， Micron Technologies Inc.
+                                                    <br>
+                                                    <a href="http://notfound.html">
+                                                        http://404notfound.html
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <img src="images/invited_speakers/QingZhou.jpg" alt="Fa-Long Luo" style="height:100px;">
+                                                </td>
+                                                <td valign="top">   
+                                                    <big><b>Qing Zhou (周晴)</b></big>
+                                                    <br>
+                                                    Professor and Vice Chair, University of California at Los Angeles 
+                                                    <br>
+                                                    <a href="http://www.stat.ucla.edu/~zhou/">
+                                                        http://www.stat.ucla.edu/~zhou/
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <img src="images/invited_speakers/Zhi-HongMao.jpg" alt="Zhi-Hong Mao" style="height:100px;">
+                                                </td>
+                                                <td valign="top">   
+                                                    <big><b>Zhi-Hong Mao (毛志宏)</b></big>
+                                                    <br>
+                                                    Associate Professor, University of Pittsburgh
+                                                    <br>
+                                                    <a href="http://www.engineering.pitt.edu/Zhi-Hong_Mao/">
+                                                        http://www.engineering.pitt.edu/Zhi-Hong_Mao/
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <img src="images/invited_speakers/XiaodanFan.jpg" alt="Xiaodan Fan" style="height:100px;">
+                                                </td>
+                                                <td valign="top">   
+                                                    <big><b>Xiaodan Fan (樊晓丹)</b></big>
+                                                    <br>
+                                                    Associate Professor, The Chinese University of Hong Kong
+                                                    <br>
+                                                    <a href="http://www.sta.cuhk.edu.hk/xfan/default.aspx">
+                                                        http://www.sta.cuhk.edu.hk/xfan/default.aspx
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Schedule                                    |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="schedule" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven-A">
+                                        <h3 class="accordion-h1">Schedule</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseSeven-A" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <table class="table table-hover">
+                                            <!--<thead>
+                                                <tr>
+                                                    <th>Event</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>-->
+                                            <tbody>
+                                                <tr>
+                                                    <h4 style="text-align: center">Morning, Oct. 15, 2016</h4>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">大会开幕，合影</td>
+                                                    <td>9:00-9:20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">特邀报告</td>
+                                                    <td>9:00-9:20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">茶歇</td>
+                                                    <td>9:00-9:20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">大会报告</td>
+                                                    <td>9:00-9:20</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <h4 style="text-align: center">Afternoon, Oct. 15, 2016</h4>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">特邀报告</td>
+                                                    <td>14:00-14:50</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">大会讨论</td>
+                                                    <td>14:00-14:50</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">茶歇</td>
+                                                    <td>14:00-14:50</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">圆桌讨论</td>
+                                                    <td>14:00-14:50</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <h4 style="text-align: center">Morning, Oct. 16, 2016</h4>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">特邀报告</td>
+                                                    <td>9:00-9:20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">茶歇</td>
+                                                    <td>9:00-9:20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">大会报告</td>
+                                                    <td>9:00-9:20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="509">闭幕式</td>
+                                                    <td>9:00-9:20</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Tutorials                                   |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="tutorials" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
+                                        <h3 class="accordion-h1">Tutorials</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseEight" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        The list of accepted tutorials for the conference is as follows:
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <th>Speaker(s)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="tutorials/00.html">Regression Modeling Strategies and the rms Package</a></td>
+                                                    <td>Frank Harrell</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="tutorials/01.html">Using Git and GitHub with R, RStudio, and R Markdown</a></td>
+                                                    <td>Jennifer Bryan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="tutorials/02.html">Effective Shiny Programming</a></td>
+                                                    <td>Joe Cheng</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="tutorials/03.html">Missing Value Imputation with R</a></td>
+                                                    <td>Julie Josse</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="tutorials/04.html">Extracting data from the web APIs and beyond</a></td>
+                                                    <td>Karthik Ram, Garrett Grolemund and Scott Chamberlain</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="tutorials/05.html">Ninja Moves with data.table - Learn by Doing in a Cookbook Style Workshop</a></td>
+                                                    <td>Matt Dowle & Arunkumar Srinivasan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="tutorials/06.html">Never Tell Me the Odds! Machine Learning with Class Imbalances</a></td>
+                                                    <td>Max Kuhn</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="tutorials/07.html">MoRe than woRds, Text and Context: Language Analytics in Finance with R</a></td>
+                                                    <td>Sanjiv Das</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Location                                    |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="location" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTen">
+                                        <h3 class="accordion-h1">Location</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseTen" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        
+                                        <h3>Tsinghua University,    FIT Building</h3>
+                                        <p>The conference will be held in FIT Building in Tsinghua campus.</p>
+                                        <p>We recommend you take a taxi from the Beijing Capital International
+                                         Airport to Tsinghua University. You can print the following map out 
+                                         and give it to the taxi driver. The driver will then know how to bring
+                                          you to Tsinghua campus or a hotel nearby. For your convenience, a pdf
+                                           version of the map can be downloaded 
+                                           <a href="xxxx.pdf" target="_blank" class="external">here</a>.
+                                        </p>
+                                        <div style="width:650px;height:350px;border:#ccc solid 1px;" id="dituContent"></div>
+                                        <!--
+                                        <h3>The Bay Area</h3>
+                                        <p>To the west of the <a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=stanford+university&amp;ie=UTF8&amp;ll=37.430603,-122.167239&amp;spn=0.015608,0.026436&amp;t=h&amp;z=15" target="_blank" class="external">University’s 8,180-acre campus</a> are the Santa Cruz Mountains and Pacific Ocean, and to the east San Francisco Bay.&nbsp; Known as <a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=stanford+university&amp;ie=UTF8&amp;ll=37.572882,-122.147369&amp;spn=0.498505,0.845947&amp;t=h&amp;z=10" target="_blank" class="external">The Peninsula</a>, the area is rich in natural beauty, culture, and entertainment.&nbsp;</p>
+                                        <h3>Palo Alto</h3>
+                                        <p>Although the University is virtually a community unto itself and even has its own zip code—94305—it calls the <a href="http://www.cityofpaloalto.org/" target="_blank" class="external">City of Palo Alto</a> home. Downtown Palo Alto is a short walk from campus and includes many attractions, as well as many shops and restaurants.</p>
+                                        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=202567232753691496610.0004ea629f20b5ae2348a&amp;ie=UTF8&amp;t=m&amp;ll=37.427468,-122.169685&amp;spn=0.016358,0.027466&amp;z=9&amp;t=p&amp;output=embed"></iframe>
+
+                                        -->
+
+                                   
+                                        
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Lodging                                     |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="lodging" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEleven">
+                                        <h3 class="accordion-h1">Lodging</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseEleven" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <p class="body_text">
+                                            The following hotels with reasonable tariff ranged from 
+                                            RMB360-350 per night could be booked via 
+                                            <a href="http://www.XXXX.net" target="_blank">www.XXXX.net </a>
+                                        </p>
+
+                                        <p>
+                                            <span class="body_text_bold">Hejia Inn North 4th Ring - Beijing</span>
+                                            <code>(30 minutes walking distance to conference venue)</code>
+                                            <br>
+                                            <span class="body_text">22 Huaqing Jiayuan, Chengfu Road, Haidian District</span>
+                                        </p>
+                                        
+                                        <p class="body_text">
+                                            <span class="body_text_bold">Greentree Inn Xueyuan Road - Beijing</span> 
+                                            <code>(30 minutes walking distance to conference venue)</code>
+                                            <br>
+                                            Zhanchunyuan Road, Haidian District
+                                        </p>
+
+                                        <p>
+                                            <span class="body_text_bold">Lantinghui Hotel - Beijing</span>
+                                            <span class="body_text">
+                                                <code>(30 minutes walking distance to conference venue)</code>                                                
+                                                <br>
+                                                No.35 Chengfu Road, Haidian District
+                                            </span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Code of Conduct                             |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="behavioR" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThirteen">
+                                        <h3 class="accordion-h1">Code of Conduct</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseThirteen" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            All attendees, speakers, sponsors and
+                                            volunteers at SIIP 2016 are required to agree
+                                            to the following code of conduct. Organizers
+                                            will enforce this code throughout and expect
+                                            cooperation in ensuring a safe environment for
+                                            all.
+                                        </p>
+                                        <h3>The Short Version</h3>
+                                        <p>
+                                            The organizers of SIIP 2016 and Tsinghua
+                                            University are dedicated to providing a
+                                            harassment-free conference experience for
+                                            everyone regardless of gender, gender
+                                            expression, sexual orientation, disability,
+                                            physical appearance, body size, race, or
+                                            religion (or lack thereof). We do not tolerate
+                                            harassment of SIIP 2016 participants in any
+                                            form. Sexual language and imagery is not
+                                            appropriate for any conference venue,
+                                            including talks, workshops, conference events,
+                                            Twitter and other online media. SIIP 2016
+                                            participants violating these rules may be
+                                            sanctioned or expelled from the
+                                            conference <em>without a refund</em> at the
+                                            discretion of the SIIP  2016 organizers.
+                                        </p>
+                                        <h3>The Long Version</h3>
+                                        <p>
+                                            Harassment includes offensive verbal comments
+                                            related to gender, sexual orientation,
+                                            disability, physical appearance, body size,
+                                            race, religion, sexual and or discriminatory
+                                            images in public spaces, deliberate
+                                            intimidation, stalking, following, harassing
+                                            photography or recording, sustained disruption
+                                            of talks or other events, inappropriate
+                                            physical contact, and unwelcome sexual
+                                            attention.
+                                        </p>
+                                        <p>
+                                            Participants asked to stop any harassing
+                                            behavior are expected to comply
+                                            immediately.
+                                        </p>
+                                        <p>
+                                            Sponsors are also subject to the
+                                            anti-harassment policy. In particular,
+                                            sponsors should not use sexualized images,
+                                            activities, or other material. Booth staff
+                                            (including volunteers) should not use
+                                            sexualized clothing/uniforms/costumes, or
+                                            otherwise create a sexualized environment.
+                                        </p>
+                                        <p>
+                                            Participants engaging in harassing behavior
+                                            may be sanctioned in any way organizers deem
+                                            appropriate, including expulsion from the
+                                            conference without refund and providing
+                                            details to partner institutions and
+                                            events.
+                                        </p>
+                                        <p>
+                                            If you are being harassed, notice that
+                                            someone else is being harassed, or have any
+                                            other concerns, please contact a member of
+                                            SIIP  2016 staff immediately. SIIP 2016
+                                            staff can be readily identified as they will
+                                            be wearing distinctively colored SIIP 2016
+                                            t-shirts.
+                                        </p>
+                                        <p>
+                                            SIIP 2016 staff will be happy to help
+                                            participants contact hotel/venue security or
+                                            local law enforcement, provide escorts, or
+                                            otherwise assist those experiencing harassment
+                                            to feel safe for the duration of SIIP
+                                            2016. We value your attendance.
+                                        </p>
+                                        <p>
+                                            <small>
+                                                <em>
+                                                    Adapted
+                                                    from <a href="http://user2015.math.aau.dk/behaviouR"
+                                                            target="_blank">http://user2015.math.aau.dk/behaviouR</a>
+                                                </em>
+                                            </small>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--===========================================================================-->
+                        <!--|                    可隐藏框: Conference Flyer                            |-->
+                        <!--===========================================================================-->
+                        <div class="accordion-group">
+                            <section id="flyer" style="display: inline;">
+                                <div class="accordion-heading accordion-opened">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteen">
+                                        <h3 class="accordion-h1">Conference Flyer</h3>
+                                    </a>
+                                </div>
+                                <div id="collapseFourteen" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            The Conference Flyer is
+                                            available as a <a href="http://xxxx.pdf">pdf document</a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- deprecated
+    <div id="emptyness"></div>
+    <div class="modal fade hide" id="twittermodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <a class="twitter-timeline" data-widget-id="481885930052016080" href="https://twitter.com/hashtag/user2016">#user2016 Tweets</a>
+            </div>
+        </div>
+    </div>
+    -->
     </div>
 
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      
-    </ul>
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">
+              For any corrections or updates, please submit a pull request on <a href="https://github.com/user2016/user2016.github.io">user2016.github.io</a>. Design adapted from <a href="https://jeroenooms.github.io/">
+                    Jeroen
+                    Ooms
+                </a>.
+            </p>
+        </div>
+    </div>
+    <script src="jquery/jquery-1.10.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="user.js"></script>
+    <!--
+    <script>
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
+    </script>
 
-    <p>&copy; 2016. All rights reserved. </p>
-  </div>
-</div>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
+        ga('create', 'UA-67368813-1', 'auto');
+        ga('send', 'pageview');
 
-    <div class="content container">
-<div class="posts">
+    </script>
+    -->
 
-      
-</div>
-</div>
-
-  </body>
+    <script type="text/javascript">
+        var hasLoaded = false;
+        $(window).bind('load', function () {
+            if (!hasLoaded && $(window).innerWidth() <= 480) {
+                hasLoaded = true;
+                $(".accordion-heading").removeClass('accordion-opened');
+                $(".accordion-toggle").removeClass('collapsed');
+                $(".accordion-body").removeClass('in');
+                $(".accordion-body").css("height", "0px");
+            }
+        });
+    </script>
+    <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.339393,40.002366);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+    map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+    map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+    map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"FIT&nbsp;Building",content:"我的备注",point:"116.337965|40.002725",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+            
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+    </script>
+</body>
 </html>
