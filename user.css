@@ -1,4 +1,4 @@
-
+7
 #twittermodal{
 	width: 520px;
 	height: 600px;
@@ -45,7 +45,17 @@ blockquote{
 }
 
 .subhead {
-	background-image: url('images/tsinghua.png');
+	background-image: url('images/fit_banner_reduced.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 80px;
+	color: white;
+	text-shadow: 3px 3px 5px black;
+	margin-bottom: 30px;
+	white-space: nowrap;
+}
+.subheadzh {
+	background-image: url('images/fit_banner_reduced.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	padding: 80px;
@@ -56,6 +66,9 @@ blockquote{
 }
 
 .subhead h1 {
+	font-size: 38px;
+}
+.subheadzh h1 {
 	font-size: 48px;
 }
 
@@ -64,6 +77,10 @@ blockquote{
 	font-weight: 300;
 }
 
+.subheadzh p {
+	font-size: 30px;
+	font-weight: 300;
+}
 
 .nav li a {
 	color: #003399;
@@ -91,11 +108,20 @@ section {
 	.affix {
 		position: static;
 	}
+
 	.subhead h1 {
 		font-size: 32px;
 	}
-	
+
+	.subheadzh h1 {
+		font-size: 32px;
+	}
+
 	.subhead p {
+		font-size: 24px;
+		font-weight: 300;
+	}
+	.subheadzh p {
 		font-size: 24px;
 		font-weight: 300;
 	}
@@ -108,6 +134,9 @@ section {
 
 @media all and (max-width:479px){
 	.subhead, .media-object {
+		display: none;
+	}
+	.subheadzh, .media-object {
 		display: none;
 	}
 
