@@ -1,0 +1,165 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Sijie Chen
+    - name: Position
+      value: Postdoctoral Scholar, Stanford University
+    - name: Email
+      value: chensj16@stanford.edu
+    - name: Location
+      value: Stanford, CA, USA
+    - name: Languages
+      value: English (fluent), Mandarin Chinese (native)
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Ph.D., Control Science & Engineering
+      institution: Tsinghua University, Beijing, China
+      year: 2016 - 2023
+      description:
+        - Department of Automation
+        - "Advisors: Prof. Xuegong Zhang & Prof. Michael S. Waterman"
+        - "Thesis: Constructing cell-state transition landscapes from single-cell transcriptomes"
+    - title: B.Eng., Software Engineering
+      institution: Chongqing University, Chongqing, China
+      year: 2012 - 2016
+      description:
+        - School of Big Data and Software Engineering
+        - Outstanding Graduate (top of program)
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Postdoctoral Scholar
+      institution: Stanford University, Stanford, CA
+      year: 2024 - present
+      description:
+        - >-
+          <b>TransMap</b> (NeurIPS 2026 submission, first author): a discrete
+          optimal-transport framework (Gromov–Wasserstein, Fused-GW with block
+          coordinate descent) that re-represents scRNA-seq cells as 2D feature
+          images. ~15M-parameter CNN beats parameter-matched MLPs on five
+          multi-organ benchmarks; shared multi-species grid aligns cross-species
+          cells without ortholog conversion.
+        - >-
+          <b>Dynode</b> (first author, in prep): SE(3)-equivariant transformer
+          neural-ODE model that learns 3D organogenesis trajectories with
+          OT-based regularisation; supports <i>in silico</i> perturbation for
+          congenital heart disease.
+        - >-
+          Chromatin regulatory dynamics: SMARCB1 / JARID2 coordination in
+          pluripotency, using the dynamics framework above with single-cell
+          RNA-seq.
+        - >-
+          Antibody design with immune epigenomics: ATAC-seq as functional
+          readout, feedback into molecular-engineering loop.
+    - title: Research Assistant
+      institution: Tsinghua University, Beijing
+      year: 2023 - 2024
+      description:
+        - Continued cell-atlas and single-cell foundation-model work.
+    - title: Ph.D. Researcher
+      institution: Tsinghua University, Beijing
+      year: 2016 - 2023
+      description:
+        - >-
+          <b>hECA</b>: cell-centric assembly of human cell atlas (1.09M cells
+          across 38 organs, 116 datasets).
+        - >-
+          <b>VeloFusion</b>: velocity-informed cross-batch integration via
+          graph generative models.
+        - >-
+          Contributed to <b>scMulan</b>: 368M-parameter multitask generative
+          single-cell foundation model.
+        - >-
+          $D_2^R$ statistic: linear-time repeat detection (Bioinformatics
+          2019), with Prof. Michael S. Waterman.
+
+- title: Research Areas
+  type: nested_list
+  contents:
+    - title: Representation Learning with Structural Inductive Bias
+      items:
+        - Gromov–Wasserstein gene-to-pixel layouts for tabular biological data
+        - Image-native encoders (CNN, ViT) on transcriptomic data
+        - Contrastive cross-domain alignment
+    - title: Generative Latent-Variable Models
+      items:
+        - VAE families (vanilla, hierarchical, conditional)
+        - MrVI-style sample-level conditional generative models
+        - Foundation-model pre-training for single-cell
+    - title: Spatio-Temporal & Equivariant Dynamics
+      items:
+        - SE(3)-equivariant transformer-based neural ODEs
+        - Optimal-transport-driven trajectory inference
+        - In-silico perturbation
+
+- title: Awards & Honors
+  type: time_table
+  contents:
+    - year: 2016
+      items:
+        - Outstanding Graduate, Chongqing University
+    - year: 2015
+      items:
+        - National Scholarship, Ministry of Education of China
+        - ACM-ICPC Asia Regional Bronze Medal, Xi'an site
+
+- title: Teaching
+  type: time_table
+  contents:
+    - title: Machine Learning (graduate course)
+      institution: Tsinghua University — Teaching Assistant
+      year: 2018 - 2020
+    - title: Data Structure (undergraduate course)
+      institution: Tsinghua University — Teaching Assistant
+      year: 2017
+
+- title: Technical Skills
+  type: nested_list
+  contents:
+    - title: Generative & Representation Learning
+      items:
+        - VAEs (vanilla / hierarchical / conditional, MrVI-style)
+        - Contrastive learning (NT-Xent, SimCLR-style)
+        - Foundation-model pre-training (single-cell, 368M-scale)
+        - Joint-VAE, discrete + continuous latent spaces
+    - title: Optimal Transport
+      items:
+        - Sinkhorn, Gromov–Wasserstein, Fused-GW, BCD solvers
+        - Discrete OT for cross-domain & cross-species alignment
+    - title: Equivariant & Geometric Deep Learning
+      items:
+        - SE(3)-equivariant transformers
+        - Neural ODEs / dynamical-system modelling
+        - Graph neural networks (GAT for GRN inference)
+    - title: Multi-modal & Cross-domain Integration
+      items:
+        - scRNA + spatial transcriptomics + scATAC + imaging
+        - Species-, batch-, and sample-level transfer
+    - title: Software & Systems
+      items:
+        - PyTorch (advanced, custom modules & training loops)
+        - TensorFlow, JAX
+        - CUDA kernel development
+        - Distributed training (DDP, multi-node), mixed precision
+        - SLURM clusters, Docker, Git, GitHub Actions
+    - title: Programming Languages
+      items:
+        - Python, C / C++, R, MATLAB, Java
+    - title: Bioinformatics
+      items:
+        - (single-cell) RNA-seq, ATAC-seq, ChIP-seq, spatial transcriptomics
+        - Gene-regulatory-network inference, trajectory & velocity analysis
+        - Cross-species ortholog mapping
+    - title: Medical Imaging / Radiomics
+      items:
+        - CT/MRI feature extraction
+        - Multi-scale radiomic modelling (NSCLC heterogeneity, ITHscore)
+
+- title: Other Interests
+  type: list
+  contents:
+    - <u>Hobbies:</u> Aquascaping, cooking, swimming, hiking.
