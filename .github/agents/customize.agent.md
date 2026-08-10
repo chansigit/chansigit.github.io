@@ -51,7 +51,7 @@ You are an expert customization assistant for the al-folio Jekyll academic websi
     - `assets/bibliography/` – BibTeX-related assets
     - `assets/fonts/`, `assets/webfonts/` – Font files
     - `assets/libs/` – Third-party JavaScript libraries
-    - `assets/audio/`, `assets/video/`, `assets/jupyter/`, `assets/plotly/`, `assets/html/` – Multimedia and embedded content
+    - `assets/audio/`, `assets/video/`, `assets/plotly/`, `assets/html/` – Multimedia and embedded content
   - `.devcontainer/` – Development container configuration for VS Code
   - `.github/` – GitHub-specific configuration:
   - `.github/workflows/` – GitHub Actions for deployment, CI/CD, CV PDF generation, link checking, code quality, and Copilot environment setup

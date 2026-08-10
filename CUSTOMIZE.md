@@ -62,7 +62,7 @@ Here we will give you some tips on how to customize the website. One important t
     - [How it works](#how-it-works)
     - [Configuration](#configuration-1)
     - [Disable related posts for a specific post](#disable-related-posts-for-a-specific-post)
-    - [Additional configuration in _config.yml](#additional-configuration-in-_configyml)
+    - [Additional configuration in \_config.yml](#additional-configuration-in-_configyml)
   - [Managing publication display](#managing-publication-display)
   - [Adding a Google Calendar](#adding-a-google-calendar)
     - [Basic usage](#basic-usage)
@@ -282,7 +282,6 @@ Understanding al-folio's technology stack will help you better customize and ext
   - `classifier-reborn`: Used for categorizing and finding related blog posts
   - `jekyll-archives-v2`: Creates archive pages for posts and collections organized by category, tag, or date
   - `jekyll-feed`: Generates an Atom (RSS-like) feed for your content
-  - `jekyll-jupyter-notebook`: Integrates Jupyter notebooks into your site
   - `jekyll-minifier`: Minifies HTML, CSS, and JavaScript for better performance
   - `jekyll-paginate-v2`: Handles pagination for blog posts and archives
   - `jekyll-scholar`: Manages bibliography files (BibTeX) and generates publication pages with citations
@@ -1102,7 +1101,6 @@ exclude:
   - _pages/blog.md
   - _posts/
   - _projects/?_project.md
-  - assets/jupyter/blog.ipynb
 ```
 
 Here is a list of the main components that you may want to delete, and how to do it. Don't forget if you delete a page to update the `nav_order` of the remaining pages.

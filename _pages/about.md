@@ -2,13 +2,10 @@
 layout: about
 title: about
 permalink: /
-subtitle: >
-  Postdoctoral scholar, <a href="https://med.stanford.edu/xinglab/people.html" target="_blank">Lei Xing Lab</a>, Stanford University.
-  Machine learning for biological discovery.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: sijie_profile.png
   image_circular: false
   more_info: >
     <p>Stanford, CA</p>

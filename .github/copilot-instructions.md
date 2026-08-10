@@ -14,7 +14,7 @@
 
 - **Jekyll:** v4.x (Ruby static site generator)
 - **Ruby:** 3.3.5 (primary CI/CD version), 3.2.2 (some workflows)
-- **Python:** 3.13 (for nbconvert, jupyter notebook support)
+- **Python:** Used by utility scripts
 - **Node.js:** Latest (for purgecss and prettier)
 - **Docker:** Uses prebuilt image `amirpourmand/al-folio:v0.16.3` (Ruby slim-based)
 
@@ -22,7 +22,6 @@
 
 - `classifier-reborn` – Related posts calculation
 - `jekyll-archives-v2` – Archive page generation
-- `jekyll-jupyter-notebook` – Jupyter notebook embedding
 - `jekyll-minifier` – CSS/JS minification
 - `jekyll-paginate-v2` – Pagination
 - `jekyll-scholar` – Bibliography management
@@ -74,7 +73,6 @@ docker compose -f docker-compose-slim.yml up
 
 ```bash
 bundle install                         # Install Ruby gems
-pip install jupyter                    # Install Python dependencies
 bundle exec jekyll serve --port 4000   # Run at http://localhost:4000
 ```
 
@@ -83,7 +81,6 @@ bundle exec jekyll serve --port 4000   # Run at http://localhost:4000
 - **ImageMagick must be installed** – Required for image processing plugins
   - Docker: Installed automatically
   - Local: `sudo apt-get install imagemagick` (Linux) or `brew install imagemagick` (Mac)
-- **nbconvert must be upgraded before build** – `pip3 install --upgrade nbconvert`
 - **Always set JEKYLL_ENV=production for production builds** – Required for CSS/JS minification
 
 ## Project Layout & Key Files
@@ -124,8 +121,8 @@ When making changes:
 ### GitHub Workflows (in `.github/workflows/`)
 
 - **deploy.yml** – Main deployment workflow (runs on push/PR to main/master)
-  - Sets up Ruby 3.3.5, Python 3.13
-  - Installs imagemagick, nbconvert
+  - Sets up Ruby 3.3.5
+  - Installs ImageMagick
   - Runs `bundle exec jekyll build` with JEKYLL_ENV=production
   - Runs purgecss for CSS optimization
   - Commits built site to gh-pages branch
