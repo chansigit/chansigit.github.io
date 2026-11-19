@@ -65,10 +65,26 @@ The result is a map of regions inside the tumor, here with 6 classes.
 </div>
 </div>
 
+## Pieces of a class
+
+<div class="cols pieces">
+<div>
+
+The colored pixels belong to one class $k$; the grey pixels belong to other classes.
+
+- **Piece.** Pixels of one class that touch each other, diagonals included.
+- <span class="sw sw-a"></span> **Largest piece.** Its size is $A_k = 14$ pixels.
+- <span class="sw sw-b"></span> **Number of pieces.** Class $k$ has $n_k = 2$ pieces, dark and light.
+- <span class="sw sw-s"></span> A single stray pixel does not count.
+
+</div>
+<svg class="grid" viewBox="0 0 440 264" role="img" aria-label="A grid of pixels. One class forms a large piece of 14 pixels, a small piece of 5 pixels and a single stray pixel. All other pixels belong to other classes."><rect class="c-o" x="2.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-a" x="90.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-a" x="134.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-a" x="178.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="222.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="354.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="398.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="46.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="90.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="134.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="178.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="222.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-b" x="354.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-b" x="398.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-a" x="90.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-a" x="134.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-a" x="178.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-a" x="222.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-b" x="354.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-b" x="398.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="90.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-a" x="134.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-a" x="178.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="222.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-b" x="354.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="398.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="90.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="134.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="178.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="222.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-s" x="266.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="354.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="398.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="90.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="134.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="178.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="222.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="354.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="398.0" y="222.0" width="40" height="40" rx="4"/></svg>
+</div>
+
 ## From the map to a score
 
-For each class $k$, let $n_k$ be its number of connected pieces and
-$A_k$ the area of its largest piece. With $N$ tumor pixels and $K$ classes,
+For each class $k$, let $n_k$ be its number of pieces and $A_k$ the size of its
+largest piece. With $N$ tumor pixels and $K$ classes,
 
 $$
 \mathrm{ITHscore} \;=\; 1 - \frac{1}{N}\sum_{k=1}^{K}\frac{A_k}{n_k}
