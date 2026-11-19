@@ -65,19 +65,19 @@ The result is a map of regions inside the tumor, here with 6 clusters.
 </div>
 </div>
 
-## Pieces of a cluster
+## Connected components of a cluster
 
 <div class="cols pieces">
 <div>
 
 Teal pixels form cluster $k$. Grey pixels belong to other clusters.
 
-- **Piece.** A group of cluster-$k$ pixels that touch each other, diagonals included. The numbers are piece sizes in pixels.
-- **$n_k$** is the number of pieces in cluster $k$. Here $n_k = 2$; a single stray pixel is ignored.
-- **$A_k$** is the size of the largest piece of cluster $k$. Here $A_k = 14$.
+- **Connected component.** A group of cluster-$k$ pixels that touch each other, diagonals included. The numbers are component sizes in pixels.
+- **$n_k$** is the number of connected components of cluster $k$. Here $n_k = 2$; a single stray pixel is ignored.
+- **$A_k$** is the size of its largest connected component. Here $A_k = 14$.
 
 </div>
-<div class="cells" role="img" aria-label="A grid of pixels. Cluster k, in teal, forms a piece of 14 pixels, a piece of 5 pixels and a single stray pixel. Grey pixels belong to other clusters."><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k">14</i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k">5</i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="s">1</i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i></div>
+<div class="cells" role="img" aria-label="A grid of pixels. Cluster k, in teal, forms a connected component of 14 pixels, one of 5 pixels and a single stray pixel. Grey pixels belong to other clusters."><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k">14</i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k">5</i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="s">1</i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i></div>
 </div>
 
 ## From the map to a score
@@ -88,9 +88,9 @@ $$
 \mathrm{ITHscore} \;=\; 1 - \frac{1}{N}\sum_{k=1}^{K}\frac{A_k}{n_k}
 $$
 
-where cluster $k$ has $n_k$ pieces, the largest of size $A_k$.
+where cluster $k$ has $n_k$ connected components, the largest of size $A_k$.
 
-- $A_k / n_k$ is large when a cluster is one big block, and small when it is split into many pieces.
+- $A_k / n_k$ is large when a cluster is one big block, and small when it is split into many components.
 - Solid clusters give a score near 0. Scattered clusters give a score near 1.
 - The example tumor scores 0.69.
 
@@ -117,8 +117,8 @@ where cluster $k$ has $n_k$ pieces, the largest of size $A_k$.
 <ol style="counter-reset: line 5">
 <li><span><i>a</i> ← 0</span></li>
 <li><span><b>for</b> <i>k</i> = 1, …, <i>K</i> <b>do</b></span></li>
-<li class="i1"><span><i>R</i> ← pieces of cluster <i>k</i> in <i>L</i></span><span class="cm">▷ 8-connected, more than 1 pixel</span></li>
-<li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span><span class="cm">▷ largest piece / number of pieces</span></li>
+<li class="i1"><span><i>R</i> ← connected components of cluster <i>k</i> in <i>L</i></span><span class="cm">▷ 8-connected, more than 1 pixel</span></li>
+<li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span><span class="cm">▷ add <i>A<sub>k</sub></i> / <i>n<sub>k</sub></i></span></li>
 <li><span><b>end for</b></span></li>
 <li><span><b>return</b> <i>s</i> = 1 − <i>a</i> / <i>N</i></span></li>
 </ol>
