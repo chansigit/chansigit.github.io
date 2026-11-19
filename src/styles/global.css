@@ -180,6 +180,17 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .pieces .cells .k { background: var(--accent); color: var(--accent-ink); }
 .pieces .cells .s { border: 2px dashed var(--accent); color: var(--accent); }
 
+/* a sequence as a row of letter cells, and a small bar chart */
+.slide-body .seq { display: flex; gap: 0.35cqw; margin: 0.4em 0 1em; align-self: flex-start; }
+.seq i { width: 4.6cqw; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-style: normal; font-weight: 600; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: var(--surface); border: 1px solid var(--line); border-radius: 0.5cqw; }
+.seq i.m { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.slide-body .bars { display: grid; grid-template-columns: auto 1fr; gap: 0.6em 1.2em; align-items: center; margin: 0.4em 0 1.2em; width: min(100%, 46em); }
+.bars > span { font-weight: 600; }
+.bars > div { display: flex; align-items: center; gap: 0.7em; }
+.bars .b { display: block; height: 1.2em; border-radius: 3px; background: color-mix(in srgb, var(--accent) 35%, var(--bg)); }
+.bars .b.hi { background: var(--accent); }
+.bars b { font-weight: 600; white-space: nowrap; }
+
 /* typeset formula (KaTeX). KaTeX sets 1.21em by default; keep every part at 18pt or more. */
 .slide-body .katex { font-size: 1.08em; }
 .slide-body .katex-display { margin: 0 0 1em; text-align: center; background: none; color: var(--ink); border-radius: 4px; padding: 0.3em 0; align-self: center; width: fit-content; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
