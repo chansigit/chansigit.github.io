@@ -111,6 +111,9 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .project-list li { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 1.5rem; padding: 1.2rem 0; border-top: 1px solid var(--line); align-items: baseline; }
 .project-list .name { font-family: var(--display); font-size: 1.5rem; font-weight: 600; }
 .project-list p { margin: 0; max-width: 40rem; }
+.project-list li.has-thumb { grid-template-columns: 14rem minmax(0, 1fr) 13rem; align-items: center; }
+.project-list .thumb { display: block; }
+.project-list .thumb img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
 
 /* project pages: a slide deck. Slides are 16:9 and scale with the deck width. */
 .crumb { margin: 1.8rem 0 1rem; }
@@ -275,6 +278,8 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
   .year-group { grid-template-columns: 1fr; gap: 0.6rem; }
   .year-group h2 { position: static; }
   .project-list li, .dated li { grid-template-columns: 1fr; gap: 0.2rem; }
+  .project-list li.has-thumb { grid-template-columns: 1fr; gap: 0.4rem; }
+  .project-list .thumb { max-width: 18rem; margin-top: 0.4rem; }
   .site-head ul { gap: 0 1.1rem; }
   .site-head li a { padding: 0.45rem 0 0.4rem; }
   .block { padding: 2.2rem 0; }

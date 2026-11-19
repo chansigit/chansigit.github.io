@@ -24,9 +24,14 @@ const categories = [
             {projects
               .filter((p) => p.category === c.key)
               .map((p) => (
-                <li>
+                <li class={p.image ? "has-thumb" : undefined}>
                   <a class="name" href={`/projects/${p.slug}/`}>{p.title}</a>
                   <p>{p.description}</p>
+                  {p.image && (
+                    <a class="thumb" href={`/projects/${p.slug}/`} tabindex="-1">
+                      <img src={p.image} alt={p.image_alt ?? ""} loading="lazy" />
+                    </a>
+                  )}
                 </li>
               ))}
           </ul>

@@ -3,6 +3,8 @@ title: Hybrid Vision
 description: Host software that fuses a LiDAR and a camera sharing one spinning mirror into a single live image. Demoed at CES 2020.
 importance: 7
 category: imaging
+image: /assets/img/hybrid-vision/mirror-scan-still.webp
+image_alt: 3D model of the scanner, with the laser line sweeping across the field of view
 ---
 
 <img class="cover wide" src="/assets/img/hybrid-vision/mirror-scan-still.webp" alt="3D model of the scanner: a laser and receiver module beside a rotating four-facet mirror, with the laser line sweeping across the field of view." />
