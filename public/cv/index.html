@@ -156,30 +156,30 @@
     <ul class="o">
       <li><span class="theme">Data framework behind a million-cell human cell atlas</span>
         <ul>
-          <li>Proposed the unified information framework for cell atlas assembly <a class="ref" href="#pub2">[2]</a>, covering ontologies and metadata standards.</li>
-          <li>Sole first author of hECA <a class="ref" href="#pub3">[3]</a>, the human Ensemble Cell Atlas: designed the unified giant table (uGT) architecture and
+          <li>Proposed the unified information framework for cell atlas assembly <a class="ref" href="#pub3">[3]</a>, covering ontologies and metadata standards.</li>
+          <li>Led hECA <a class="ref" href="#pub4">[4]</a>, the human Ensemble Cell Atlas: designed the unified giant table (uGT) architecture and
             standardized <span class="todo">N</span> million cells from <span class="todo">M</span> studies.</li>
         </ul></li>
       <li><span class="theme">Scalable algorithms for high-dimensional biological data</span>
         <ul>
-          <li>DenseFly <a class="ref" href="#pub5">[5]</a>: fly-olfaction-inspired locality-sensitive hashing for approximate nearest-neighbor cell search.</li>
-          <li>TFcomb <a class="ref" href="#pub6">[6]</a>: graph attention networks over single-cell multi-omics to solve the inverse problem of transcription-factor combinations.</li>
+          <li>DenseFly <a class="ref" href="#pub6">[6]</a>: fly-olfaction-inspired locality-sensitive hashing for approximate nearest-neighbor cell search.</li>
+          <li>TFcomb <a class="ref" href="#pub7">[7]</a>: graph attention networks over single-cell multi-omics to solve the inverse problem of transcription-factor combinations.</li>
         </ul></li>
       <li><span class="theme">Foundation models and representation learning for single-cell data</span>
         <ul>
-          <li>scMulan <a class="ref" href="#pub1">[1]</a>: a 368M-parameter generative pre-trained model on 10M cells with zero-shot multitask capability
+          <li>scMulan <a class="ref" href="#pub2">[2]</a>: a 368M-parameter generative pre-trained model on 10M cells with zero-shot multitask capability
             (<span class="todo">my role: data / training / evaluation</span>).</li>
-          <li>UniCoord <a class="ref" href="#pub7">[7]</a> (joint-VAE with mixed discrete/continuous latents) and STEM <a class="ref" href="#pub8">[8]</a> (transfer learning across modalities).</li>
+          <li>UniCoord <a class="ref" href="#pub8">[8]</a> (joint-VAE with mixed discrete/continuous latents) and STEM <a class="ref" href="#pub9">[9]</a> (transfer learning across modalities).</li>
         </ul></li>
       <li><span class="theme">Resolving the interior of a tumor from a routine CT scan</span>
         Conceived a way to describe a tumor by the layout of its interior instead of one feature vector for the whole tumor: cluster per-pixel texture
-            features on a CT slice into regions <a class="ref" href="#pub10">[10]</a>. Co-developed it into ITHscore <a class="ref" href="#pub9">[9]</a>, an unsupervised
+            features on a CT slice into regions <a class="ref" href="#pub11">[11]</a>. Co-developed it into ITHscore <a class="ref" href="#pub10">[10]</a>, an unsupervised
             score of how fragmented those regions are, tested on 6 patient cohorts (n=1399) against tumor stage, tissue invasion, survival and gene-pathway activity.</li>
       <li><span class="theme">Statistical detection of where a microbial genome breaks its own rules</span>
-        Proposed <i>D<sub>2</sub><sup class="tight">R</sup></i> <a class="ref" href="#pub4">[4]</a>, a linear-time statistic for mining recurring subsequences from large-scale microbiome sequencing data, which helps
+        Proposed <i>D<sub>2</sub><sup class="tight">R</sup></i> <a class="ref" href="#pub5">[5]</a>, a linear-time statistic for mining recurring subsequences from large-scale microbiome sequencing data, which helps
             identify programmable elements, mobile genetic elements, noncoding RNA systems, etc. It extends word-count statistics
             to 2<sup>nd</sup>-order self-matching (<i>handshake</i>) counts within a sequence. Advised by <a href="https://dornsife.usc.edu/msw/">Michael S. Waterman</a> and <a href="https://dornsife.usc.edu/fsun/">Fengzhu Sun</a>.
-            Also contributed to <i>nuMetaSim</i> <a class="ref" href="#pub21">[21]</a>, a platform for simulating microbiome sequencing data.</li>
+            Also contributed to <i>nuMetaSim</i> <a class="ref" href="#pub24">[24]</a>, a platform for simulating microbiome sequencing data.</li>
     </ul>
   </div>
 
@@ -200,8 +200,8 @@
     <div>Undergraduate Research Assistant, Advisor: <b><a href="https://idrblab.org/Peoples-PI.php">Prof. Feng Zhu</a></b></div>
     <ul class="d">
       <li>Built an end-to-end metabolomics analysis workflow and platform, from the core peak alignment algorithms in C<span class="pp">++</span> to the
-        user-facing web interface. Co-first author of MMEASE <a class="ref" href="#pub23">[23]</a>, a platform for metabolomics meta-analysis, and contributor to its companion benchmark study
-        <a class="ref" href="#pub22">[22]</a>.</li>
+        user-facing web interface. Co-first author of MMEASE <a class="ref" href="#pub26">[26]</a>, a platform for metabolomics meta-analysis, and contributor to its companion benchmark study
+        <a class="ref" href="#pub25">[25]</a>.</li>
     </ul>
   </div>
 </section>
@@ -211,49 +211,57 @@
   <p>See <a href="https://scholar.google.com/citations?user=bhseUuYAAAAJ&hl=en">my google scholar</a> for an up-to-date list.</p>
   <p>(<sup>*</sup> equal contribution)</p>
   <ol class="pubs">
-    <li id="pub1">Haiyang Bian<sup>*</sup>, Yixin Chen<sup>*</sup>, Xiaomin Dong<sup>*</sup>, Chen Li, Minsheng Hao, <span class="me">Sijie Chen</span>, et al., Xuegong Zhang.
+    <li id="pub1"><span class="me">Sijie Chen</span>, et al.
+      TransMap: image-native representations for single-cell genomics. <span class="venue">NeurIPS 2026</span> (under review).</li>
+    <li id="pub2">Haiyang Bian<sup>*</sup>, Yixin Chen<sup>*</sup>, Xiaomin Dong<sup>*</sup>, Chen Li, Minsheng Hao, <span class="me">Sijie Chen</span>, et al., Xuegong Zhang.
       scMulan: a multitask generative pre-trained language model for single-cell analysis. <span class="venue">RECOMB 2024</span>.</li>
-    <li id="pub2"><span class="me">Sijie Chen</span>, Yanting Luo, Haoxiang Gao, Fanhong Li, Jiaqi Li, Yixin Chen, Renke You, Hairong Lv, Kui Hua, Rui Jiang, Xuegong Zhang.
+    <li id="pub3"><span class="me">Sijie Chen</span>, Yanting Luo, Haoxiang Gao, Fanhong Li, Jiaqi Li, Yixin Chen, Renke You, Hairong Lv, Kui Hua, Rui Jiang, Xuegong Zhang.
       Toward a unified information framework for cell atlas assembly. <span class="venue">National Science Review 2022</span>.</li>
-    <li id="pub3"><span class="me">Sijie Chen</span>, et al., Xuegong Zhang (27 authors, sole first author).
+    <li id="pub4"><span class="me">Sijie Chen</span>, et al., Xuegong Zhang.
       hECA: The cell-centric assembly of a cell atlas. <span class="venue">iScience 2022</span>.</li>
-    <li id="pub4"><span class="me">Sijie Chen</span>, Yixin Chen, Fengzhu Sun, Michael S Waterman, Xuegong Zhang.
+    <li id="pub5"><span class="me">Sijie Chen</span>, Yixin Chen, Fengzhu Sun, Michael S Waterman, Xuegong Zhang.
       A new statistic for efficient detection of repetitive sequences. <span class="venue">Bioinformatics 2019</span>.</li>
-    <li id="pub5">Yixin Chen, <span class="me">Sijie Chen</span>, Xuegong Zhang.
-      DenseFly: fly-inspired locality-sensitive hashing for large-scale cell search. <span class="venue">BMC Genomics 2020</span>.</li>
-    <li id="pub6">Chen Li, <span class="me">Sijie Chen</span>, Yixin Chen, Haiyang Bian, Minsheng Hao, Lei Wei, Xuegong Zhang.
-      TFcomb: identifying transcription factor combinations from single-cell multi-omics with graph attention networks. <span class="venue">Genome Research 2025</span>.</li>
-    <li id="pub7">Haoxiang Gao<sup>*</sup>, Kui Hua<sup>*</sup>, Xinze Wu<sup>*</sup>, Lei Wei, <span class="me">Sijie Chen</span>, et al., Xuegong Zhang.
-      UniCoord: a learnable universal coordinate system for single-cell atlases via joint-VAE. <span class="venue">Communications Biology 2024</span>.</li>
-    <li id="pub8">Minsheng Hao, Erpai Luo, Yixin Chen, Yanhong Wu, Chen Li, <span class="me">Sijie Chen</span>, et al.
-      STEM: transfer learning for integrating scRNA-seq and spatial transcriptomics. <span class="venue">Communications Biology 2024</span>.</li>
-    <li id="pub9">Jiaqi Li, Zhenbin Qiu, Chao Zhang, <span class="me">Sijie Chen</span>, et al.
-      ITHscore: multi-scale radiomic quantification of intratumor heterogeneity in lung cancer across 6 cohorts (n=1399). <span class="venue">European Radiology 2023</span>.</li>
-    <li id="pub10">Jiaqi Li, Haiming Lu, Xiang Fang, <span class="me">Sijie Chen</span>, Xuegong Zhang.
-      Pixel-level unsupervised clustering for intratumor heterogeneity. <span class="venue">IEEE BIBM 2019</span>.</li>
-    <li id="pub11">Najeebullah Shah, Jiaqi Li, Fanhong Li, Wenchang Chen, Haoxiang Gao, <span class="me">Sijie Chen</span>, Kui Hua, Xuegong Zhang.
-      Ab initio knowledge discovery from single-cell RNA-seq data. <span class="venue">Patterns 2020</span>.</li>
-    <li id="pub12"><span class="me">Sijie Chen</span>, et al. Protocol for using hECA. <span class="venue">STAR Protocols 2022</span>.</li>
-    <li id="pub13">Yixin Chen, Kui Hua, ..., <span class="me">Sijie Chen</span>, ..., Xuegong Zhang.
-      uniHEART: an integrated human heart cell atlas. <span class="venue">Research Square 2023</span>.</li>
-    <li id="pub14"><span class="todo">Authors</span>. A generic consensus-peak reference for scATAC-seq. <span class="venue">bioRxiv 2023</span>.</li>
-    <li id="pub15"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
-      MorPhiC Consortium: <span class="todo">title</span>. <span class="venue">Nature 2025</span>.</li>
-    <li id="pub16"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
-      Erythropoietin receptor on cDC1s. <span class="venue">Nature 2025</span>.</li>
-    <li id="pub17"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
-      Reciprocal regulation of TFH cells and dendritic cells. <span class="venue">Nature Immunology 2024</span>.</li>
-    <li id="pub18"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
-      Dynamic regulation of ILC development. <span class="venue">Mucosal Immunology 2024</span>.</li>
-    <li id="pub19"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
-      Intestinal toxicity to CTLA-4 blockade. <span class="venue">Journal of Experimental Medicine 2022</span>.</li>
-    <li id="pub20"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
-      Cellular features of meniscal degeneration. <span class="venue">eLife 2022</span>.</li>
-    <li id="pub21">Shansong Liu, Kui Hua, <span class="me">Sijie Chen</span>, Xuegong Zhang.
+    <li id="pub6">Yixin Chen<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Xuegong Zhang.
+      Using DenseFly algorithm for cell searching on massive scRNA-seq datasets. <span class="venue">BMC Genomics 2020</span>.</li>
+    <li id="pub7">Chen Li, <span class="me">Sijie Chen</span>, Yixin Chen, Haiyang Bian, Minsheng Hao, Lei Wei, Xuegong Zhang.
+      TFcomb identifies transcription factor combinations for cellular reprogramming based on single-cell multi-omics data. <span class="venue">Genome Research 2025</span>.</li>
+    <li id="pub8">Haoxiang Gao<sup>*</sup>, Kui Hua<sup>*</sup>, Xinze Wu<sup>*</sup>, Lei Wei, <span class="me">Sijie Chen</span>, et al., Xuegong Zhang.
+      Building a learnable universal coordinate system for single-cell atlas with a joint-VAE model. <span class="venue">Communications Biology 2024</span>.</li>
+    <li id="pub9">Minsheng Hao, Erpai Luo, Yixin Chen, Yanhong Wu, Chen Li, <span class="me">Sijie Chen</span>, et al.
+      STEM enables mapping of single-cell and spatial transcriptomics data with transfer learning. <span class="venue">Communications Biology 2024</span>.</li>
+    <li id="pub10">Jiaqi Li, Zhenbin Qiu, Chao Zhang, <span class="me">Sijie Chen</span>, et al.
+      ITHscore: comprehensive quantification of intra-tumor heterogeneity in NSCLC by multi-scale radiomic features. <span class="venue">European Radiology 2023</span>.</li>
+    <li id="pub11">Jiaqi Li, Haiming Lu, Xiang Fang, <span class="me">Sijie Chen</span>, Xuegong Zhang.
+      Pixel-level clustering reveals intra-tumor heterogeneity in non-small cell lung cancer. <span class="venue">IEEE BIBM 2019</span>.</li>
+    <li id="pub12"><span class="me">Sijie Chen</span>, Lei Wei, Xuegong Zhang.
+      Velocity-informed integration of single-cell RNA sequencing data. <span class="venue">RECOMB 2024</span>.</li>
+    <li id="pub13"><span class="me">Sijie Chen</span>, Zheng Wei, Yang Chen, Kui Hua, et al., Xuegong Zhang.
+      SIP: an interchangeable pipeline for scRNA-seq data processing. <span class="venue">bioRxiv 2018</span>.</li>
+    <li id="pub14">Najeebullah Shah, Jiaqi Li, Fanhong Li, Wenchang Chen, Haoxiang Gao, <span class="me">Sijie Chen</span>, Kui Hua, Xuegong Zhang.
+      An experiment on ab initio discovery of biological knowledge from scRNA-seq data using machine learning. <span class="venue">Patterns 2020</span>.</li>
+    <li id="pub15">Yixin Chen, Minsheng Hao, Haoxiang Gao, Jiaqi Li, <span class="me">Sijie Chen</span>, Fanhong Li, Lei Wei, Xuegong Zhang.
+      Protocol for profiling cell-centric assembled single-cell human transcriptome data in hECA. <span class="venue">STAR Protocols 2022</span>.</li>
+    <li id="pub16">Xuegong Zhang, Yixin Chen, Kui Hua, S. Xu, Renke You, Minsheng Hao, Wenrui Li, Lei Wei, Jinmeng Jia, Xi Xi, <span class="me">Sijie Chen</span>, et al.
+      uniHEART: an ensemble atlas of cardiac cells provides multifaceted portraits of the human heart. <span class="venue">Research Square 2023</span>.</li>
+    <li id="pub17">Qiuchen Meng, Xinze Wu, Wenchang Chen, Yubo Zhao, Chen Li, <span class="me">Sijie Chen</span>, et al., Lei Wei, Xuegong Zhang.
+      A generic reference defined by consensus peaks for single-cell ATAC-seq data analysis. <span class="venue">Nature Communications 2026</span>.</li>
+    <li id="pub18">The MorPhiC Consortium.
+      MorPhiC Consortium: towards functional characterization of all human genes. <span class="venue">Nature 2025</span>.</li>
+    <li id="pub19">Xiangyue Zhang, Christopher S. McGinnis, Guotao Yu, <span class="me">Sijie Chen</span>, et al., Edgar G. Engleman.
+      Erythropoietin receptor on cDC1s dictates immune tolerance. <span class="venue">Nature 2025</span>.</li>
+    <li id="pub20">Xue Bai, <span class="me">Sijie Chen</span>, Xinxin Chi, Bowen Xie, Xinyi Guo, et al., Chen Dong.
+      Reciprocal regulation of T follicular helper cells and dendritic cells drives chronic colitis development. <span class="venue">Nature Immunology 2024</span>.</li>
+    <li id="pub21">Tao Wu<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Jie Ma, Xinyi Zhu, Maocai Luo, et al., Xuegong Zhang, Yunping Zhu, Li Wu.
+      Dynamic regulation of innate lymphoid cell development during ontogeny. <span class="venue">Mucosal Immunology 2024</span>.</li>
+    <li id="pub22">Yifan Zhou, Yusra B. Medik, Bhakti Patel, Daniel B. Zamler, <span class="me">Sijie Chen</span>, Thomas Chapman, et al.
+      Intestinal toxicity to CTLA-4 blockade driven by IL-6 and myeloid infiltration. <span class="venue">Journal of Experimental Medicine 2023</span>.</li>
+    <li id="pub23">Weili Fu<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Runze Yang, Chen Li, Haoxiang Gao, Jian Li, Xuegong Zhang.
+      Cellular features of localized microenvironments in human meniscal degeneration: a single-cell transcriptomic study. <span class="venue">eLife 2022</span>.</li>
+    <li id="pub24">Shansong Liu, Kui Hua, <span class="me">Sijie Chen</span>, Xuegong Zhang.
       Comprehensive simulation of metagenomic sequencing data with non-uniform sampling distribution. <span class="venue">Quantitative Biology 2018</span>.</li>
-    <li id="pub22">Bo Li, Jing Tang, Qingxia Yang, Xuejiao Cui, Shuang Li, <span class="me">Sijie Chen</span>, Quanxing Cao, Weiwei Xue, Na Chen, Feng Zhu.
+    <li id="pub25">Bo Li, Jing Tang, Qingxia Yang, Xuejiao Cui, Shuang Li, <span class="me">Sijie Chen</span>, Quanxing Cao, Weiwei Xue, Na Chen, Feng Zhu.
       Performance evaluation and online realization of data-driven normalization methods used in LC/MS based untargeted metabolomics analysis. <span class="venue">Scientific Reports 2016</span>.</li>
-    <li id="pub23">Qingxia Yang<sup>*</sup>, Bo Li<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Jing Tang<sup>*</sup>, Yinghong Li, Yi Li, Song Zhang, Cheng Shi, Ying Zhang, Minjie Mou, Weiwei Xue, Feng Zhu.
+    <li id="pub26">Qingxia Yang<sup>*</sup>, Bo Li<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Jing Tang<sup>*</sup>, Yinghong Li, Yi Li, Song Zhang, Cheng Shi, Ying Zhang, Minjie Mou, Weiwei Xue, Feng Zhu.
       MMEASE: online meta-analysis of metabolomic data by enhanced metabolite annotation, marker selection and enrichment analysis. <span class="venue">Journal of Proteomics 2021</span>.</li>
   </ol>
 </section>
