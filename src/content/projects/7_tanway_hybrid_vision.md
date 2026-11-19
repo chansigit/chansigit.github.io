@@ -7,7 +7,9 @@ category: imaging
 
 <div class="paper">
 
-**Tanway Hybrid Vision, host software v0.1**
+<img class="cover wide" src="/assets/img/hybrid-vision/mirror-scan-still.webp" alt="3D model of the scanner: a laser and receiver module beside a rotating four-facet mirror, with the laser line sweeping across the field of view." />
+
+**Host software v0.1**
 
 Tanway Technology, Beijing. Demoed at CES 2020, Las Vegas, January 2020.
 
