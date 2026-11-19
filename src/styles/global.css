@@ -129,17 +129,16 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide-title { justify-content: center; padding-bottom: 6cqw; }
 .slide-title h1 { font-size: 3em; }
 .slide-title { padding-bottom: 3.2cqw; }
-.slide-title .paper { margin-top: 1.2em; padding-top: 0.9em; border-top: 1px solid var(--line); max-width: 57cqw; }
-.slide-body img.cover { position: absolute; top: 4.2cqw; right: 6cqw; height: 37cqw; max-height: none; width: auto; padding: 0; border: 0; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 6px 18px rgba(0,0,0,.14); }
+.slide-title .paper { margin-top: 1.2em; padding-top: 0.9em; border-top: 1px solid var(--line); }
+.title-flow img.cover { float: right; margin: 0 0 1.5cqw 3cqw; height: 37cqw; max-height: none; width: auto; padding: 0; border: 0; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 6px 18px rgba(0,0,0,.14); }
 .slide-title .paper p { margin: 0 0 0.45em; max-width: none; }
 .slide-title .paper p:last-child { margin-bottom: 0; }
-.slide-title:has(.cover) .slide-lead { max-width: 57cqw; }
-.slide-title:has(.cover.wide) .slide-lead, .slide-title:has(.cover.wide) .paper { max-width: 48cqw; }
+.slide-title:has(.cover) { justify-content: flex-start; }
 .slide-title:has(.cover.wide) { padding-top: 3cqw; padding-bottom: 0.5cqw; }
-.slide-body img.cover.wide { top: 6cqw; width: 37cqw; height: auto; border: 1px solid var(--line); }
+.title-flow img.cover.wide { width: 37cqw; height: auto; border: 1px solid var(--line); margin-top: 1cqw; }
 .slide-lead { font-family: var(--body); font-size: 1.3em; line-height: 1.35; font-weight: 400; max-width: 26em; margin: 0.6em 0 0; text-wrap: balance; }
-.slide-title > .slide-body { flex: none; display: block; padding: 0; margin-top: 1.2em; color: var(--muted); }
-.slide-title > .slide-body > p { max-width: 38em; }
+.slide-title .title-flow > .slide-body { flex: none; display: block; padding: 0; margin-top: 1.2em; color: var(--muted); }
+.slide-title .title-flow > .slide-body > p { max-width: none; }
 .slide > .slide-body { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 0.4em; padding-bottom: 1.6em; }
 .slide-body > :is(p, ul, ol) { max-width: 38em; }
 .roomy-1 > .slide-body { font-size: 1.16em; }
@@ -232,11 +231,9 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 /* Narrow decks: 18pt text no longer fits a 16:9 frame, so the frame grows with its content */
 @container (max-width: 760px) {
   .slide { aspect-ratio: auto; min-height: 75cqw; }
-  .slide-title .paper { max-width: none; }
   .roomy-1 > .slide-body, .roomy-2 > .slide-body, .roomy-3 > .slide-body { font-size: 1em; }
-  .slide-body img.cover { position: static; height: auto; width: min(14rem, 55%); margin: 0 0 1.2rem; }
-  .slide-body img.cover.wide { width: min(24rem, 100%); }
-  .slide-title:has(.cover.wide) .slide-lead, .slide-title:has(.cover.wide) .paper { max-width: none; }
+  .title-flow img.cover { float: none; display: block; height: auto; width: min(14rem, 55%); margin: 0 0 1.2rem; }
+  .title-flow img.cover.wide { width: min(24rem, 100%); }
 }
 @container (max-width: 700px) {
   .slide { aspect-ratio: auto; min-height: 70cqw; font-size: 18pt; padding: 1.6rem 1.25rem 2.4rem; }

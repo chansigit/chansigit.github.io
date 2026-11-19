@@ -16,7 +16,11 @@ const related = keys.map((k) => publications.find((p) => p.key === k)).filter(Bo
 // text before the first heading goes on the title slide.
 const html = await project.html();
 const parts = html.split(/(?=<h2[\s>])/);
-const intro = parts[0].startsWith("<h2") ? "" : parts.shift();
+let intro = parts[0].startsWith("<h2") ? "" : parts.shift();
+// The title slide's cover image floats at the top right, so the text below it can use the full width.
+const coverMatch = intro.match(/<img[^>]*class="cover[^"]*"[^>]*>/);
+const cover = coverMatch ? coverMatch[0] : "";
+if (cover) intro = intro.replace(cover, "");
 const strip = (t) => t.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#x26;/g, "&").trim();
 const slides = parts.map((part) => {
   const m = part.match(/^<h2[^>]*>([\s\S]*?)<\/h2>/);
@@ -37,9 +41,12 @@ const total = slides.length + 1;
       <div class="deck-stage">
         <div class="deck-track" tabindex="0">
           <article class="slide slide-title" id="slide-1">
-            <h1>{project.title}</h1>
-            <p class="slide-lead">{project.description}</p>
-            {intro && <div class="slide-body" set:html={intro} />}
+            <div class="title-flow">
+              {cover && <Fragment set:html={cover} />}
+              <h1>{project.title}</h1>
+              <p class="slide-lead">{project.description}</p>
+              {intro && <div class="slide-body" set:html={intro} />}
+            </div>
             <span class="slide-no">1 / {total}</span>
           </article>
           {
