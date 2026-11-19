@@ -1,5 +1,5 @@
 ---
-title: Meniscus atlas
+title: Meniscus Atlas
 description: A single-cell atlas of the human knee meniscus, a fibrocartilage, and what changes when it degenerates.
 importance: 9
 category: biomedicine
