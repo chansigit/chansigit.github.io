@@ -23,11 +23,11 @@ and use them to divide the interior of the tumor into regions.
 The internal structure itself becomes the information, read from a CT scan
 that every patient already has.
 
-## The input: a CT scan and a tumor mask
+## The input: a CT image and a tumor
 
 <figure>
 <img src="/assets/img/ithscore/slice-mask.png" alt="Three panels: a chest CT slice, a binary mask marking a small lung tumor, and the mask overlaid on the slice." />
-<figcaption>The CT slice where the tumor is largest, the tumor mask, and both overlaid. Patient LUNG1-100 from the public LUNG1 dataset on The Cancer Imaging Archive; this example runs through the next slides.</figcaption>
+<figcaption>A CT image, the mask that marks the given tumor on it, and both overlaid. Patient LUNG1-100 from the public LUNG1 dataset on The Cancer Imaging Archive; this example runs through the next slides.</figcaption>
 </figure>
 
 ## From the tumor to a map of regions
@@ -35,7 +35,7 @@ that every patient already has.
 <div class="cols">
 <div>
 
-1. Take the CT slice where the tumor is largest and crop the tumor.
+1. Given a tumor on a CT image, take its pixels.
 2. For every tumor pixel, compute radiomic texture features on its 5 x 5
    neighborhood.
 3. Cluster the pixels by these features. Pixels with similar local texture get
@@ -67,13 +67,12 @@ ITHscore = 1 - (1/N) * sum over k of ( A_k / n_k )
 
 <div class="algo">
 <p class="algo-cap"><b>Algorithm 1</b> ITHscore</p>
-<p><b>Input:</b> CT volume <i>I</i>, tumor mask <i>M</i>; window radius <i>r</i> = 2, number of classes <i>K</i> = 6</p>
+<p><b>Input:</b> CT image <i>I</i>, where <i>I</i>(<i>p</i>) is the intensity at pixel <i>p</i> in Hounsfield units; a given tumor <i>T</i>, the set of its <i>N</i> pixels</p>
+<p><b>Parameters:</b> window radius <i>r</i> = 2, number of classes <i>K</i> = 6</p>
 <p><b>Output:</b> ITHscore <i>s</i> ∈ [0, 1)</p>
 <ol>
-<li><span><i>z</i>* ← arg max<sub><i>z</i></sub> |<i>M<sub>z</sub></i>|</span><span class="cm">▷ slice with the largest tumor area</span></li>
-<li><span><i>T</i> ← tumor pixels of slice <i>z</i>*; &nbsp;<i>N</i> ← |<i>T</i>|</span></li>
 <li><span><b>for</b> each pixel <i>p</i> ∈ <i>T</i> <b>do</b></span></li>
-<li class="i1"><span><i>φ</i>(<i>p</i>) ← radiomic features of the (2<i>r</i>+1) × (2<i>r</i>+1) window centered at <i>p</i></span></li>
+<li class="i1"><span><i>φ</i>(<i>p</i>) ← radiomic features of <i>I</i> on the (2<i>r</i>+1) × (2<i>r</i>+1) window centered at <i>p</i></span></li>
 <li><span><b>end for</b></span></li>
 <li><span>rescale every feature of <i>φ</i> to [0, 1] over <i>T</i></span></li>
 <li><span><i>L</i> ← K-means(<i>φ</i>, <i>K</i>)</span><span class="cm">▷ map of regions</span></li>

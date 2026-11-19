@@ -20,12 +20,5 @@ RNA-seq analysis.
 - Batch correction
 - Conditional generation of cells
 
-## My part
-
-- Latent-variable model design: joint-VAE universal coordinate systems that
-  support alignment across platforms and across modalities.
-- Dataset curation and evaluation.
-
 Presented at RECOMB 2024.
-
 [Project repository on GitHub](https://github.com/Zhang-lab-AI/scMulan)

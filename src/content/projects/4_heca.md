@@ -23,11 +23,5 @@ the cell, not the dataset.
 Flexible cloud retrieval lets the scattered datasets be queried as a single
 dataset.
 
-## My part
-
-- Co-first author of the
-  [hECA paper in *iScience* (2022)](https://www.cell.com/iscience/fulltext/S2589-0042(22)00589-2).
-- Co-led the design of the underlying unified information framework (uGT,
-  *National Science Review* 2022).
-
-Web interface: [eca.xglab.tech](https://eca.xglab.tech)
+[Paper in *iScience* (2022)](https://www.cell.com/iscience/fulltext/S2589-0042(22)00589-2)
+and web interface at [eca.xglab.tech](https://eca.xglab.tech).
