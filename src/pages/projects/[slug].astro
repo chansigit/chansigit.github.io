@@ -8,7 +8,8 @@ export function getStaticPaths() {
   return projects.map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
 }
 const { project } = Astro.props;
-const related = publications.filter((p) => p.key === project.related_publications);
+const keys = String(project.related_publications ?? "").split(/[\s,]+/).filter(Boolean);
+const related = keys.map((k) => publications.find((p) => p.key === k)).filter(Boolean);
 ---
 
 <Base title={project.title} description={project.description}>
@@ -22,7 +23,7 @@ const related = publications.filter((p) => p.key === project.related_publication
     {
       related.length > 0 && (
         <section class="block">
-          <h2>Related publication</h2>
+          <h2>{related.length > 1 ? "Related publications" : "Related publication"}</h2>
           <PubList pubs={related} />
         </section>
       )

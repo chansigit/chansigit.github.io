@@ -2,7 +2,7 @@
 title: Dynode
 description: SE(3)-equivariant transformer-based neural ODEs for 3D organogenesis.
 importance: 2
-category: research
+category: single-cell
 ---
 
 **Dynode** models 3D organogenesis from spatiotemporally resolved single-cell

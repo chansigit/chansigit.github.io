@@ -2,7 +2,7 @@
 title: TransMap
 description: Image-native representations for single-cell genomics via Gromov–Wasserstein optimal transport.
 importance: 1
-category: research
+category: single-cell
 related_publications: chen2026transmap
 ---
 

@@ -2,22 +2,27 @@
 import Base from "../../layouts/Base.astro";
 import { projects } from "../../lib/content.js";
 
-const categories = ["research", "infrastructure"];
+const categories = [
+  { key: "single-cell", title: "Machine learning for single-cell biology" },
+  { key: "imaging", title: "Imaging and sensing" },
+  { key: "sequence", title: "Statistics for sequence data" },
+  { key: "infrastructure", title: "Data platforms" },
+];
 ---
 
-<Base title="Projects" description="Selected projects on representation learning, generative modeling, and biological data integration.">
+<Base title="Projects" description="Research and engineering projects by Sijie Chen.">
   <div class="wrap">
     <header class="page-head">
       <h1>Projects</h1>
-      <p class="lead">Selected projects on representation learning, generative modeling, and biological data integration.</p>
+      <p class="lead">Research and engineering projects, from current work on single-cell foundation models back to undergraduate research.</p>
     </header>
     {
       categories.map((c) => (
         <section class="project-group">
-          <h2>{c}</h2>
+          <h2>{c.title}</h2>
           <ul class="project-list">
             {projects
-              .filter((p) => p.category === c)
+              .filter((p) => p.category === c.key)
               .map((p) => (
                 <li>
                   <a class="name" href={`/projects/${p.slug}/`}>{p.title}</a>
