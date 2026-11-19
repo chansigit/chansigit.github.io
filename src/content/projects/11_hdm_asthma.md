@@ -22,10 +22,10 @@ image_alt: Single-cell map of lung immune cells, with Mgl2+ dendritic cells, Gpn
 
 ## Which cells drive allergic asthma?
 
-- In **allergic asthma**, the airways overreact to harmless particles such as **house dust mite**.
-- **Dendritic cells** and **macrophages** shape this reaction, but their **subtypes** were poorly mapped.
-- Mice were exposed to house dust mite, and their lung cells were read one by one with **single-cell RNA-seq**.
-- The asthmatic lung was compared with the **healthy** lung, cell type by cell type.
+- **Allergic asthma** is a chronic inflammation of the airways.
+- **Dendritic cells** and **macrophages** shape it, but their **subtypes** were poorly mapped.
+- We used **house dust mite** (HDM) extract to **model asthma** in mice, an established model.
+- Lung cells of **HDM-treated** and **control** mice were profiled by **single-cell RNA-seq**.
 
 ## 26 immune cell types, annotated
 
