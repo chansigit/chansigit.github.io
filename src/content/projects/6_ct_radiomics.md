@@ -8,6 +8,8 @@ related_publications: li2023ithscore, li2019pixelclust
 
 <div class="paper">
 
+<img class="cover" src="/assets/img/ithscore/eur-radiol-33-2-cover.webp" alt="Cover of European Radiology, volume 33, issue 2, February 2023" />
+
 **[ITHscore: comprehensive quantification of intra-tumor heterogeneity in NSCLC by multi-scale radiomic features](https://doi.org/10.1007/s00330-022-09055-0)**
 
 Jiaqi Li, Zhenbin Qiu, Chao Zhang, **Sijie Chen**, Mengmin Wang, Qiuchen Meng, Haiming Lu, Lei Wei, Hairong Lv, Wenzhao Zhong, Xuegong Zhang

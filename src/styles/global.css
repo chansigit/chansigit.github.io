@@ -122,7 +122,9 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide h2 { font-size: 1.9em; margin: 0 0 0.55em; padding-bottom: 0.4em; border-bottom: 1px solid var(--line); max-width: none; text-wrap: balance; }
 .slide-title { justify-content: center; padding-bottom: 6cqw; }
 .slide-title h1 { font-size: 3em; }
-.slide-title .paper { margin-top: 1.4em; padding-top: 1em; border-top: 1px solid var(--line); max-width: 46em; }
+.slide-title { padding-bottom: 3.2cqw; }
+.slide-title .paper { margin-top: 1.2em; padding-top: 0.9em; border-top: 1px solid var(--line); max-width: 57cqw; }
+.slide-body img.cover { position: absolute; top: 4.2cqw; right: 6cqw; height: 37cqw; max-height: none; width: auto; padding: 0; border: 0; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 6px 18px rgba(0,0,0,.14); }
 .slide-title .paper p { margin: 0 0 0.45em; max-width: none; }
 .slide-title .paper p:last-child { margin-bottom: 0; }
 .slide-lead { font-family: var(--display); font-size: 1.3em; line-height: 1.3; font-weight: 500; max-width: 26em; margin: 0.6em 0 0; text-wrap: balance; }
@@ -175,6 +177,8 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 /* Narrow decks: 18pt text no longer fits a 16:9 frame, so the frame grows with its content */
 @container (max-width: 1000px) {
   .slide { aspect-ratio: auto; min-height: 56cqw; }
+  .slide-title .paper { max-width: none; }
+  .slide-body img.cover { position: static; height: auto; width: min(14rem, 55%); margin: 0 0 1.2rem; }
 }
 @container (max-width: 700px) {
   .slide { aspect-ratio: auto; min-height: 70cqw; font-size: 18pt; padding: 1.6rem 1.25rem 2.4rem; }
