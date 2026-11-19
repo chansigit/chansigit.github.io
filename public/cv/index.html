@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sijie Chen - CV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  /* Computer Modern, same face as the LaTeX original; files in ./fonts */
+  @font-face { font-family: "CMU Serif"; font-style: normal; font-weight: 400; src: url("fonts/cmu-serif-500-roman.woff2") format("woff2"); }
+  @font-face { font-family: "CMU Serif"; font-style: italic; font-weight: 400; src: url("fonts/cmu-serif-500-italic.woff2") format("woff2"); }
+  @font-face { font-family: "CMU Serif"; font-style: normal; font-weight: 700; src: url("fonts/cmu-serif-700-roman.woff2") format("woff2"); }
+  @font-face { font-family: "CMU Serif"; font-style: italic; font-weight: 700; src: url("fonts/cmu-serif-700-italic.woff2") format("woff2"); }
+  /* link color options: navy #1a3d7c | Stanford cardinal #8c1515 | teal #0b6e6e | dark gray #444 */
+  :root { --link: #008080; --rule: #000; }
+  html { background: #eee; }
+  body {
+    font-family: "CMU Serif", "Latin Modern Roman", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.22; color: #000;
+    max-width: 8.5in; margin: 0.4in auto; padding: 0.75in 0.85in 0.6in;
+    background: #fff; box-shadow: 0 0 8px rgba(0,0,0,.25);
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .todo { background: #fff3a0; }            /* fill-me markers; remove class when done */
+
+  /* header */
+  header { text-align: center; margin-bottom: 1.2em; }
+  header h1 { font-size: 22pt; font-weight: bold; margin: 0 0 .35em; }
+  header p { margin: .15em 0; }
+  .ico { width: .9em; height: .9em; vertical-align: -.1em; margin-right: .3em; fill: currentColor; }
+
+  /* sections */
+  h2 {
+    font-size: 11pt; font-weight: bold; text-transform: uppercase; letter-spacing: .02em;
+    margin: 1.3em 0 .55em; padding-bottom: .15em; border-bottom: 1px solid var(--rule);
+  }
+  section > * { margin-left: 1.9em; margin-right: 0; text-align: justify; hyphens: auto; }
+  section > h2 { margin-left: 0; }
+  p { margin: 0 0 .5em; }
+
+  /* entry: left title, right italic date */
+  .entry { margin-bottom: .55em; }
+  .adv { color: #333; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .row .date { font-style: italic; white-space: nowrap; margin-left: 1em; }
+  .org { font-weight: bold; }
+  .group { font-style: italic; }
+  .entry.exp { margin-bottom: 1.1em; }
+  .entry.exp .row .org { font-weight: normal; }   /* EXPERIENCES uses plain org name, as in the original */
+
+  /* bullet levels: ◦ (theme) and · (detail) */
+  ul { list-style: none; margin: .35em 0 0; padding: 0; }
+  ul li { position: relative; padding-left: 1.2em; margin-bottom: .15em; }
+  ul li::before { position: absolute; left: .1em; }
+  ul.o > li::before, ul.d > li::before { content: "\2022"; font-size: .7em; top: .2em; }   /* • theme / single bullet */
+  ul.o > li > ul { margin: .15em 0 0 -1.2em; }
+  ul.o ul li::before { content: "\25E6"; font-size: .55em; top: .35em; }   /* ◦ sub-point, smaller than the theme dot */
+  .theme { font-weight: bold; display: block; }
+  .project { font-weight: bold; display: block; padding-left: 1.2em; margin-top: .25em; }
+
+  /* numbered publications */
+  ol.pubs { padding-left: 1.9em; margin: .4em 0 0; }
+  ol.pubs li { margin-bottom: .3em; padding-left: .1em; }
+  .me { font-weight: bold; }
+  sup { font-size: .7em; line-height: 0; }
+  sub { font-size: .7em; line-height: 0; }
+  sup.tight { margin-left: -.55em; }
+  .pp { font-size: .78em; letter-spacing: -.12em; margin-right: .12em; position: relative; top: -.06em; }
+  a.ref { color: var(--link); font-size: .8em; }
+  ol.pubs li:target { background: #f2f7f7; }
+  .venue { font-style: italic; }
+
+  /* awards & skills: two-column definition rows */
+  table.kv { border-collapse: collapse; }
+  table.kv td { vertical-align: top; padding: 0 1.5em .12em 0; }
+  table.kv td:first-child { font-weight: bold; white-space: nowrap; }
+
+  footer { font-size: 9pt; margin-top: 1.5em; }
+
+  @media print {
+    html { background: #fff; }
+    body { margin: 0; padding: 0; box-shadow: none; max-width: none; }
+    @page { size: letter; margin: 0.9in 0.85in 0.8in; }
+    .entry, ol.pubs li { break-inside: avoid; }
+    h2 { break-after: avoid; }
+    .todo { background: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sijie Chen</h1>
+  <p><svg class="ico" viewBox="0 0 24 24"><path d="M9 4h6a2 2 0 0 1 2 2v1h4v12H3V7h4V6a2 2 0 0 1 2-2zm0 3h6V6H9v1z"/></svg>Postdoc @ Stanford University</p>
+  <p><svg class="ico" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.6l8 5 8-5V7l-8 5z"/></svg><a href="mailto:chansigit@gmail.com">chansigit@gmail.com</a>
+     &nbsp;&nbsp;<svg class="ico" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg><a href="https://github.com/chansigit">github.com/chansigit</a>
+     &nbsp;&nbsp;<svg class="ico" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-6 9.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5l-6 3.3-6-3.3z"/></svg><a href="https://scholar.google.com/citations?user=bhseUuYAAAAJ&hl=en">Google Scholar</a></p>
+</header>
+
+<section>
+  <h2>Research Statement</h2>
+  <p>My research interests lie in <b>Machine Learning</b> and <b>Foundation Models</b> for large-scale, high-dimensional
+  scientific data. In particular, I am interested in generative pre-training on sparse count data, representation learning
+  and geometry (optimal transport, hashing, disentangled latent spaces), and the data engineering that lets models consume
+  millions of heterogeneous samples. Most recently, I have been building foundation models for cell-type classification
+  and exploring LLM agents as autonomous analysts for biological data.</p>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="row"><span><span class="org">Stanford University</span>, Stanford, CA, USA</span><span class="date">2024.5 - Present</span></div>
+    <div>Postdoc, Department of Radiation Oncology and Department of Computer Science</div>
+    <div class="adv">Mentor: <a href="https://profiles.stanford.edu/lei-xing">Prof. Lei Xing</a></div>
+  </div>
+  <div class="entry">
+    <div class="row"><span><span class="org">Tsinghua University</span>, Beijing, China</span><span class="date">2016.9 - 2023.6</span></div>
+    <div>PhD in Control Science and Engineering, Department of Automation</div>
+    <div class="adv">Advisors: <a href="https://www.au.tsinghua.edu.cn/en/info/1078/3209.htm">Prof. Xuegong Zhang</a>, <a href="https://dornsife.usc.edu/msw/">Prof. Michael S. Waterman</a></div>
+  </div>
+  <div class="entry">
+    <div class="row"><span><span class="org">Chongqing University</span>, Chongqing, China</span><span class="date">2012.9 - 2016.7</span></div>
+    <div>B.Eng. in Computer Science, School of Software Engineering</div>
+    <div class="adv">Advisor: <a href="https://idrblab.org/Peoples-PI.php">Prof. Feng Zhu</a></div>
+  </div>
+</section>
+
+<section>
+  <h2>Experiences</h2>
+
+  <div class="entry exp">
+    <div class="row"><span class="org">Stanford University, Stanford, CA, USA</span><span class="date">2024.5 - Present</span></div>
+    <div class="group">Xing Lab, Department of Radiation Oncology and Department of Computer Science</div>
+    <div>Postdoc, Mentor: <b><a href="https://profiles.stanford.edu/lei-xing">Prof. Lei Xing</a></b></div>
+    <ul class="o">
+      <li>I build foundation models for single-cell biology. I lead <a href="https://github.com/chansigit/genofoundation">genofoundation</a>,
+        a foundation model for cell-type classification pre-trained on <span class="todo">N million</span> cells from
+        <span class="todo">M</span> heterogeneous scRNA-seq datasets, with a data-engineering stack
+        (<code>stangene</code>, <code>stanobj</code>, <code>stancounts</code>) that harmonizes genes, formats and counts across sources.</li>
+      <li>I work on geometry-aware representation learning for cross-dataset and cross-species alignment.
+        <ul>
+          <li>Transmap: interpretable, zero-shot mapping across single-cell datasets via optimal transport [<span class="todo">ref</span>].</li>
+          <li>torchgw: a GPU library for (sampled) Gromov-Wasserstein alignment, benchmarked against bilingual word-embedding alignment.</li>
+          <li>multispecies-int: a cross-species integration benchmark (173,979 cells &times; 5,373 orthologs) with a leaderboard and CI.</li>
+        </ul></li>
+      <li>I build LLM-agent tooling for autonomous single-cell analysis (QC, clustering, annotation) on Stanford's Sherlock cluster,
+        running multi-GPU SLURM training jobs at scale.</li>
+    </ul>
+  </div>
+
+  <div class="entry exp">
+    <div class="row"><span class="org">Tsinghua University, Beijing, China</span><span class="date">2016.9 - 2023.6</span></div>
+    <div class="group">Bioinformatics Division, Department of Automation</div>
+    <div>Research Assistant, Advisors: <b><a href="https://www.au.tsinghua.edu.cn/en/info/1078/3209.htm">Prof. Xuegong Zhang</a></b>, <b><a href="https://dornsife.usc.edu/msw/">Prof. Michael S. Waterman</a></b></div>
+    <div>My PhD thesis is on <span class="todo">thesis title</span>.</div>
+    <ul class="o">
+      <li><span class="theme">Data framework behind a million-cell human cell atlas</span>
+        <ul>
+          <li>Proposed the unified information framework for cell atlas assembly <a class="ref" href="#pub2">[2]</a>, covering ontologies and metadata standards.</li>
+          <li>Sole first author of hECA <a class="ref" href="#pub3">[3]</a>, the human Ensemble Cell Atlas: designed the unified giant table (uGT) architecture and
+            standardized <span class="todo">N</span> million cells from <span class="todo">M</span> studies.</li>
+        </ul></li>
+      <li><span class="theme">Scalable algorithms for high-dimensional biological data</span>
+        <ul>
+          <li>DenseFly <a class="ref" href="#pub5">[5]</a>: fly-olfaction-inspired locality-sensitive hashing for approximate nearest-neighbor cell search.</li>
+          <li>TFcomb <a class="ref" href="#pub6">[6]</a>: graph attention networks over single-cell multi-omics to solve the inverse problem of transcription-factor combinations.</li>
+        </ul></li>
+      <li><span class="theme">Foundation models and representation learning for single-cell data</span>
+        <ul>
+          <li>scMulan <a class="ref" href="#pub1">[1]</a>: a 368M-parameter generative pre-trained model on 10M cells with zero-shot multitask capability
+            (<span class="todo">my role: data / training / evaluation</span>).</li>
+          <li>UniCoord <a class="ref" href="#pub7">[7]</a> (joint-VAE with mixed discrete/continuous latents) and STEM <a class="ref" href="#pub8">[8]</a> (transfer learning across modalities).</li>
+          <li>ITHscore <a class="ref" href="#pub9">[9]</a><a class="ref" href="#pub10">[10]</a>: multi-scale radiomic features for tumor heterogeneity, generalized over 6 cohorts (n=1399).</li>
+        </ul></li>
+      <li><span class="theme">Statistical detection of where a genome breaks its own rules</span>
+        Proposed <i>D<sub>2</sub><sup class="tight">R</sup></i> <a class="ref" href="#pub4">[4]</a>, a linear-time statistic for mining recurring subsequences from large-scale microbiome sequencing data, which helps
+            identify programmable elements, mobile genetic elements, noncoding RNA systems, etc. It extends word-count statistics
+            to 2<sup>nd</sup>-order self-matching (<i>handshake</i>) counts within a sequence. Advised by <a href="https://dornsife.usc.edu/msw/">Michael S. Waterman</a> and <a href="https://dornsife.usc.edu/fsun/">Fengzhu Sun</a>.
+            Also contributed to <i>nuMetaSim</i> <a class="ref" href="#pub21">[21]</a>, a platform for simulating microbiome sequencing data.</li>
+    </ul>
+  </div>
+
+  <div class="entry exp">
+    <div class="row"><span class="org">Tanway Technology Co., Ltd., Beijing, China</span><span class="date">2019.10 - 2020.03</span></div>
+    <div>Part-time Intern, Mentors: <b><a href="http://www.tanway.com/en/about/">Dr. Ruitong Zheng</a></b>, <b><a href="http://www.tanway.com/en/about/">Dr. Shiwei Wang</a></b></div>
+    <ul class="d">
+      <li><span class="theme">Camera&ndash;LiDAR fusion through a single spinning mirror</span>
+        Solely developed the host software for Tanway's hybrid-vision prototype, in which a 16-channel LiDAR and a line-scan camera share
+        one rotating mirror: real-time decoding of the LiDAR stream, industrial camera acquisition, and depth-coded fusion of both streams
+        into one live image. Demoed at CES 2020.</li>
+    </ul>
+  </div>
+
+  <div class="entry exp">
+    <div class="row"><span class="org">Chongqing University, Chongqing, China</span><span class="date">2015.9 - 2016.6</span></div>
+    <div class="group">School of Software Engineering</div>
+    <div>Undergraduate Research Assistant, Advisor: <b><a href="https://idrblab.org/Peoples-PI.php">Prof. Feng Zhu</a></b></div>
+    <ul class="d">
+      <li>Built an end-to-end metabolomics analysis workflow and platform, from the core peak alignment algorithms in C<span class="pp">++</span> to the
+        user-facing web interface. Co-first author of MMEASE <a class="ref" href="#pub23">[23]</a>, a platform for metabolomics meta-analysis, and contributor to its companion benchmark study
+        <a class="ref" href="#pub22">[22]</a>.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Selected Publications</h2>
+  <p>See <a href="https://scholar.google.com/citations?user=bhseUuYAAAAJ&hl=en">my google scholar</a> for an up-to-date list.</p>
+  <p>(<sup>*</sup> equal contribution)</p>
+  <ol class="pubs">
+    <li id="pub1">Haiyang Bian<sup>*</sup>, Yixin Chen<sup>*</sup>, Xiaomin Dong<sup>*</sup>, Chen Li, Minsheng Hao, <span class="me">Sijie Chen</span>, et al., Xuegong Zhang.
+      scMulan: a multitask generative pre-trained language model for single-cell analysis. <span class="venue">RECOMB 2024</span>.</li>
+    <li id="pub2"><span class="me">Sijie Chen</span>, Yanting Luo, Haoxiang Gao, Fanhong Li, Jiaqi Li, Yixin Chen, Renke You, Hairong Lv, Kui Hua, Rui Jiang, Xuegong Zhang.
+      Toward a unified information framework for cell atlas assembly. <span class="venue">National Science Review 2022</span>.</li>
+    <li id="pub3"><span class="me">Sijie Chen</span>, et al., Xuegong Zhang (27 authors, sole first author).
+      hECA: The cell-centric assembly of a cell atlas. <span class="venue">iScience 2022</span>.</li>
+    <li id="pub4"><span class="me">Sijie Chen</span>, Yixin Chen, Fengzhu Sun, Michael S Waterman, Xuegong Zhang.
+      A new statistic for efficient detection of repetitive sequences. <span class="venue">Bioinformatics 2019</span>.</li>
+    <li id="pub5">Yixin Chen, <span class="me">Sijie Chen</span>, Xuegong Zhang.
+      DenseFly: fly-inspired locality-sensitive hashing for large-scale cell search. <span class="venue">BMC Genomics 2020</span>.</li>
+    <li id="pub6">Chen Li, <span class="me">Sijie Chen</span>, Yixin Chen, Haiyang Bian, Minsheng Hao, Lei Wei, Xuegong Zhang.
+      TFcomb: identifying transcription factor combinations from single-cell multi-omics with graph attention networks. <span class="venue">Genome Research 2025</span>.</li>
+    <li id="pub7">Haoxiang Gao<sup>*</sup>, Kui Hua<sup>*</sup>, Xinze Wu<sup>*</sup>, Lei Wei, <span class="me">Sijie Chen</span>, et al., Xuegong Zhang.
+      UniCoord: a learnable universal coordinate system for single-cell atlases via joint-VAE. <span class="venue">Communications Biology 2024</span>.</li>
+    <li id="pub8">Minsheng Hao, Erpai Luo, Yixin Chen, Yanhong Wu, Chen Li, <span class="me">Sijie Chen</span>, et al.
+      STEM: transfer learning for integrating scRNA-seq and spatial transcriptomics. <span class="venue">Communications Biology 2024</span>.</li>
+    <li id="pub9">Jiaqi Li, Zhenbin Qiu, Chao Zhang, <span class="me">Sijie Chen</span>, et al.
+      ITHscore: multi-scale radiomic quantification of intratumor heterogeneity in lung cancer across 6 cohorts (n=1399). <span class="venue">European Radiology 2022</span>.</li>
+    <li id="pub10">Jiaqi Li, Haiming Lu, Xiang Fang, <span class="me">Sijie Chen</span>, Xuegong Zhang.
+      Pixel-level unsupervised clustering for intratumor heterogeneity. <span class="venue">IEEE BIBM 2019</span>.</li>
+    <li id="pub11">Najeebullah Shah, Jiaqi Li, Fanhong Li, Wenchang Chen, Haoxiang Gao, <span class="me">Sijie Chen</span>, Kui Hua, Xuegong Zhang.
+      Ab initio knowledge discovery from single-cell RNA-seq data. <span class="venue">Patterns 2020</span>.</li>
+    <li id="pub12"><span class="me">Sijie Chen</span>, et al. Protocol for using hECA. <span class="venue">STAR Protocols 2022</span>.</li>
+    <li id="pub13">Yixin Chen, Kui Hua, ..., <span class="me">Sijie Chen</span>, ..., Xuegong Zhang.
+      uniHEART: an integrated human heart cell atlas. <span class="venue">Research Square 2023</span>.</li>
+    <li id="pub14"><span class="todo">Authors</span>. A generic consensus-peak reference for scATAC-seq. <span class="venue">bioRxiv 2023</span>.</li>
+    <li id="pub15"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
+      MorPhiC Consortium: <span class="todo">title</span>. <span class="venue">Nature 2025</span>.</li>
+    <li id="pub16"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
+      Erythropoietin receptor on cDC1s. <span class="venue">Nature 2025</span>.</li>
+    <li id="pub17"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
+      Reciprocal regulation of TFH cells and dendritic cells. <span class="venue">Nature Immunology 2024</span>.</li>
+    <li id="pub18"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
+      Dynamic regulation of ILC development. <span class="venue">Mucosal Immunology 2024</span>.</li>
+    <li id="pub19"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
+      Intestinal toxicity to CTLA-4 blockade. <span class="venue">Journal of Experimental Medicine 2022</span>.</li>
+    <li id="pub20"><span class="todo">Authors</span>, <span class="me">Sijie Chen</span>, et al.
+      Cellular features of meniscal degeneration. <span class="venue">eLife 2022</span>.</li>
+    <li id="pub21">Shansong Liu, Kui Hua, <span class="me">Sijie Chen</span>, Xuegong Zhang.
+      Comprehensive simulation of metagenomic sequencing data with non-uniform sampling distribution. <span class="venue">Quantitative Biology 2018</span>.</li>
+    <li id="pub22">Bo Li, Jing Tang, Qingxia Yang, Xuejiao Cui, Shuang Li, <span class="me">Sijie Chen</span>, Quanxing Cao, Weiwei Xue, Na Chen, Feng Zhu.
+      Performance evaluation and online realization of data-driven normalization methods used in LC/MS based untargeted metabolomics analysis. <span class="venue">Scientific Reports 2016</span>.</li>
+    <li id="pub23">Qingxia Yang<sup>*</sup>, Bo Li<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Jing Tang<sup>*</sup>, Yinghong Li, Yi Li, Song Zhang, Cheng Shi, Ying Zhang, Minjie Mou, Weiwei Xue, Feng Zhu.
+      MMEASE: online meta-analysis of metabolomic data by enhanced metabolite annotation, marker selection and enrichment analysis. <span class="venue">Journal of Proteomics 2021</span>.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Awards</h2>
+  <table class="kv">
+    <tr><td class="todo">2024</td><td class="todo">Award / fellowship name, granting body</td></tr>
+    <tr><td class="todo">2020</td><td class="todo">Award / fellowship name, granting body</td></tr>
+  </table>
+</section>
+
+
+<section>
+  <h2>Technical Strengths</h2>
+  <table class="kv">
+    <tr><td>Deep Learning Software Stacks</td><td>PyTorch, JAX<span class="todo">?</span>, scVI-tools, multi-GPU / SLURM training, HuggingFace</td></tr>
+    <tr><td>Programming Languages</td><td>Proficient with Python, R, C/C<span class="pp">++</span><span class="todo">?</span>; also Rust, JavaScript/TypeScript</td></tr>
+    <tr><td>Additional Skills</td><td>Optimal transport, LSH / ANN search, LLM agents &amp; tool use, large-scale data engineering, HPC</td></tr>
+  </table>
+</section>
+
+<footer>last updated: 09/27/2026</footer>
+
+</body>
+</html>

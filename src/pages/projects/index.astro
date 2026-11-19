@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import Base from "../../layouts/Base.astro";
+import { projects } from "../../lib/content.js";
+
+const categories = ["research", "infrastructure"];
+---
+
+<Base title="Projects" description="Selected projects on representation learning, generative modeling, and biological data integration.">
+  <h1>Projects</h1>
+  <p class="subtitle">Selected projects on representation learning, generative modeling, and biological data integration.</p>
+  {
+    categories.map((c) => (
+      <section>
+        <h2>{c}</h2>
+        <ul class="projects">
+          {projects
+            .filter((p) => p.category === c)
+            .map((p) => (
+              <li>
+                <a href={`/projects/${p.slug}/`} tabindex="-1" aria-hidden="true">
+                  <Image src={p.image} alt="" width={272} />
+                </a>
+                <div>
+                  <a class="name" href={`/projects/${p.slug}/`}>{p.title}</a>
+                  <p>{p.description}</p>
+                </div>
+              </li>
+            ))}
+        </ul>
+      </section>
+    ))
+  }
+</Base>

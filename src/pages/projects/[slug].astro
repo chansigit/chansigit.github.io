@@ -1,0 +1,27 @@
+---
+import Base from "../../layouts/Base.astro";
+import PubList from "../../components/PubList.astro";
+import { projects } from "../../lib/content.js";
+import { publications } from "../../lib/bib.js";
+
+export function getStaticPaths() {
+  return projects.map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+const { project } = Astro.props;
+const related = publications.filter((p) => p.key === project.related_publications);
+---
+
+<Base title={project.title} description={project.description}>
+  <h1>{project.title}</h1>
+  <p class="subtitle">{project.description}</p>
+  <div class="prose"><project.Content /></div>
+  {
+    related.length > 0 && (
+      <>
+        <h2>Related publication</h2>
+        <PubList pubs={related} />
+      </>
+    )
+  }
+  <p><a href="/projects/">&larr; All projects</a></p>
+</Base>

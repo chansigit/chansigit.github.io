@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import PubList from "../components/PubList.astro";
+import { publications } from "../lib/bib.js";
+
+const years = [...new Set(publications.map((p) => p.year))];
+---
+
+<Base title="Publications" description="Publications by Sijie Chen, in reverse chronological order.">
+  <h1>Publications</h1>
+  <p class="subtitle">
+    By year, newest first. * indicates equal contribution. Citation counts are on{" "}
+    <a href="https://scholar.google.com/citations?user=bhseUuYAAAAJ&hl=en">Google Scholar</a>.
+  </p>
+  {
+    years.map((y) => (
+      <section>
+        <h2 class="year">{y}</h2>
+        <PubList pubs={publications.filter((p) => p.year === y)} />
+      </section>
+    ))
+  }
+</Base>

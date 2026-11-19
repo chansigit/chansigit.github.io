@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import PubList from "../components/PubList.astro";
+import { Content as About } from "../content/about.md";
+import profile from "../assets/sijie_profile.png";
+import { site, formatDate } from "../lib/site.js";
+import { publications } from "../lib/bib.js";
+
+const news = Object.values(import.meta.glob("../content/news/*.md", { eager: true })).sort(
+  (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date),
+);
+const selected = publications.filter((p) => p.selected);
+---
+
+<Base>
+  <h1>{site.name}</h1>
+  <p class="subtitle">Postdoctoral Scholar, Stanford University</p>
+
+  <div class="profile">
+    <Image src={profile} alt="Portrait of Sijie Chen" width={440} loading="eager" />
+    <p>{site.location}</p>
+    <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+  </div>
+  <div class="prose"><About /></div>
+  <div class="clear"></div>
+
+  <h2>News</h2>
+  <ul class="dated">
+    {
+      news.map((n) => (
+        <li>
+          <time datetime={new Date(n.frontmatter.date).toISOString().slice(0, 10)}>{formatDate(n.frontmatter.date)}</time>
+          <div><n.Content /></div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Selected Publications</h2>
+  <PubList pubs={selected} />
+  <p><a href="/publications/">All publications &rarr;</a></p>
+</Base>

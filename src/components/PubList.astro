@@ -1,0 +1,34 @@
+---
+const { pubs } = Astro.props;
+---
+
+<ol class="pubs">
+  {
+    pubs.map((p) => (
+      <li id={p.key}>
+        {p.authors.map((a, i) => (
+          <>
+            {i > 0 && ", "}
+            <span class={a.me ? "me" : undefined}>{a.name}</span>
+          </>
+        ))}
+        {p.authors.at(-1).name.endsWith(".") ? " " : ". "}
+        {p.url ? (
+          <a class="pub-title" href={p.url}>{p.title}</a>
+        ) : (
+          <span class="pub-title">{p.title}</span>
+        )}
+        {". "}
+        <span class="venue">{p.venue}</span>
+        {`, ${p.year}.`}
+        {p.note && <span class="note"> ({p.note})</span>}
+        {p.abstract && (
+          <details>
+            <summary>Abstract</summary>
+            <p>{p.abstract}</p>
+          </details>
+        )}
+      </li>
+    ))
+  }
+</ol>

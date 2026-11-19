@@ -1,0 +1,19 @@
+---
+import Base from "../../layouts/Base.astro";
+import { posts } from "../../lib/content.js";
+import { formatDate } from "../../lib/site.js";
+---
+
+<Base title="Blog">
+  <h1>Blog</h1>
+  <ul class="dated">
+    {
+      posts.map((p) => (
+        <li>
+          <time datetime={p.date}>{formatDate(p.date)}</time>
+          <div><a href={`/blog/${p.slug}/`}>{p.title}</a></div>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
