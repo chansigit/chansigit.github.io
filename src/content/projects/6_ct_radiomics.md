@@ -42,7 +42,7 @@ that every patient already has.
 
 <figure>
 <img src="/assets/img/ithscore/slice-mask.png" alt="Three panels: a chest CT slice, a binary mask marking a small lung tumor, and the mask overlaid on the slice." />
-<figcaption>A CT image, the mask of the given tumor, and both overlaid. Patient LUNG1-100 of the public LUNG1 dataset (TCIA). Figures and example from the ITHscore package by Jiaqi Li, MIT license.</figcaption>
+<figcaption>A CT image, the mask of the given tumor, and both overlaid. Patient LUNG1-100, public LUNG1 dataset; figure from the ITHscore package.</figcaption>
 </figure>
 
 ## From the tumor to a map of regions

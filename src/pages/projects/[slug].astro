@@ -20,7 +20,12 @@ const intro = parts[0].startsWith("<h2") ? "" : parts.shift();
 const strip = (t) => t.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#x26;/g, "&").trim();
 const slides = parts.map((part) => {
   const m = part.match(/^<h2[^>]*>([\s\S]*?)<\/h2>/);
-  return { title: strip(m[1]), heading: m[1], body: part.slice(m[0].length) };
+  const body = part.slice(m[0].length);
+  // Prose-only slides with little text get bigger type so they fill the frame.
+  const plain = !/<(pre|img|figure|table)|class="(algo|cols|formula)|katex-display/.test(body);
+  const n = strip(body).length;
+  const size = !plain ? "" : n <= 300 ? "roomy-3" : n <= 420 ? "roomy-2" : n <= 560 ? "roomy-1" : "";
+  return { title: strip(m[1]), heading: m[1], body, size };
 });
 const total = slides.length + 1;
 ---
@@ -39,7 +44,7 @@ const total = slides.length + 1;
           </article>
           {
             slides.map((s, i) => (
-              <article class="slide" id={`slide-${i + 2}`}>
+              <article class={`slide ${s.size}`} id={`slide-${i + 2}`}>
                 <h2 set:html={s.heading} />
                 <div class="slide-body" set:html={s.body} />
                 <span class="slide-no">{i + 2} / {total}</span>

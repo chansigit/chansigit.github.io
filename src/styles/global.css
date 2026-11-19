@@ -131,6 +131,9 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide-title > .slide-body { flex: none; display: block; padding: 0; margin-top: 1.2em; color: var(--muted); }
 .slide > .slide-body { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 0.4em; padding-bottom: 1.6em; }
 .slide-body > :is(p, ul, ol) { max-width: 38em; }
+.roomy-1 > .slide-body { font-size: 1.16em; }
+.roomy-2 > .slide-body { font-size: 1.25em; }
+.roomy-3 > .slide-body { font-size: 1.4em; }
 .slide-body p { margin: 0 0 0.8em; }
 .slide-body > pre { align-self: flex-start; max-width: 100%; }
 .slide-body > :last-child { margin-bottom: 0; }
@@ -143,9 +146,9 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide-body pre code { background: none; }
 .slide-no { position: absolute; right: 2.2cqw; bottom: 1.2cqw; font-size: 1em; color: var(--muted); font-variant-numeric: tabular-nums; }
 /* figures and two-column slides */
-.slide-body figure { width: fit-content; max-width: 100%; align-self: center; text-align: left; }
-.slide-body figure img { max-height: 34cqw; }
-.slide-body figure figcaption { width: 0; min-width: 100%; margin-top: 0.8em; }
+.slide-body figure { width: min(100%, 72cqw); align-self: center; text-align: left; }
+.slide-body figure img { width: 100%; max-height: none; }
+.slide-body figure figcaption { margin-top: 0.8em; font-size: 1.1em; max-width: none; }
 .slide-body img { display: block; background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 0.4em; max-width: 100%; width: auto; max-height: 30cqw; }
 .slide-body figure { margin: 0; }
 .slide-body figcaption, .slide-body .credit { font-size: 1em; color: var(--muted); margin-top: 0.6em; max-width: 46em; }
@@ -156,9 +159,9 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .cols .pair img { max-height: 19cqw; }
 
 /* typeset formula (KaTeX). KaTeX sets 1.21em by default; keep every part at 18pt or more. */
-.slide-body .katex { font-size: 1.15em; }
-.slide-body .katex-display { margin: 0 0 1em; text-align: left; background: none; color: var(--ink); border-radius: 4px; padding: 0.3em 0; width: fit-content; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
-.slide-body .katex-display > .katex { text-align: left; }
+.slide-body .katex { font-size: 1.08em; }
+.slide-body .katex-display { margin: 0 0 1em; text-align: center; background: none; color: var(--ink); border-radius: 4px; padding: 0.3em 0; align-self: center; width: fit-content; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.slide-body .katex-display > .katex { text-align: center; font-size: 1.4em; }
 
 /* pseudocode set like a LaTeX algorithm float */
 @font-face { font-family: "CMU Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url("/cv/fonts/cmu-serif-500-roman.woff2") format("woff2"); }
@@ -175,9 +178,10 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .algo .cm { white-space: nowrap; }
 .algo sub, .algo sup { font-size: 0.72em; line-height: 0; }
 /* Narrow decks: 18pt text no longer fits a 16:9 frame, so the frame grows with its content */
-@container (max-width: 1000px) {
+@container (max-width: 1120px) {
   .slide { aspect-ratio: auto; min-height: 56cqw; }
   .slide-title .paper { max-width: none; }
+  .roomy-1 > .slide-body, .roomy-2 > .slide-body, .roomy-3 > .slide-body { font-size: 1em; }
   .slide-body img.cover { position: static; height: auto; width: min(14rem, 55%); margin: 0 0 1.2rem; }
 }
 @container (max-width: 700px) {
