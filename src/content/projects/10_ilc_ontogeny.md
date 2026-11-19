@@ -1,5 +1,5 @@
 ---
-title: ILC ontogeny
+title: ILC Ontogeny Atlas
 description: How innate lymphoid progenitors switch their output after birth, read from single-cell trajectories.
 importance: 10
 category: biomedicine
