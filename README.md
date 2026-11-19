@@ -19,6 +19,6 @@ npm run build    # static output in dist/
 | Publications | `src/data/papers.bib` (`selected = {true}` shows a paper on the home page) |
 | Name, email, navigation | `src/lib/site.js` |
 | Styles | `src/styles/global.css` |
-| CV page | `public/cv/index.html`, copied as is from `site/index.html` of the private `cv` repo, with its fonts in `public/cv/fonts/` |
+| CV page | `public/cv/index.html` is the source of the CV (edit it here; its CMU Serif fonts are in `public/cv/fonts/`). The reports and PDFs behind it stay in the private `cv` repo |
 
 The previous al-folio (Jekyll) version of the site is kept on the `al-folio-backup` branch.
