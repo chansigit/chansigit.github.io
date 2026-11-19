@@ -98,6 +98,7 @@ a.pub-title { color: var(--accent); }
 .pub-authors .me { color: var(--ink); font-weight: 600; }
 .pub-venue { font-size: 0.95rem; margin-top: 0.15rem; }
 .pub-venue .venue { font-style: italic; }
+.pub-project { font-size: 0.92rem; margin-top: 0.2rem; }
 .note { color: var(--muted); }
 details { margin-top: 0.35rem; }
 summary { cursor: pointer; color: var(--accent); font-size: 0.92rem; width: fit-content; }

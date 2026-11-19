@@ -1,5 +1,12 @@
 ---
+import { projects } from "../lib/content.js";
 const { pubs } = Astro.props;
+// paper key -> project page that discusses it
+const projectOf = {};
+for (const pr of projects)
+  for (const k of String(pr.related_publications ?? "").split(/[\s,]+/).filter(Boolean))
+    projectOf[k] ??= pr;
+const here = Astro.url.pathname;
 ---
 
 <ol class="pubs">
@@ -24,6 +31,9 @@ const { pubs } = Astro.props;
           {`, ${p.year}`}
           {p.note && <span class="note"> ({p.note})</span>}
         </div>
+        {projectOf[p.key] && !here.startsWith(`/projects/${projectOf[p.key].slug}`) && (
+          <div class="pub-project"><a href={`/projects/${projectOf[p.key].slug}/`}>Project page: {projectOf[p.key].title}</a></div>
+        )}
         {p.abstract && (
           <details>
             <summary>Abstract</summary>
