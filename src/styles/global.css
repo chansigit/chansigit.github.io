@@ -196,6 +196,9 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .bars b { font-weight: 600; white-space: nowrap; }
 
 .slide-body figure.wide { width: 100%; }
+.slide-body figure.tall { width: 100%; }
+.slide-body figure.tall > img { height: 47cqw; width: auto; max-width: 100%; margin: 0 auto; padding: 0; border: 0; }
+.slide-body figure.tall > figcaption { max-width: none; }
 .slide-body figure.mid { width: min(100%, 46cqw); }
 .slide-body figure.big { width: 100%; }
 .slide-body figure.big > img { width: min(100%, 72cqw); margin: 0 auto; }
