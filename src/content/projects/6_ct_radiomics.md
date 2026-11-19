@@ -18,14 +18,17 @@ Jiaqi Li, Zhenbin Qiu, Chao Zhang, **Sijie Chen**, Mengmin Wang, Qiuchen Meng, H
 
 </div>
 
-## One vector per tumor hides its interior
+## A whole-tumor summary hides what is inside
 
-Radiomics usually treats a tumor as one object: it extracts one feature vector
-from the whole tumor and then classifies the tumor.
+Radiomics measures a tumor on a CT image: its shape, its brightness, how coarse
+its texture is. The usual recipe computes about a hundred such measurements
+over the whole tumor and feeds them to a classifier. Each tumor becomes one row
+of numbers.
 
-But a tumor is not uniform inside. How its regions differ, the intra-tumor
-heterogeneity, relates to how the disease behaves, and it is normally measured
-from tissue, after surgery or biopsy.
+But a tumor is not uniform inside, and an average over the whole tumor cannot
+show how its regions differ. This intra-tumor heterogeneity relates to how the
+disease behaves, and it is normally measured from tissue, after surgery or
+biopsy.
 
 ## Idea: look inside the tumor
 
