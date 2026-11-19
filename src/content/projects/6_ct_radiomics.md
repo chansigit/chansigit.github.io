@@ -4,6 +4,8 @@ description: Resolving the interior of a tumor from a routine CT scan, and scori
 importance: 6
 category: imaging
 related_publications: li2023ithscore, li2019pixelclust
+image: /assets/img/ithscore/eur-radiol-33-2-cover.webp
+image_alt: Cover of European Radiology, volume 33, issue 2
 ---
 
 <div class="paper">

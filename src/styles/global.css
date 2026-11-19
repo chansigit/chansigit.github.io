@@ -112,8 +112,8 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .project-list .name { font-family: var(--display); font-size: 1.5rem; font-weight: 600; }
 .project-list p { margin: 0; max-width: 40rem; }
 .project-list li.has-thumb { grid-template-columns: 14rem minmax(0, 1fr) 13rem; align-items: center; }
-.project-list .thumb { display: block; }
-.project-list .thumb img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+.project-list .thumb { display: block; justify-self: end; }
+.project-list .thumb img { display: block; width: auto; height: auto; max-width: 13rem; max-height: 8.5rem; border: 1px solid var(--line); border-radius: 4px; }
 
 /* project pages: a slide deck. Slides are 16:9 and scale with the deck width. */
 .crumb { margin: 1.8rem 0 1rem; }
