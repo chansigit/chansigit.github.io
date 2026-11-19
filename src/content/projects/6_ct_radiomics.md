@@ -52,12 +52,12 @@ The result is a map of regions inside the tumor, here with 6 classes.
 
 ## From the map to a score
 
-For each class *k*, let *n<sub>k</sub>* be its number of connected pieces and
-*A<sub>k</sub>* the area of its largest piece. With *N* tumor pixels,
+For each class $k$, let $n_k$ be its number of connected pieces and
+$A_k$ the area of its largest piece. With $N$ tumor pixels and $K$ classes,
 
-```
-ITHscore = 1 - (1/N) * sum over k of ( A_k / n_k )
-```
+$$
+\mathrm{ITHscore} \;=\; 1 - \frac{1}{N}\sum_{k=1}^{K}\frac{A_k}{n_k}
+$$
 
 - Every class forms one solid block: the score is near 0.
 - The classes are scattered into many small pieces: the score is near 1.

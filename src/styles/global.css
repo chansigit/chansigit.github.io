@@ -150,6 +150,11 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .cols .pair { display: flex; gap: 1.5cqw; align-items: center; }
 .cols .pair img { max-height: 19cqw; }
 
+/* typeset formula (KaTeX). KaTeX sets 1.21em by default; keep every part at 18pt or more. */
+.slide-body .katex { font-size: 1.15em; color: var(--ink); }
+.slide-body .katex-display { margin: 0 0 1em; text-align: left; background: var(--bg); border-radius: 4px; padding: 0.6em 1.4em; width: fit-content; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.slide-body .katex-display > .katex { text-align: left; }
+
 /* pseudocode set like a LaTeX algorithm float */
 @font-face { font-family: "CMU Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url("/cv/fonts/cmu-serif-500-roman.woff2") format("woff2"); }
 @font-face { font-family: "CMU Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url("/cv/fonts/cmu-serif-500-italic.woff2") format("woff2"); }
