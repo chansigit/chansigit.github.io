@@ -119,6 +119,8 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .deck-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; }
 .deck-track::-webkit-scrollbar { display: none; }
 .slide { position: relative; flex: 0 0 100%; scroll-snap-align: start; scroll-snap-stop: always; aspect-ratio: 16 / 9; display: flex; flex-direction: column; padding: 4.2cqw 6cqw 3.2cqw; font-size: clamp(18pt, 1.9cqw, 2.6rem); line-height: 1.45; }
+/* Slide titles use the plain body face. Bricolage Grotesque (the site's display face) has an odd f and is not used in decks. */
+.slide h2, .slide-title h1 { font-family: var(--body); font-weight: 600; letter-spacing: -0.012em; }
 .slide h2 { font-size: 1.9em; margin: 0 0 0.55em; padding-bottom: 0.4em; border-bottom: 1px solid var(--line); max-width: none; text-wrap: balance; }
 .slide-title { justify-content: center; padding-bottom: 6cqw; }
 .slide-title h1 { font-size: 3em; }
