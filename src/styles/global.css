@@ -116,7 +116,7 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .crumb { margin: 1.8rem 0 1rem; }
 .deck { --w: min(100vw - 2 * var(--gutter), 84rem, (100vh - 14rem) * 16 / 9); width: max(var(--w), 40rem); margin-left: calc((100% - max(var(--w), 40rem)) / 2); margin-bottom: 2.5rem; }
 .deck-stage { container-type: inline-size; }
-.deck-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+.deck-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; }
 .deck-track::-webkit-scrollbar { display: none; }
 .slide { position: relative; flex: 0 0 100%; scroll-snap-align: start; scroll-snap-stop: always; aspect-ratio: 16 / 9; display: flex; flex-direction: column; padding: 4.2cqw 6cqw 3.2cqw; font-size: clamp(18pt, 1.9cqw, 2.6rem); line-height: 1.45; }
 .slide h2 { font-size: 1.9em; margin: 0 0 0.55em; padding-bottom: 0.4em; border-bottom: 1px solid var(--line); max-width: none; text-wrap: balance; }
@@ -133,15 +133,15 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide-body li { margin-bottom: 0.5em; }
 .slide-body li:last-child { margin-bottom: 0; }
 .slide-body li::marker { color: var(--accent); font-weight: 600; }
-.slide-body pre { background: var(--bg); font-size: 1em; padding: 0.9em 1.1em; margin: 0 0 1em; }
-.slide-body code { background: var(--bg); }
+.slide-body pre { background: var(--surface); font-size: 1em; padding: 0.9em 1.1em; margin: 0 0 1em; }
+.slide-body code { background: var(--surface); }
 .slide-body pre code { background: none; }
 .slide-no { position: absolute; right: 2.2cqw; bottom: 1.2cqw; font-size: 1em; color: var(--muted); font-variant-numeric: tabular-nums; }
 /* figures and two-column slides */
 .slide-body figure { width: fit-content; max-width: 100%; align-self: center; text-align: left; }
 .slide-body figure img { max-height: 34cqw; }
 .slide-body figure figcaption { width: 0; min-width: 100%; margin-top: 0.8em; }
-.slide-body img { display: block; background: #fff; border-radius: 4px; padding: 0.4em; max-width: 100%; width: auto; max-height: 30cqw; }
+.slide-body img { display: block; background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 0.4em; max-width: 100%; width: auto; max-height: 30cqw; }
 .slide-body figure { margin: 0; }
 .slide-body figcaption, .slide-body .credit { font-size: 1em; color: var(--muted); margin-top: 0.6em; max-width: 46em; }
 .cols { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4cqw; align-items: center; }
@@ -151,8 +151,8 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .cols .pair img { max-height: 19cqw; }
 
 /* typeset formula (KaTeX). KaTeX sets 1.21em by default; keep every part at 18pt or more. */
-.slide-body .katex { font-size: 1.15em; color: var(--ink); }
-.slide-body .katex-display { margin: 0 0 1em; text-align: left; background: var(--bg); border-radius: 4px; padding: 0.6em 1.4em; width: fit-content; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.slide-body .katex { font-size: 1.15em; }
+.slide-body .katex-display { margin: 0 0 1em; text-align: left; background: none; color: var(--ink); border-radius: 4px; padding: 0.3em 0; width: fit-content; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 .slide-body .katex-display > .katex { text-align: left; }
 
 /* pseudocode set like a LaTeX algorithm float */
