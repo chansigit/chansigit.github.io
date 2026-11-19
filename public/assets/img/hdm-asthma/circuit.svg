@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a2e30"/></marker></defs>
+<rect x="14" y="28" width="270" height="62" rx="10" fill="#008080" fill-opacity="0.12" stroke="#008080" stroke-width="2.5"/>
+<text x="149.0" y="67.0" text-anchor="middle" font-size="24" font-weight="600" fill="#1a2e30">Mgl2⁺ dendritic cell</text>
+<rect x="476" y="28" width="270" height="62" rx="10" fill="#008080" fill-opacity="0.12" stroke="#008080" stroke-width="2.5"/>
+<text x="611.0" y="67.0" text-anchor="middle" font-size="24" font-weight="600" fill="#1a2e30">Th2 cell</text>
+<line x1="292" y1="71.0" x2="468" y2="71.0" stroke="#1a2e30" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="380.0" y="57.0" text-anchor="middle" font-size="22" font-style="italic" fill="#1a2e30">Ccl17</text>
+<rect x="14" y="128" width="270" height="62" rx="10" fill="#b45f00" fill-opacity="0.12" stroke="#b45f00" stroke-width="2.5"/>
+<text x="149.0" y="167.0" text-anchor="middle" font-size="24" font-weight="600" fill="#1a2e30">CD300e⁺ monocyte</text>
+<rect x="476" y="128" width="270" height="62" rx="10" fill="#b45f00" fill-opacity="0.12" stroke="#b45f00" stroke-width="2.5"/>
+<text x="611.0" y="167.0" text-anchor="middle" font-size="24" font-weight="600" fill="#1a2e30">Gpnmb⁺ macrophage</text>
+<line x1="292" y1="171.0" x2="468" y2="171.0" stroke="#1a2e30" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="380.0" y="157.0" text-anchor="middle" font-size="22" font-style="italic" fill="#1a2e30">becomes</text>
+<rect x="14" y="228" width="270" height="62" rx="10" fill="#556b6c" fill-opacity="0.12" stroke="#556b6c" stroke-width="2.5"/>
+<text x="149.0" y="267.0" text-anchor="middle" font-size="24" font-weight="600" fill="#1a2e30">Structural cells</text>
+<rect x="476" y="228" width="270" height="62" rx="10" fill="#556b6c" fill-opacity="0.12" stroke="#556b6c" stroke-width="2.5"/>
+<text x="611.0" y="267.0" text-anchor="middle" font-size="24" font-weight="600" fill="#1a2e30">Macrophages</text>
+<line x1="292" y1="271.0" x2="468" y2="271.0" stroke="#1a2e30" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="380.0" y="257.0" text-anchor="middle" font-size="22" font-style="italic" fill="#1a2e30">Cxcl12, Igf1, Tgfb</text>
+</svg>
