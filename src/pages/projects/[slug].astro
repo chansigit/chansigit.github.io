@@ -22,7 +22,7 @@ const slides = parts.map((part) => {
   const m = part.match(/^<h2[^>]*>([\s\S]*?)<\/h2>/);
   const body = part.slice(m[0].length);
   // Prose-only slides with little text get bigger type so they fill the frame.
-  const plain = !/<(pre|img|figure|table)|class="(algo|cols|formula)|katex-display/.test(body);
+  const plain = !/<(pre|img|figure|table)|class="(algo|cols|formula|lidar-demo)|katex-display/.test(body);
   const n = strip(body).length;
   const size = !plain ? "" : n <= 300 ? "roomy-3" : n <= 420 ? "roomy-2" : n <= 560 ? "roomy-1" : "";
   return { title: strip(m[1]), heading: m[1], body, size };
@@ -128,4 +128,9 @@ const total = slides.length + 1;
     if (start) track.scrollTo({ left: (start - 1) * track.clientWidth });
     sync();
   }
+</script>
+
+<script>
+  const lidarHost = document.querySelector("[data-lidar-demo]");
+  if (lidarHost) import("../../scripts/lidar-demo.js").then((m) => m.mountLidarDemo(lidarHost));
 </script>

@@ -15,6 +15,7 @@
     "astro": "^7.4.13",
     "katex": "^0.16.47",
     "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "three": "^0.187.0"
   }
 }
