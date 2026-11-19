@@ -82,7 +82,7 @@ $$
 
 ## A loop that drives degeneration
 
-<figure class="mid">
+<figure class="big">
 <img src="/assets/img/meniscus/fig6-model.webp" alt="Schematic of a normal and a degenerated meniscus: in degeneration, matrix disassembly, new blood vessels and inflammation reinforce each other." />
 <figcaption><strong>Matrix breakdown</strong>, <strong>new blood vessels</strong> and <strong>inflammation</strong> feed each other. From Fu, Chen et al., <i>eLife</i> 2022 (CC BY 4.0), Fig. 6.</figcaption>
 </figure>

@@ -197,6 +197,7 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 
 .slide-body figure.wide { width: 100%; }
 .slide-body figure.mid { width: min(100%, 46cqw); }
+.slide-body figure.big { width: min(100%, 72cqw); }
 .slide-body figure.tall { width: 100%; }
 .slide-body figure.tall > img { width: auto; max-width: 100%; max-height: 36cqw; margin: 0 auto; }
 .slide-body figure.wide > img { width: 100%; }
