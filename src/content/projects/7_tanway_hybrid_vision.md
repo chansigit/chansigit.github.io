@@ -13,6 +13,6 @@ with the camera, LiDAR and fused views side by side.
 
 Prototype built by Tanway Technology, shown at CES 2020 in Las Vegas.
 
-## How the mirror scans
+## System structure
 
 <div class="lidar-demo" data-lidar-demo role="img" aria-label="Animated 3D model of a four-facet rotating mirror. A laser and receiver module and a line-scan camera sit behind a window. As the mirror turns, the laser line sweeps across the field of view, and the swept area fills in."></div>

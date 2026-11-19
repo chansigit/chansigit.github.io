@@ -277,9 +277,13 @@ function build(host) {
   const tagDefs = [
     ["Rotating mirror", [0, 54, 0], [50, -50]],
     ["Laser", [-148, YC + 8, Z0], [-60, 0]],
+    ["Beam splitter", [-118, YC + 5, Z0], [20, -105]],
     ["Receiver", [-118, YC + 17, Z0 - 16], [-60, -55]],
-    ["Line-scan camera", [-118, YC - 12, Z0 + 16], [-60, 60]],
-    ["Window", [0, YC + 30, R_WIN], [60, 40]],
+    ["Line-scan camera", [-118, YC - 12, Z0 + 16], [-100, 105]],
+    ["Shared lens", [-93, YC - 12, Z0], [20, 62]],
+    ["Motor and encoder wheel", [10, 6.5, 12], [30, 105]],
+    ["Frame trigger sensor", [0, 8, 22], [60, 55]],
+    ["Window", [0, YC + 30, R_WIN], [110, -5]],
     ["Field of view", [0, YC + 17, R_SCR], [50, 30]],
   ];
   const svgNS = "http://www.w3.org/2000/svg";
