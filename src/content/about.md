@@ -19,8 +19,3 @@ methods for genomic sequence analysis.
 
 I am open to industry research / engineering positions in machine learning,
 foundation models for science, and AI for medicine.
-[CV](/cv/) &middot;
-[CV (PDF)](/assets/pdf/cv.pdf) &middot;
-[GitHub](https://github.com/chansigit) &middot;
-[Google Scholar](https://scholar.google.com/citations?user=bhseUuYAAAAJ&hl=en) &middot;
-[LinkedIn](https://www.linkedin.com/in/sijie-chen-94ab1a308/)

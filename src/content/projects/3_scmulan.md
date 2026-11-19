@@ -1,7 +1,6 @@
 ---
 title: scMulan
 description: A 368M-parameter multitask generative pre-trained model for single-cell analysis.
-img: scmulan.png
 importance: 3
 category: research
 related_publications: bian2024scmulan

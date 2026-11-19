@@ -1,0 +1,38 @@
+---
+// Decorative illustration for the home page: a sparse expression profile drawn as a
+// pixel image (the idea behind TransMap). Generated at build time, always the same.
+const cols = 26;
+const rows = 20;
+const cell = 10;
+const gap = 2;
+const blobs = [
+  { x: 0.3, y: 0.32, s: 0.17, a: 1.0 },
+  { x: 0.74, y: 0.6, s: 0.2, a: 0.9 },
+  { x: 0.58, y: 0.16, s: 0.09, a: 0.75 },
+  { x: 0.14, y: 0.82, s: 0.11, a: 0.6 },
+  { x: 0.9, y: 0.12, s: 0.07, a: 0.55 },
+];
+const noise = (i, j) => {
+  const v = Math.sin(i * 127.1 + j * 311.7) * 43758.5453;
+  return v - Math.floor(v);
+};
+const cells = [];
+for (let j = 0; j < rows; j++) {
+  for (let i = 0; i < cols; i++) {
+    const x = (i + 0.5) / cols;
+    const y = (j + 0.5) / rows;
+    let v = 0;
+    for (const b of blobs) v += b.a * Math.exp(-((x - b.x) ** 2 + (y - b.y) ** 2) / (2 * b.s * b.s));
+    const n = noise(i, j);
+    // Most genes are not expressed in a given cell: keep the image sparse.
+    const opacity = n < 0.3 ? 0.05 : Math.min(1, 0.06 + v * (0.55 + 0.6 * n));
+    cells.push({ x: i * (cell + gap), y: j * (cell + gap), opacity: opacity.toFixed(2) });
+  }
+}
+const width = cols * (cell + gap) - gap;
+const height = rows * (cell + gap) - gap;
+---
+
+<svg viewBox={`0 0 ${width} ${height}`} aria-hidden="true">
+  {cells.map((c) => <rect x={c.x} y={c.y} width={cell} height={cell} fill="currentColor" fill-opacity={c.opacity} />)}
+</svg>

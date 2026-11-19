@@ -10,8 +10,12 @@ const { post } = Astro.props;
 ---
 
 <Base title={post.title} description={post.description || undefined}>
-  <h1>{post.title}</h1>
-  <p class="subtitle">{formatDate(post.date)}</p>
-  <div class="prose"><post.Content /></div>
-  <p><a href="/blog/">&larr; All posts</a></p>
+  <div class="wrap">
+    <header class="page-head">
+      <p><a href="/blog/">All posts</a></p>
+      <h1>{post.title}</h1>
+      <p class="lead">{formatDate(post.date)}</p>
+    </header>
+    <div class="prose"><post.Content /></div>
+  </div>
 </Base>

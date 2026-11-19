@@ -7,17 +7,21 @@ const years = [...new Set(publications.map((p) => p.year))];
 ---
 
 <Base title="Publications" description="Publications by Sijie Chen, in reverse chronological order.">
-  <h1>Publications</h1>
-  <p class="subtitle">
-    By year, newest first. * indicates equal contribution. Citation counts are on{" "}
-    <a href="https://scholar.google.com/citations?user=bhseUuYAAAAJ&hl=en">Google Scholar</a>.
-  </p>
-  {
-    years.map((y) => (
-      <section>
-        <h2 class="year">{y}</h2>
-        <PubList pubs={publications.filter((p) => p.year === y)} />
-      </section>
-    ))
-  }
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Publications</h1>
+      <p class="lead">
+        Newest first. A star marks equal contribution. Citation counts are on{" "}
+        <a href="https://scholar.google.com/citations?user=bhseUuYAAAAJ&hl=en">Google Scholar</a>.
+      </p>
+    </header>
+    {
+      years.map((y) => (
+        <section class="year-group">
+          <h2>{y}</h2>
+          <PubList pubs={publications.filter((p) => p.year === y)} />
+        </section>
+      ))
+    }
+  </div>
 </Base>

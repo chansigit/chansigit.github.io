@@ -5,15 +5,19 @@ import { formatDate } from "../../lib/site.js";
 ---
 
 <Base title="Blog">
-  <h1>Blog</h1>
-  <ul class="dated">
-    {
-      posts.map((p) => (
-        <li>
-          <time datetime={p.date}>{formatDate(p.date)}</time>
-          <div><a href={`/blog/${p.slug}/`}>{p.title}</a></div>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Blog</h1>
+    </header>
+    <ul class="dated">
+      {
+        posts.map((p) => (
+          <li>
+            <time datetime={p.date}>{formatDate(p.date)}</time>
+            <a href={`/blog/${p.slug}/`}>{p.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </Base>

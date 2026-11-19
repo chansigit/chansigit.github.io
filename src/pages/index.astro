@@ -2,9 +2,10 @@
 import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import PubList from "../components/PubList.astro";
+import PixelField from "../components/PixelField.astro";
 import { Content as About } from "../content/about.md";
 import profile from "../assets/sijie_profile.png";
-import { site, formatDate } from "../lib/site.js";
+import { site, links, formatDate } from "../lib/site.js";
 import { publications } from "../lib/bib.js";
 
 const news = Object.values(import.meta.glob("../content/news/*.md", { eager: true })).sort(
@@ -14,30 +15,56 @@ const selected = publications.filter((p) => p.selected);
 ---
 
 <Base>
-  <h1>{site.name}</h1>
-  <p class="subtitle">Postdoctoral Scholar, Stanford University</p>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>{site.name}</h1>
+        <p class="role">Postdoctoral scholar at Stanford University, {site.location}</p>
+        <p class="statement">I build representations and generative models that preserve the structure of complex biological data.</p>
+        <div class="actions">
+          <a class="button" href="/cv/">Read my CV</a>
+          {links.map((l) => <a href={l.href}>{l.title}</a>)}
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <div class="frame">
+          <PixelField />
+          <Image src={profile} alt="Portrait of Sijie Chen" width={520} loading="eager" />
+        </div>
+        <figcaption>
+          Background: an illustration of a cell drawn as an image of its genes, the idea behind{" "}
+          <a href="/projects/1_transmap/">TransMap</a>.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
 
-  <div class="profile">
-    <Image src={profile} alt="Portrait of Sijie Chen" width={440} loading="eager" />
-    <p>{site.location}</p>
-    <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+  <div class="wrap">
+    <section class="block two-col">
+      <div>
+        <h2>About</h2>
+        <div class="prose"><About /></div>
+      </div>
+      <div>
+        <h2>News</h2>
+        <ul class="news">
+          {
+            news.map((n) => (
+              <li>
+                <time datetime={new Date(n.frontmatter.date).toISOString().slice(0, 10)}>{formatDate(n.frontmatter.date)}</time>
+                <n.Content />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Selected publications</h2>
+      <PubList pubs={selected} />
+      <p class="more"><a href="/publications/">See all {publications.length} publications</a></p>
+    </section>
   </div>
-  <div class="prose"><About /></div>
-  <div class="clear"></div>
-
-  <h2>News</h2>
-  <ul class="dated">
-    {
-      news.map((n) => (
-        <li>
-          <time datetime={new Date(n.frontmatter.date).toISOString().slice(0, 10)}>{formatDate(n.frontmatter.date)}</time>
-          <div><n.Content /></div>
-        </li>
-      ))
-    }
-  </ul>
-
-  <h2>Selected Publications</h2>
-  <PubList pubs={selected} />
-  <p><a href="/publications/">All publications &rarr;</a></p>
 </Base>

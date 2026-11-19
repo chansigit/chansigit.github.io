@@ -12,16 +12,20 @@ const related = publications.filter((p) => p.key === project.related_publication
 ---
 
 <Base title={project.title} description={project.description}>
-  <h1>{project.title}</h1>
-  <p class="subtitle">{project.description}</p>
-  <div class="prose"><project.Content /></div>
-  {
-    related.length > 0 && (
-      <>
-        <h2>Related publication</h2>
-        <PubList pubs={related} />
-      </>
-    )
-  }
-  <p><a href="/projects/">&larr; All projects</a></p>
+  <div class="wrap">
+    <header class="page-head">
+      <p><a href="/projects/">All projects</a></p>
+      <h1>{project.title}</h1>
+      <p class="lead">{project.description}</p>
+    </header>
+    <div class="prose"><project.Content /></div>
+    {
+      related.length > 0 && (
+        <section class="block">
+          <h2>Related publication</h2>
+          <PubList pubs={related} />
+        </section>
+      )
+    }
+  </div>
 </Base>

@@ -21,3 +21,10 @@ export function formatDate(value) {
     timeZone: "UTC",
   });
 }
+
+export const links = [
+  { title: "Google Scholar", href: "https://scholar.google.com/citations?user=bhseUuYAAAAJ&hl=en" },
+  { title: "GitHub", href: "https://github.com/chansigit" },
+  { title: "LinkedIn", href: "https://www.linkedin.com/in/sijie-chen-94ab1a308/" },
+  { title: "CV as PDF", href: "/assets/pdf/cv.pdf" },
+];

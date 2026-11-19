@@ -1,7 +1,6 @@
 ---
 title: hECA
 description: Cell-centric assembly of a human cell atlas — 1.09M cells across 38 organs.
-img: heca.png
 importance: 4
 category: infrastructure
 related_publications: chen2022heca

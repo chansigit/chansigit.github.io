@@ -1,12 +1,10 @@
 // Markdown content, loaded at build time.
 const slugOf = (path) => path.split("/").pop().replace(/\.md$/, "");
-const images = import.meta.glob("../assets/*.png", { eager: true, import: "default" });
 
 export const projects = Object.entries(import.meta.glob("../content/projects/*.md", { eager: true }))
   .map(([path, mod]) => ({
     slug: slugOf(path),
     ...mod.frontmatter,
-    image: images[`../assets/${mod.frontmatter.img}`],
     Content: mod.Content,
   }))
   .sort((a, b) => a.importance - b.importance);

@@ -1,4 +1,8 @@
 ---
+import "@fontsource-variable/bricolage-grotesque";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/400-italic.css";
+import "@fontsource/ibm-plex-sans/600.css";
 import "../styles/global.css";
 import { site } from "../lib/site.js";
 
@@ -19,26 +23,32 @@ const isCurrent = (href) => (href === "/" ? path === "/" : path.startsWith(href)
     <meta property="og:description" content={description} />
     <link rel="canonical" href={new URL(path, Astro.site)} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href="/cv/fonts/cmu-serif-500-roman.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
-    <nav class="site-nav" aria-label="Main">
-      <a class="brand" href="/">{site.name}</a>
-      <ul>
-        {
-          site.nav.map((item) => (
-            <li>
-              <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
-                {item.title}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <header class="site-head">
+      <nav class="wrap" aria-label="Main">
+        <a class="brand" href="/">{site.name}</a>
+        <ul>
+          {
+            site.nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                  {item.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </header>
     <main>
       <slot />
     </main>
-    <footer>&copy; {new Date().getFullYear()} {site.name}. Last updated {new Date().toISOString().slice(0, 10)}.</footer>
+    <footer class="site-foot">
+      <div class="wrap">
+        <span>&copy; {new Date().getFullYear()} {site.name}</span>
+        <span>Last updated {new Date().toISOString().slice(0, 10)}</span>
+      </div>
+    </footer>
   </body>
 </html>
