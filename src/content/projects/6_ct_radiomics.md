@@ -45,6 +45,26 @@ ITHscore = 1 - (1/N) * sum over k of ( A_k / n_k )
 - Every class forms one solid block: the score is near 0.
 - The classes are scattered into many small pieces: the score is near 1.
 
+## The whole method in pseudocode
+
+```
+Input: CT volume I, tumor mask M        Parameters: r = 2, K = 6
+
+slice <- the slice of I where M has the largest area
+T     <- tumor pixels of that slice;  N <- |T|
+for each pixel p in T:
+    phi[p] <- radiomic features of the (2r+1) x (2r+1) window at p
+rescale every feature to [0, 1] over T
+L     <- KMeans(phi, K), written back on the tumor   # map of regions
+
+total <- 0
+for k = 1 .. K:
+    R <- connected pieces of class k in L, 1-pixel pieces dropped
+    if R is empty: continue
+    total <- total + (largest piece in R) / (number of pieces in R)
+return 1 - total / N                                 # ITHscore
+```
+
 ## Two studies
 
 - **2019, pixel-level clustering.** Region maps of lung tumors, viewed at
