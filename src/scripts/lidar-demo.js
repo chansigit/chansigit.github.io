@@ -371,8 +371,11 @@ function build(host) {
       const x = (v.x * 0.5 + 0.5) * w;
       const y = (-v.y * 0.5 + 0.5) * h;
       const k = Math.min(1, w / 900);
-      const lx = x + tg.off[0] * k;
+      const tw = tg.el.offsetWidth;
+      let lx = x + tg.off[0] * k;
       const ly = y + tg.off[1] * k;
+      // keep the label inside the stage
+      lx = tg.off[0] < 0 ? Math.max(lx, tw + 6) : Math.min(lx, w - tw - 6);
       tg.dot.style.left = `${x.toFixed(1)}px`;
       tg.dot.style.top = `${y.toFixed(1)}px`;
       tg.el.style.left = `${lx.toFixed(1)}px`;
