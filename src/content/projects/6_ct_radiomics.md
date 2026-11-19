@@ -6,6 +6,16 @@ category: imaging
 related_publications: li2023ithscore, li2019pixelclust
 ---
 
+<div class="paper">
+
+**[ITHscore: comprehensive quantification of intra-tumor heterogeneity in NSCLC by multi-scale radiomic features](https://doi.org/10.1007/s00330-022-09055-0)**
+
+Jiaqi Li, Zhenbin Qiu, Chao Zhang, **Sijie Chen**, Mengmin Wang, Qiuchen Meng, Haiming Lu, Lei Wei, Hairong Lv, Wenzhao Zhong, Xuegong Zhang
+
+*European Radiology* 33(2):893–903, February 2023. Published online 24 August 2022.
+
+</div>
+
 ## One vector per tumor hides its interior
 
 Radiomics usually treats a tumor as one object: it extracts one feature vector
