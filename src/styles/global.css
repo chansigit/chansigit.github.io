@@ -143,6 +143,7 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide-body li { margin-bottom: 0.5em; }
 .slide-body li:last-child { margin-bottom: 0; }
 .slide-body li::marker { color: var(--accent); font-weight: 600; }
+.slide-body strong { font-weight: 600; color: var(--accent); }
 .slide-body pre { background: var(--surface); font-size: 1em; padding: 0.9em 1.1em; margin: 0 0 1em; }
 .slide-body code { background: var(--surface); }
 .slide-body pre code { background: none; }

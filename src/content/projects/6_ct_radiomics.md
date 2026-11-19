@@ -20,23 +20,16 @@ Jiaqi Li, Zhenbin Qiu, Chao Zhang, **Sijie Chen**, Mengmin Wang, Qiuchen Meng, H
 
 ## A whole-tumor summary hides what is inside
 
-Radiomics measures a tumor on a CT image: its shape, its brightness, how coarse
-its texture is. The usual recipe computes about a hundred such measurements
-over the whole tumor and feeds them to a classifier. Each tumor becomes one row
-of numbers.
-
-But a tumor is not uniform inside, and an average over the whole tumor cannot
-show how its regions differ. This intra-tumor heterogeneity relates to how the
-disease behaves, and it is normally measured from tissue, after surgery or
-biopsy.
+- **Radiomics** measures a tumor on a CT image: its shape, brightness and texture.
+- The usual recipe takes about a hundred measurements over the **whole tumor**, so each tumor becomes **one row of numbers**.
+- But a tumor is **not uniform inside**, and an average hides how its regions differ.
+- This **intra-tumor heterogeneity** relates to how the disease behaves, yet it normally needs **tissue** from surgery or biopsy.
 
 ## Idea: look inside the tumor
 
-Compute the texture features around *every pixel* instead of once per tumor,
-and use them to divide the interior of the tumor into regions.
+Compute texture features around **every pixel**, instead of once per tumor, and use them to divide the interior of the tumor into **regions**.
 
-The internal structure itself becomes the information, read from a CT scan
-that every patient already has.
+The **internal structure** itself becomes the information, read from a CT scan that every patient already has.
 
 ## The input: a CT image and a tumor
 
@@ -163,14 +156,14 @@ every patient.
 
 ## Results on 1399 patients
 
-Validated on six patient cohorts, ITHscore
+Validated on **six patient cohorts**, ITHscore
 
-- rises with tumor stage;
-- separates tumors with and without lymphovascular and pleural invasion;
-- separates patient groups with different survival;
-- correlates with heterogeneity-related gene pathways.
+- rises with **tumor stage**;
+- separates tumors with and without **lymphovascular** and **pleural invasion**;
+- separates patient groups with different **survival**;
+- correlates with heterogeneity-related **gene pathways**.
 
-It needs no training labels, and it also works on head-and-neck cancer.
+It needs **no training labels**, and it also works on **head-and-neck cancer**.
 
 ## Run it
 
