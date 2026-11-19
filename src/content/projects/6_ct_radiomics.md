@@ -23,15 +23,32 @@ and use them to divide the interior of the tumor into regions.
 The internal structure itself becomes the information, read from a CT scan
 that every patient already has.
 
-## From a CT scan to a map of regions
+## The input: a CT scan and a tumor mask
 
-1. Take the CT slice where the tumor is largest.
+<figure>
+<img src="/assets/img/ithscore/slice-mask.png" alt="Three panels: a chest CT slice, a binary mask marking a small lung tumor, and the mask overlaid on the slice." />
+<figcaption>The CT slice where the tumor is largest, the tumor mask, and both overlaid. Patient LUNG1-100 from the public LUNG1 dataset on The Cancer Imaging Archive; this example runs through the next slides.</figcaption>
+</figure>
+
+## From the tumor to a map of regions
+
+<div class="cols">
+<div>
+
+1. Take the CT slice where the tumor is largest and crop the tumor.
 2. For every tumor pixel, compute radiomic texture features on its 5 x 5
    neighborhood.
 3. Cluster the pixels by these features. Pixels with similar local texture get
    the same label.
 
-The result is a map of regions inside the tumor.
+The result is a map of regions inside the tumor, here with 6 classes.
+
+</div>
+<div class="pair">
+<img src="/assets/img/ithscore/tumor-crop.png" alt="The cropped tumor on CT, and the same crop with the tumor mask overlaid." />
+<img src="/assets/img/ithscore/label-map-k6.png" alt="Label map of the tumor with six classes, forming nested and partly broken bands." />
+</div>
+</div>
 
 ## From the map to a score
 
@@ -44,34 +61,49 @@ ITHscore = 1 - (1/N) * sum over k of ( A_k / n_k )
 
 - Every class forms one solid block: the score is near 0.
 - The classes are scattered into many small pieces: the score is near 1.
+- The example tumor scores 0.69.
 
-## The whole method in pseudocode
+## The algorithm
 
-```
-Input: CT volume I, tumor mask M        Parameters: r = 2, K = 6
+<div class="algo">
+<p class="algo-cap"><b>Algorithm 1</b> ITHscore</p>
+<p><b>Input:</b> CT volume <i>I</i>, tumor mask <i>M</i>; window radius <i>r</i> = 2, number of classes <i>K</i> = 6</p>
+<p><b>Output:</b> ITHscore <i>s</i> ∈ [0, 1)</p>
+<ol>
+<li><span><i>z</i>* ← arg max<sub><i>z</i></sub> |<i>M<sub>z</sub></i>|</span><span class="cm">▷ slice with the largest tumor area</span></li>
+<li><span><i>T</i> ← tumor pixels of slice <i>z</i>*; &nbsp;<i>N</i> ← |<i>T</i>|</span></li>
+<li><span><b>for</b> each pixel <i>p</i> ∈ <i>T</i> <b>do</b></span></li>
+<li class="i1"><span><i>φ</i>(<i>p</i>) ← radiomic features of the (2<i>r</i>+1) × (2<i>r</i>+1) window centered at <i>p</i></span></li>
+<li><span><b>end for</b></span></li>
+<li><span>rescale every feature of <i>φ</i> to [0, 1] over <i>T</i></span></li>
+<li><span><i>L</i> ← K-means(<i>φ</i>, <i>K</i>)</span><span class="cm">▷ map of regions</span></li>
+<li><span><i>a</i> ← 0</span></li>
+<li><span><b>for</b> <i>k</i> = 1, …, <i>K</i> <b>do</b></span></li>
+<li class="i1"><span><i>R</i> ← connected pieces of class <i>k</i> in <i>L</i> with more than one pixel</span><span class="cm">▷ 8-connectivity</span></li>
+<li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span><span class="cm">▷ largest piece / number of pieces</span></li>
+<li><span><b>end for</b></span></li>
+<li><span><b>return</b> <i>s</i> = 1 − <i>a</i> / <i>N</i></span></li>
+</ol>
+</div>
 
-slice <- the slice of I where M has the largest area
-T     <- tumor pixels of that slice;  N <- |T|
-for each pixel p in T:
-    phi[p] <- radiomic features of the (2r+1) x (2r+1) window at p
-rescale every feature to [0, 1] over T
-L     <- KMeans(phi, K), written back on the tumor   # map of regions
+## The same tumor at several resolutions
 
-total <- 0
-for k = 1 .. K:
-    R <- connected pieces of class k in L, 1-pixel pieces dropped
-    if R is empty: continue
-    total <- total + (largest piece in R) / (number of pieces in R)
-return 1 - total / N                                 # ITHscore
-```
+<div class="cols">
+<div>
 
-## Two studies
+Changing the number of classes shows the tumor at different resolutions, here
+from 3 to 9 classes.
 
-- **2019, pixel-level clustering.** Region maps of lung tumors, viewed at
-  several resolutions, show three recurring patterns: uni-core, multi-core and
-  diffused. Uni-core and diffused tumors differ in survival time.
-- **2023, ITHscore.** The map is turned into one number, which can be computed
-  for every patient and tested at scale.
+The first study, in 2019, read such maps and found three recurring patterns in
+lung tumors: uni-core, multi-core and diffused. Uni-core and diffused tumors
+differ in survival time.
+
+ITHscore, in 2023, replaces the reading by one number that can be computed for
+every patient.
+
+</div>
+<img src="/assets/img/ithscore/multi-resolution.png" alt="Grid of panels: the CT slice, the cropped tumor, and label maps of the tumor with 3 to 9 classes." />
+</div>
 
 ## Results on 1399 patients
 
@@ -84,10 +116,22 @@ Validated on six patient cohorts, ITHscore
 
 It needs no training labels, and it also works on head-and-neck cancer.
 
-## My part and the code
+## Run it
 
-I conceived and initiated this line of work and helped develop it with Jiaqi
-Li, who led it and is first author of both papers, in collaboration with the
-Guangdong Lung Cancer Institute.
+```
+pip install ITHscore
+```
 
-[Code on GitHub](https://github.com/LiJiaqi96/ITHscore)
+```
+image             = ITHscore.load_image(dicom_path)
+seg               = ITHscore.load_seg(seg_path)
+img, mask         = ITHscore.get_largest_slice(image, seg)
+sub_img, sub_mask = ITHscore.locate_tumor(img, mask)
+features          = ITHscore.extract_radiomic_features(sub_img, sub_mask)
+label_map         = ITHscore.pixel_clustering(sub_mask, features, cluster=6)
+ITHscore.calITHscore(label_map)        # 0.688 for the example tumor
+```
+
+[github.com/LiJiaqi96/ITHscore](https://github.com/LiJiaqi96/ITHscore)
+
+<p class="credit">The figures and the example in this deck come from the ITHscore package by Jiaqi Li (MIT license).</p>

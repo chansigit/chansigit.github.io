@@ -124,7 +124,8 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide-title h1 { font-size: 4.2em; }
 .slide-lead { font-family: var(--display); font-size: 1.5em; line-height: 1.3; font-weight: 500; max-width: 26em; margin: 0.8em 0 0; text-wrap: balance; }
 .slide-title .slide-body { margin-top: 1.4em; color: var(--muted); }
-.slide-body { max-width: 40em; }
+.slide-body > :is(p, ul, ol) { max-width: 40em; }
+.slide-body > pre { width: fit-content; max-width: 100%; }
 .slide-body > :last-child { margin-bottom: 0; }
 .slide-body ul, .slide-body ol { padding-left: 1.2em; margin: 0 0 1em; }
 .slide-body li { margin-bottom: 0.45em; }
@@ -133,12 +134,42 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide-body code { background: var(--bg); }
 .slide-body pre code { background: none; }
 .slide-no { position: absolute; right: 2.2cqw; bottom: 1.6cqw; font-size: 0.7em; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* figures and two-column slides */
+.slide-body img { display: block; background: #fff; border-radius: 4px; padding: 0.4em; max-width: 100%; width: auto; max-height: 30cqw; }
+.slide-body figure { margin: 0 0 1em; }
+.slide-body figcaption, .slide-body .credit { font-size: 0.72em; color: var(--muted); margin-top: 0.6em; max-width: 46em; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3cqw; align-items: start; }
+.cols > div > :last-child { margin-bottom: 0; }
+.cols img { max-height: 37cqw; }
+.cols .pair { display: flex; gap: 1cqw; align-items: flex-start; }
+.cols .pair img { max-height: 19cqw; }
+
+/* pseudocode set like a LaTeX algorithm float */
+@font-face { font-family: "CMU Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url("/cv/fonts/cmu-serif-500-roman.woff2") format("woff2"); }
+@font-face { font-family: "CMU Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url("/cv/fonts/cmu-serif-500-italic.woff2") format("woff2"); }
+@font-face { font-family: "CMU Serif"; font-style: normal; font-weight: 700; font-display: swap; src: url("/cv/fonts/cmu-serif-700-roman.woff2") format("woff2"); }
+.algo { font-family: "CMU Serif", "Latin Modern Roman", "Times New Roman", serif; font-size: 0.8em; line-height: 1.36; background: var(--bg); color: var(--ink); max-width: 46em; padding: 0 1em; border-top: 0.14em solid var(--ink); border-bottom: 0.14em solid var(--ink); }
+.algo p { margin: 0; max-width: none; }
+.algo .algo-cap { padding: 0.25em 0; border-bottom: 0.06em solid var(--ink); margin-bottom: 0.3em; }
+.algo ol { list-style: none; margin: 0; padding: 0 0 0.35em; counter-reset: line; max-width: none; }
+.algo li { counter-increment: line; margin: 0; padding-left: 2.2em; position: relative; display: flex; justify-content: space-between; gap: 1.5em; }
+.algo li::before { content: counter(line) ":"; position: absolute; left: 0; width: 1.6em; text-align: right; font-size: 0.85em; top: 0.1em; }
+.algo .i1 > span:first-child { padding-left: 1.5em; }
+.algo .i2 > span:first-child { padding-left: 3em; }
+.algo .cm { white-space: nowrap; }
+.algo sub, .algo sup { font-size: 0.72em; line-height: 0; }
 @container (max-width: 700px) {
   .slide { aspect-ratio: auto; min-height: 56cqw; font-size: 1rem; padding: 1.6rem 1.25rem 2.6rem; }
   .slide-title h1 { font-size: 2.6em; }
   .slide h2 { font-size: 1.5em; }
   .slide-lead { font-size: 1.2em; }
   .slide-no { right: 1rem; bottom: 0.8rem; font-size: 0.8rem; }
+  .slide-body img, .cols img, .cols .pair img { max-height: none; }
+  .cols { grid-template-columns: 1fr; gap: 1rem; }
+  .algo { font-size: 0.86em; padding: 0 0.5em; }
+  .algo li { display: block; }
+  .algo li > span:first-child { display: block; }
+  .algo .cm { display: block; white-space: normal; padding-left: 3em; color: var(--muted); }
 }
 .deck-bar { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.8rem 2rem; align-items: start; margin-top: 0.9rem; }
 .deck-buttons { display: flex; gap: 0.5rem; }
