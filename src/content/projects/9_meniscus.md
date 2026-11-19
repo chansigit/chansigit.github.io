@@ -41,11 +41,11 @@ image_alt: Schematic of a normal and a degenerated meniscus
 <figcaption><strong>Chondrocytes</strong>, <strong>ACTA2<sup>+</sup> cells</strong>, <strong>endothelial</strong> and <strong>immune</strong> cells. The inner zone, thought to have no vessels, contains endothelial cells. From Fu, Chen et al., <i>eLife</i> 2022 (CC BY 4.0), Fig. 1C–H.</figcaption>
 </figure>
 
-## A hierarchy of cell types
+## Seven chondral populations, in a hierarchy
 
-<figure class="tall">
-<img src="/assets/img/meniscus/fig2d-hierarchy.webp" alt="Tree of cell types: five chondrocyte populations Ch.1 to Ch.5 and two pericyte-like populations PCL.1 and PCL.2, with marker genes." />
-<figcaption>Cell types are defined <strong>top-down</strong> on a hierarchy of meta-cells, not named from a few markers: <strong>five chondrocyte</strong> and <strong>two pericyte-like</strong> populations. From Fu, Chen et al., <i>eLife</i> 2022 (CC BY 4.0), Fig. 2D.</figcaption>
+<figure class="wide">
+<img src="/assets/img/meniscus/fig2ad-types.webp" alt="Left: UMAP of chondrocytes and pericyte-like cells colored by population, Ch.1 to Ch.5, PCL.1 and PCL.2. Right: tree of the populations with their marker genes." />
+<figcaption>Left: the <strong>five chondrocyte</strong> populations Ch.1–Ch.5 and <strong>two pericyte-like</strong> populations PCL.1–2. Right: they are defined <strong>top-down</strong> on a hierarchy of meta-cells, with marker genes at each split. From Fu, Chen et al., <i>eLife</i> 2022 (CC BY 4.0), Fig. 2A,D.</figcaption>
 </figure>
 
 ## What changes in degeneration
