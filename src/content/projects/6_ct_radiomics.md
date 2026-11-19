@@ -67,19 +67,19 @@ ITHscore = 1 - (1/N) * sum over k of ( A_k / n_k )
 
 <div class="algo">
 <p class="algo-cap"><b>Algorithm 1</b> ITHscore</p>
-<p><b>Input:</b> CT image <i>I</i>, where <i>I</i>(<i>p</i>) is the intensity at pixel <i>p</i> in Hounsfield units; a given tumor <i>T</i>, the set of its <i>N</i> pixels</p>
+<p><b>Input:</b> CT image <i>I</i>; a given tumor <i>T</i> of <i>N</i> pixels</p>
 <p><b>Parameters:</b> window radius <i>r</i> = 2, number of classes <i>K</i> = 6</p>
 <p><b>Output:</b> ITHscore <i>s</i> ∈ [0, 1)</p>
 <ol>
 <li><span><b>for</b> each pixel <i>p</i> ∈ <i>T</i> <b>do</b></span></li>
-<li class="i1"><span><i>φ</i>(<i>p</i>) ← radiomic features of <i>I</i> on the (2<i>r</i>+1) × (2<i>r</i>+1) window centered at <i>p</i></span></li>
+<li class="i1"><span><i>φ</i>(<i>p</i>) ← radiomic features of <i>I</i> in the window of radius <i>r</i> at <i>p</i></span></li>
 <li><span><b>end for</b></span></li>
 <li><span>rescale every feature of <i>φ</i> to [0, 1] over <i>T</i></span></li>
 <li><span><i>L</i> ← K-means(<i>φ</i>, <i>K</i>)</span><span class="cm">▷ map of regions</span></li>
 <li><span><i>a</i> ← 0</span></li>
 <li><span><b>for</b> <i>k</i> = 1, …, <i>K</i> <b>do</b></span></li>
-<li class="i1"><span><i>R</i> ← connected pieces of class <i>k</i> in <i>L</i> with more than one pixel</span><span class="cm">▷ 8-connectivity</span></li>
-<li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span><span class="cm">▷ largest piece / number of pieces</span></li>
+<li class="i1"><span><i>R</i> ← pieces of class <i>k</i> in <i>L</i></span><span class="cm">▷ 8-connected, more than 1 pixel</span></li>
+<li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span></li>
 <li><span><b>end for</b></span></li>
 <li><span><b>return</b> <i>s</i> = 1 − <i>a</i> / <i>N</i></span></li>
 </ol>
@@ -122,15 +122,17 @@ pip install ITHscore
 ```
 
 ```
-image             = ITHscore.load_image(dicom_path)
-seg               = ITHscore.load_seg(seg_path)
-img, mask         = ITHscore.get_largest_slice(image, seg)
-sub_img, sub_mask = ITHscore.locate_tumor(img, mask)
-features          = ITHscore.extract_radiomic_features(sub_img, sub_mask)
-label_map         = ITHscore.pixel_clustering(sub_mask, features, cluster=6)
-ITHscore.calITHscore(label_map)        # 0.688 for the example tumor
+img, mask = ITHscore.get_largest_slice(
+    image, seg)
+sub_img, sub_mask = ITHscore.locate_tumor(
+    img, mask)
+features = ITHscore.extract_radiomic_features(
+    sub_img, sub_mask)
+label_map = ITHscore.pixel_clustering(
+    sub_mask, features, cluster=6)
+ITHscore.calITHscore(label_map)   # 0.688
 ```
 
 [github.com/LiJiaqi96/ITHscore](https://github.com/LiJiaqi96/ITHscore)
 
-<p class="credit">The figures and the example in this deck come from the ITHscore package by Jiaqi Li (MIT license).</p>
+<p class="credit">Figures and example from the ITHscore package by Jiaqi Li (MIT license).</p>
