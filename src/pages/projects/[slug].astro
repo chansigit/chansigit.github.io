@@ -10,16 +10,55 @@ export function getStaticPaths() {
 const { project } = Astro.props;
 const keys = String(project.related_publications ?? "").split(/[\s,]+/).filter(Boolean);
 const related = keys.map((k) => publications.find((p) => p.key === k)).filter(Boolean);
+
+// A project page is a slide deck. Every "## Heading" in the markdown starts a new slide;
+// text before the first heading goes on the title slide.
+const html = await project.html();
+const parts = html.split(/(?=<h2[\s>])/);
+const intro = parts[0].startsWith("<h2") ? "" : parts.shift();
+const strip = (t) => t.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#x26;/g, "&").trim();
+const slides = parts.map((part) => {
+  const m = part.match(/^<h2[^>]*>([\s\S]*?)<\/h2>/);
+  return { title: strip(m[1]), heading: m[1], body: part.slice(m[0].length) };
+});
+const total = slides.length + 1;
 ---
 
 <Base title={project.title} description={project.description}>
   <div class="wrap">
-    <header class="page-head">
-      <p><a href="/projects/">All projects</a></p>
-      <h1>{project.title}</h1>
-      <p class="lead">{project.description}</p>
-    </header>
-    <div class="prose"><project.Content /></div>
+    <p class="crumb"><a href="/projects/">All projects</a></p>
+    <section class="deck" data-deck aria-label={`${project.title} slides`}>
+      <div class="deck-stage">
+        <div class="deck-track" tabindex="0">
+          <article class="slide slide-title" id="slide-1">
+            <h1>{project.title}</h1>
+            <p class="slide-lead">{project.description}</p>
+            {intro && <div class="slide-body" set:html={intro} />}
+            <span class="slide-no">1 / {total}</span>
+          </article>
+          {
+            slides.map((s, i) => (
+              <article class="slide" id={`slide-${i + 2}`}>
+                <h2 set:html={s.heading} />
+                <div class="slide-body" set:html={s.body} />
+                <span class="slide-no">{i + 2} / {total}</span>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+      <div class="deck-bar">
+        <div class="deck-buttons">
+          <button type="button" data-prev aria-label="Previous slide">Previous</button>
+          <button type="button" data-next aria-label="Next slide">Next</button>
+          <button type="button" data-full hidden>Full screen</button>
+        </div>
+        <ol class="deck-outline">
+          <li><a href="#slide-1" aria-current="true">{project.title}</a></li>
+          {slides.map((s, i) => <li><a href={`#slide-${i + 2}`}>{s.title}</a></li>)}
+        </ol>
+      </div>
+    </section>
     {
       related.length > 0 && (
         <section class="block">
@@ -30,3 +69,57 @@ const related = keys.map((k) => publications.find((p) => p.key === k)).filter(Bo
     }
   </div>
 </Base>
+
+<script>
+  const deck = document.querySelector("[data-deck]");
+  if (deck) {
+    const track = deck.querySelector(".deck-track");
+    const links = [...deck.querySelectorAll(".deck-outline a")];
+    const prev = deck.querySelector("[data-prev]");
+    const next = deck.querySelector("[data-next]");
+    const full = deck.querySelector("[data-full]");
+    const last = links.length - 1;
+    const smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let current = 0;
+
+    const go = (i) => {
+      const n = Math.max(0, Math.min(last, i));
+      track.scrollTo({ left: n * track.clientWidth, behavior: smooth ? "smooth" : "auto" });
+    };
+    const sync = () => {
+      current = Math.round(track.scrollLeft / track.clientWidth);
+      links.forEach((a, i) => (i === current ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current")));
+      prev.disabled = current === 0;
+      next.disabled = current === last;
+    };
+
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", () => track.scrollTo({ left: current * track.clientWidth }));
+    prev.addEventListener("click", () => go(current - 1));
+    next.addEventListener("click", () => go(current + 1));
+    links.forEach((a, i) =>
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        go(i);
+      }),
+    );
+    document.addEventListener("keydown", (e) => {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.target.closest("input, textarea, select")) return;
+      if (e.key === "ArrowRight" || e.key === "PageDown") { e.preventDefault(); go(current + 1); }
+      if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(current - 1); }
+    });
+
+    if (deck.requestFullscreen) {
+      full.hidden = false;
+      full.addEventListener("click", () => (document.fullscreenElement ? document.exitFullscreen() : deck.requestFullscreen()));
+      document.addEventListener("fullscreenchange", () => {
+        full.textContent = document.fullscreenElement ? "Exit full screen" : "Full screen";
+        track.scrollTo({ left: current * track.clientWidth });
+      });
+    }
+
+    const start = Number((location.hash.match(/^#slide-(\d+)$/) || [])[1]);
+    if (start) track.scrollTo({ left: (start - 1) * track.clientWidth });
+    sync();
+  }
+</script>

@@ -6,12 +6,26 @@ category: single-cell
 related_publications: bian2024scmulan
 ---
 
-**scMulan** is a 368M-parameter multitask generative pre-trained foundation
-model for single-cell RNA-seq analysis, pre-trained on ~10M cells. It supports
-zero-shot cell-type annotation, batch correction, and conditional generation.
+## One generative model for many single-cell tasks
 
-I contributed to the latent-variable model design (joint-VAE universal
-coordinate systems supporting cross-platform and cross-modality alignment) and
-to dataset curation and evaluation. RECOMB / ISMB 2024.
+scMulan is a multitask generative pre-trained foundation model for single-cell
+RNA-seq analysis.
 
-→ [Project repo](https://github.com/Zhang-lab-AI/scMulan)
+- 368M parameters
+- pre-trained on about 10M cells
+
+## What it does
+
+- Zero-shot cell-type annotation
+- Batch correction
+- Conditional generation of cells
+
+## My part
+
+- Latent-variable model design: joint-VAE universal coordinate systems that
+  support alignment across platforms and across modalities.
+- Dataset curation and evaluation.
+
+Presented at RECOMB 2024.
+
+[Project repository on GitHub](https://github.com/Zhang-lab-AI/scMulan)

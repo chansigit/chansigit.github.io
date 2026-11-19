@@ -6,6 +6,7 @@ export const projects = Object.entries(import.meta.glob("../content/projects/*.m
     slug: slugOf(path),
     ...mod.frontmatter,
     Content: mod.Content,
+    html: mod.compiledContent,
   }))
   .sort((a, b) => a.importance - b.importance);
 

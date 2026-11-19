@@ -5,19 +5,28 @@ importance: 2
 category: single-cell
 ---
 
-**Dynode** models 3D organogenesis from spatiotemporally resolved single-cell
-data with an SE(3)-equivariant transformer-based neural ODE. The model
-captures morphological and expressional changes through optimal transport
-and supports *in silico* perturbation for congenital heart disease.
+## An organ forming in 3D, as a dynamical system
 
-**Key ingredients.**
+Dynode models 3D organogenesis from spatiotemporally resolved single-cell data.
 
-- SE(3)-equivariant transformer backbone (rotation- and translation-equivariant
-  feature updates).
-- Continuous-time neural ODE for trajectory inference.
-- Optimal-transport regularisation tying snapshots through Wasserstein
-  consistency.
-- *In silico* knockouts for hypothesis generation about regulators of cardiac
-  development.
+It describes how both the shape of the tissue and the gene expression of its
+cells change over time, and connects the measured time points through optimal
+transport.
 
-Preprint in preparation; will link here once posted.
+## Key ingredients
+
+- An SE(3)-equivariant transformer backbone: feature updates respect rotations
+  and translations of the tissue.
+- A continuous-time neural ODE for trajectory inference.
+- Optimal-transport regularisation that ties the snapshots together through
+  Wasserstein consistency.
+
+## Experiments in the computer
+
+The trained model supports *in silico* knockouts: remove a gene and let the
+dynamics run forward.
+
+This is used to generate hypotheses about regulators of cardiac development
+and about congenital heart disease.
+
+The preprint is in preparation and will be linked here once posted.

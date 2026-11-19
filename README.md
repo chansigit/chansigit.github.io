@@ -14,7 +14,7 @@ npm run build    # static output in dist/
 | --- | --- |
 | About text | `src/content/about.md` |
 | News items | `src/content/news/*.md` (needs a `date`) |
-| Projects | `src/content/projects/*.md` |
+| Projects | `src/content/projects/*.md`. Each project page is a slide deck: every `## Heading` starts a new slide, so keep each section short enough for one slide |
 | Blog posts | `src/content/posts/YYYY-MM-DD-title.md`, served at `/blog/YYYY/title/` |
 | Publications | `src/data/papers.bib` (`selected = {true}` shows a paper on the home page) |
 | Name, email, navigation | `src/lib/site.js` |

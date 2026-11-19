@@ -5,19 +5,25 @@ importance: 7
 category: imaging
 ---
 
+## A LiDAR and a camera behind one mirror
+
 Tanway Technology built a prototype sensor in which a 16-channel LiDAR and a
-line-scan camera look through the same rotating mirror, so that both scan the
-scene along the same line of sight. As a part-time intern in 2019 and 2020, I
-wrote the host software for this prototype on my own.
+line-scan camera look through the same rotating mirror. Both scan the scene
+along the same line of sight.
 
-The program does four things in real time:
+As a part-time intern in 2019 and 2020, I wrote the host software for this
+prototype on my own.
 
-- acquires images from the industrial line-scan camera and controls its
-  settings;
-- receives and decodes the LiDAR data stream on a separate thread;
-- assembles each mirror sweep into a depth frame;
-- paints depth as color on top of the camera image, and shows the camera view,
+## What the software does, in real time
+
+- Acquires images from the industrial line-scan camera and controls its
+  settings.
+- Receives and decodes the LiDAR data stream on a separate thread.
+- Assembles each mirror sweep into a depth frame.
+- Paints depth as color on top of the camera image, and shows the camera view,
   the LiDAR view and the fused view side by side.
+
+## Shown at CES 2020
 
 The prototype, running this software, was demoed at CES 2020 in Las Vegas.
 
