@@ -158,16 +158,12 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .cols .pair { display: flex; gap: 1.5cqw; align-items: center; }
 .cols .pair img { max-height: 19cqw; }
 
-/* pieces diagram */
-.pieces svg.grid { width: 40cqw; height: auto; }
-.pieces svg .c-o { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
-.pieces svg .c-a { fill: var(--accent); }
-.pieces svg .c-b { fill: color-mix(in srgb, var(--accent) 45%, var(--bg)); }
-.pieces svg .c-s { fill: var(--bg); stroke: var(--accent); stroke-width: 2; stroke-dasharray: 5 4; }
-.sw { display: inline-block; width: 0.8em; height: 0.8em; border-radius: 2px; margin-right: 0.35em; vertical-align: -0.05em; }
-.sw-a { background: var(--accent); }
-.sw-b { background: color-mix(in srgb, var(--accent) 45%, var(--bg)); }
-.sw-s { border: 2px dashed var(--accent); }
+/* pieces diagram: a grid of pixels, cluster k in teal */
+.pieces .cells { display: grid; grid-template-columns: repeat(10, 1fr); gap: 0.35cqw; width: 40cqw; }
+.pieces .cells i { aspect-ratio: 1; border-radius: 0.5cqw; display: flex; align-items: center; justify-content: center; font-style: normal; font-weight: 600; font-size: 1em; line-height: 1; }
+.pieces .cells .o { background: var(--surface); border: 1px solid var(--line); }
+.pieces .cells .k { background: var(--accent); color: var(--accent-ink); }
+.pieces .cells .s { border: 2px dashed var(--accent); color: var(--accent); }
 
 /* typeset formula (KaTeX). KaTeX sets 1.21em by default; keep every part at 18pt or more. */
 .slide-body .katex { font-size: 1.08em; }
@@ -205,6 +201,7 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
   .slide-lead { font-size: 1.1em; }
   .slide-no { right: 1rem; bottom: 0.8rem; font-size: 18pt; }
   .slide-body img, .cols img, .cols .pair img { max-height: none; }
+  .pieces .cells { width: min(100%, 22rem); }
   .cols { grid-template-columns: 1fr; gap: 1rem; }
   .algo { padding: 0 0.5em; }
   .algo li { display: block; }

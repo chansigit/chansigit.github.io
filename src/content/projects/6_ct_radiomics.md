@@ -56,42 +56,42 @@ that every patient already has.
 3. Cluster the pixels by these features. Pixels with similar local texture get
    the same label.
 
-The result is a map of regions inside the tumor, here with 6 classes.
+The result is a map of regions inside the tumor, here with 6 clusters.
 
 </div>
 <div class="pair">
 <img src="/assets/img/ithscore/tumor-crop.png" alt="The cropped tumor on CT, and the same crop with the tumor mask overlaid." />
-<img src="/assets/img/ithscore/label-map-k6.png" alt="Label map of the tumor with six classes, forming nested and partly broken bands." />
+<img src="/assets/img/ithscore/label-map-k6.png" alt="Label map of the tumor with six clusters, forming nested and partly broken bands." />
 </div>
 </div>
 
-## Pieces of a class
+## Pieces of a cluster
 
 <div class="cols pieces">
 <div>
 
-The colored pixels belong to one class $k$; the grey pixels belong to other classes.
+Teal pixels form cluster $k$. Grey pixels belong to other clusters.
 
-- **Piece.** Pixels of one class that touch each other, diagonals included.
-- <span class="sw sw-a"></span> **Largest piece.** Its size is $A_k = 14$ pixels.
-- <span class="sw sw-b"></span> **Number of pieces.** Class $k$ has $n_k = 2$ pieces, dark and light.
-- <span class="sw sw-s"></span> A single stray pixel does not count.
+- **Piece.** A group of cluster-$k$ pixels that touch each other, diagonals included. The numbers are piece sizes in pixels.
+- **$n_k$** is the number of pieces in cluster $k$. Here $n_k = 2$; a single stray pixel is ignored.
+- **$A_k$** is the size of the largest piece of cluster $k$. Here $A_k = 14$.
 
 </div>
-<svg class="grid" viewBox="0 0 440 264" role="img" aria-label="A grid of pixels. One class forms a large piece of 14 pixels, a small piece of 5 pixels and a single stray pixel. All other pixels belong to other classes."><rect class="c-o" x="2.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-a" x="90.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-a" x="134.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-a" x="178.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="222.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="354.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="398.0" y="2.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="46.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="90.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="134.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="178.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-a" x="222.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-b" x="354.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-b" x="398.0" y="46.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-a" x="90.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-a" x="134.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-a" x="178.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-a" x="222.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-b" x="354.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-b" x="398.0" y="90.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="90.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-a" x="134.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-a" x="178.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="222.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-b" x="354.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="398.0" y="134.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="90.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="134.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="178.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="222.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-s" x="266.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="354.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="398.0" y="178.0" width="40" height="40" rx="4"/><rect class="c-o" x="2.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="46.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="90.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="134.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="178.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="222.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="266.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="310.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="354.0" y="222.0" width="40" height="40" rx="4"/><rect class="c-o" x="398.0" y="222.0" width="40" height="40" rx="4"/></svg>
+<div class="cells" role="img" aria-label="A grid of pixels. Cluster k, in teal, forms a piece of 14 pixels, a piece of 5 pixels and a single stray pixel. Grey pixels belong to other clusters."><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k">14</i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="k">5</i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="k"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="s">1</i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i></div>
 </div>
 
 ## From the map to a score
 
-For each class $k$, let $n_k$ be its number of pieces and $A_k$ the size of its
-largest piece. With $N$ tumor pixels and $K$ classes,
+With $K$ clusters and $N$ tumor pixels,
 
 $$
 \mathrm{ITHscore} \;=\; 1 - \frac{1}{N}\sum_{k=1}^{K}\frac{A_k}{n_k}
 $$
 
-- Every class forms one solid block: the score is near 0.
-- The classes are scattered into many small pieces: the score is near 1.
+where cluster $k$ has $n_k$ pieces, the largest of size $A_k$.
+
+- $A_k / n_k$ is large when a cluster is one big block, and small when it is split into many pieces.
+- Solid clusters give a score near 0. Scattered clusters give a score near 1.
 - The example tumor scores 0.69.
 
 ## The algorithm
@@ -99,7 +99,7 @@ $$
 <div class="algo">
 <p class="algo-cap"><b>Algorithm 1</b> ITHscore</p>
 <p><b>Input:</b> CT image <i>I</i>; a given tumor <i>T</i> of <i>N</i> pixels</p>
-<p><b>Parameters:</b> window radius <i>r</i> = 2, number of classes <i>K</i> = 6</p>
+<p><b>Parameters:</b> window radius <i>r</i> = 2, number of clusters <i>K</i> = 6</p>
 <p><b>Output:</b> ITHscore <i>s</i> ∈ [0, 1)</p>
 <ol>
 <li><span><b>for</b> each pixel <i>p</i> ∈ <i>T</i> <b>do</b></span></li>
@@ -117,7 +117,7 @@ $$
 <ol style="counter-reset: line 5">
 <li><span><i>a</i> ← 0</span></li>
 <li><span><b>for</b> <i>k</i> = 1, …, <i>K</i> <b>do</b></span></li>
-<li class="i1"><span><i>R</i> ← pieces of class <i>k</i> in <i>L</i></span><span class="cm">▷ 8-connected, more than 1 pixel</span></li>
+<li class="i1"><span><i>R</i> ← pieces of cluster <i>k</i> in <i>L</i></span><span class="cm">▷ 8-connected, more than 1 pixel</span></li>
 <li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span><span class="cm">▷ largest piece / number of pieces</span></li>
 <li><span><b>end for</b></span></li>
 <li><span><b>return</b> <i>s</i> = 1 − <i>a</i> / <i>N</i></span></li>
@@ -147,8 +147,8 @@ $$
 <div class="cols">
 <div>
 
-Changing the number of classes shows the tumor at different resolutions, here
-from 3 to 9 classes.
+Changing the number of clusters shows the tumor at different resolutions, here
+from 3 to 9 clusters.
 
 The first study, in 2019, read such maps and found three recurring patterns in
 lung tumors: uni-core, multi-core and diffused. Uni-core and diffused tumors
@@ -158,7 +158,7 @@ ITHscore, in 2023, replaces the reading by one number that can be computed for
 every patient.
 
 </div>
-<img src="/assets/img/ithscore/multi-resolution.png" alt="Grid of panels: the CT slice, the cropped tumor, and label maps of the tumor with 3 to 9 classes." />
+<img src="/assets/img/ithscore/multi-resolution.png" alt="Grid of panels: the CT slice, the cropped tumor, and label maps of the tumor with 3 to 9 clusters." />
 </div>
 
 ## Results on 1399 patients
