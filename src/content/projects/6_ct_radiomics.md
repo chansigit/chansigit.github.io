@@ -27,7 +27,7 @@ that every patient already has.
 
 <figure>
 <img src="/assets/img/ithscore/slice-mask.png" alt="Three panels: a chest CT slice, a binary mask marking a small lung tumor, and the mask overlaid on the slice." />
-<figcaption>A CT image, the mask that marks the given tumor on it, and both overlaid. Patient LUNG1-100 from the public LUNG1 dataset on The Cancer Imaging Archive; this example runs through the next slides.</figcaption>
+<figcaption>A CT image, the mask that marks the given tumor on it, and both overlaid. Patient LUNG1-100 from the public LUNG1 dataset on The Cancer Imaging Archive; this example runs through the next slides. Figures and example from the ITHscore package by Jiaqi Li (MIT license).</figcaption>
 </figure>
 
 ## From the tumor to a map of regions
@@ -76,10 +76,18 @@ ITHscore = 1 - (1/N) * sum over k of ( A_k / n_k )
 <li><span><b>end for</b></span></li>
 <li><span>rescale every feature of <i>φ</i> to [0, 1] over <i>T</i></span></li>
 <li><span><i>L</i> ← K-means(<i>φ</i>, <i>K</i>)</span><span class="cm">▷ map of regions</span></li>
+</ol>
+</div>
+
+## The algorithm, continued
+
+<div class="algo">
+<p class="algo-cap"><b>Algorithm 1</b> ITHscore <span class="cont">(continued)</span></p>
+<ol style="counter-reset: line 5">
 <li><span><i>a</i> ← 0</span></li>
 <li><span><b>for</b> <i>k</i> = 1, …, <i>K</i> <b>do</b></span></li>
 <li class="i1"><span><i>R</i> ← pieces of class <i>k</i> in <i>L</i></span><span class="cm">▷ 8-connected, more than 1 pixel</span></li>
-<li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span></li>
+<li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span><span class="cm">▷ largest piece / number of pieces</span></li>
 <li><span><b>end for</b></span></li>
 <li><span><b>return</b> <i>s</i> = 1 − <i>a</i> / <i>N</i></span></li>
 </ol>
@@ -119,13 +127,9 @@ It needs no training labels, and it also works on head-and-neck cancer.
 
 ```
 pip install ITHscore
-```
 
-```
-img, mask = ITHscore.get_largest_slice(
-    image, seg)
-sub_img, sub_mask = ITHscore.locate_tumor(
-    img, mask)
+img, mask = ITHscore.get_largest_slice(image, seg)
+sub_img, sub_mask = ITHscore.locate_tumor(img, mask)
 features = ITHscore.extract_radiomic_features(
     sub_img, sub_mask)
 label_map = ITHscore.pixel_clustering(
@@ -134,5 +138,3 @@ ITHscore.calITHscore(label_map)   # 0.688
 ```
 
 [github.com/LiJiaqi96/ITHscore](https://github.com/LiJiaqi96/ITHscore)
-
-<p class="credit">Figures and example from the ITHscore package by Jiaqi Li (MIT license).</p>
