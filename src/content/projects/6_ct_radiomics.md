@@ -87,7 +87,7 @@ $$
 <p><b>Output:</b> ITHscore <i>s</i> ∈ [0, 1)</p>
 <ol>
 <li><span><b>for</b> each pixel <i>p</i> ∈ <i>T</i> <b>do</b></span></li>
-<li class="i1"><span><i>φ</i>(<i>p</i>) ← radiomic features of <i>I</i> in the window of radius <i>r</i> at <i>p</i></span></li>
+<li class="i1"><span><i>φ</i>(<i>p</i>) ← <span class="fn">RadiomicFeatures</span>(<i>I</i>, <i>p</i>, <i>r</i>)</span><span class="cm">▷ Algorithm 2</span></li>
 <li><span><b>end for</b></span></li>
 <li><span>rescale every feature of <i>φ</i> to [0, 1] over <i>T</i></span></li>
 <li><span><i>L</i> ← K-means(<i>φ</i>, <i>K</i>)</span><span class="cm">▷ map of regions</span></li>
@@ -105,6 +105,24 @@ $$
 <li class="i1"><span><b>if</b> <i>R</i> ≠ ∅ <b>then</b> <i>a</i> ← <i>a</i> + max<sub><i>c</i>∈<i>R</i></sub> |<i>c</i>| / |<i>R</i>|</span><span class="cm">▷ largest piece / number of pieces</span></li>
 <li><span><b>end for</b></span></li>
 <li><span><b>return</b> <i>s</i> = 1 − <i>a</i> / <i>N</i></span></li>
+</ol>
+</div>
+
+## The feature function
+
+<div class="algo">
+<p class="algo-cap"><b>Algorithm 2</b> <span class="fn">RadiomicFeatures</span>(<i>I</i>, <i>p</i>, <i>r</i>)</p>
+<p><b>Input:</b> CT image <i>I</i>, pixel <i>p</i>, window radius <i>r</i></p>
+<p><b>Output:</b> feature vector <i>φ</i>, about a hundred numbers</p>
+<ol>
+<li><span><i>W</i> ← { <i>q</i> : max(|<i>q<sub>x</sub></i> − <i>p<sub>x</sub></i>|, |<i>q<sub>y</sub></i> − <i>p<sub>y</sub></i>|) ≤ <i>r</i> }</span><span class="cm">▷ (2<i>r</i>+1) × (2<i>r</i>+1) window</span></li>
+<li><span><i>x</i> ← { <i>I</i>(<i>q</i>) : <i>q</i> ∈ <i>W</i> }</span><span class="cm">▷ intensities in the window</span></li>
+<li><span><i>φ</i> ← first-order statistics of <i>x</i></span><span class="cm">▷ mean, variance, skewness, entropy, …</span></li>
+<li><span><i>G</i> ← <i>x</i> binned into gray levels</span><span class="cm">▷ bin width 25</span></li>
+<li><span><b>for</b> each <i>M</i> in GLCM, GLRLM, GLSZM, GLDM, NGTDM <b>do</b></span></li>
+<li class="i1"><span>append the statistics of the matrix <i>M</i>(<i>G</i>) to <i>φ</i></span><span class="cm">▷ contrast, run emphasis, …</span></li>
+<li><span><b>end for</b></span></li>
+<li><span><b>return</b> <i>φ</i></span></li>
 </ol>
 </div>
 

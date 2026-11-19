@@ -176,6 +176,7 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .algo .i1 > span:first-child { padding-left: 1.5em; }
 .algo .i2 > span:first-child { padding-left: 3em; }
 .algo .cm { white-space: nowrap; }
+.algo .fn { font-variant: small-caps; letter-spacing: 0.02em; }
 .algo sub, .algo sup { font-size: 0.72em; line-height: 0; }
 /* Narrow decks: 18pt text no longer fits a 16:9 frame, so the frame grows with its content */
 @container (max-width: 1120px) {
