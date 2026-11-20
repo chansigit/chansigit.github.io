@@ -177,33 +177,38 @@
             score of how fragmented those regions are, tested on 6 patient cohorts (n=1399) against tumor stage, tissue invasion, survival and gene-pathway activity.</li>
       <li><span class="theme">Meniscus Atlas</span>
         Led a single-cell study of the human meniscus, a fibrocartilage of the knee, that gave the first precise characterization of its
-            cell composition and identified the molecular changes of the degenerated meniscus <a class="ref" href="#pub24">[24]</a>: new chondrocyte
+            cell composition and identified the molecular changes of the degenerated meniscus <a class="ref" href="#pub25">[24]</a>: new chondrocyte
             subtypes linked to degeneration and a loop of matrix breakdown, angiogenesis and inflammation (12 samples, 8 patients). Used multiplex
             immunofluorescence imaging to map the tissue-level distribution of marker molecules, and identified the blood- and lymphatic-vessel
             microenvironments within the cartilage. Designed and carried out the analysis, built the open cell browser, and wrote the first draft.</li>
       <li><span class="theme">Asthmatic Lung Atlas</span>
-        Carried out the single-cell and cell-type analyses of a mouse model of allergic asthma induced by house dust mite <a class="ref" href="#pub22">[22]</a>:
+        Carried out the single-cell and cell-type analyses of a mouse model of allergic asthma induced by house dust mite <a class="ref" href="#pub23">[22]</a>:
             annotated 37,723 lung cells into 26 immune and 18 structural cell types and released the annotated atlas as an
             <a href="https://doi.org/10.6084/m9.figshare.27852174.v1">open dataset</a>. The atlas identified two myeloid states that change in disease,
             <i>Mgl2</i><sup>+</sup> dendritic cells that expand and carry the Th2-recruiting chemokine <i>Ccl17</i> and monocyte-derived <i>Gpnmb</i><sup>+</sup> macrophages,
             and matched both to their counterparts in patient data.</li>
       <li><span class="theme">ILC Ontogeny Atlas</span>
         Co-designed and led the single-cell analysis of a study of how innate lymphoid progenitors switch their output after birth
-            <a class="ref" href="#pub21">[21]</a>: mapped rare fetal and adult progenitors (7.7k cells), reconstructed their differentiation with RNA velocity and
+            <a class="ref" href="#pub22">[21]</a>: mapped rare fetal and adult progenitors (7.7k cells), reconstructed their differentiation with RNA velocity and
             vector-field least-action paths, and proposed and implemented TSC, a method that fuses a regulatory network with temporal co-expression (dynamic time warping) in a
             multiplex graph to find co-timed gene modules. The analysis identified a Notch/GATA3 versus ROR&gamma;t balance behind the postnatal shift,
             confirmed by perturbation experiments in mice.</li>
       <li><span class="theme">T follicular helper cells as drivers of chronic colitis</span>
         Carried out the single-cell analysis of a study showing that T follicular helper (T<sub>FH</sub>) cells, known for helping B cells, also drive
-            chronic colitis <a class="ref" href="#pub20">[20]</a>. The analysis identified BCL6-dependent T<sub>FH</sub> cells and mature dendritic cells in the lymphoid follicles of
+            chronic colitis <a class="ref" href="#pub21">[20]</a>. The analysis identified BCL6-dependent T<sub>FH</sub> cells and mature dendritic cells in the lymphoid follicles of
             the inflamed colon, the two populations that sustain each other in DC&ndash;T clusters, and traced by RNA velocity how T<sub>FH</sub> cells
             turn into effector T cells, the path that lineage tracing confirmed ends in long-lived pathogenic T<sub>H</sub>1 cells. The same
             T<sub>FH</sub>-to-effector path was found in biopsies of ulcerative colitis patients.</li>
+      <li><span class="theme">A switch that sets the quality of dendritic cells</span>
+        Took part in the single-cell analysis discussions of a study that identified the kinase p38&alpha; as the switch between the two cytokine
+            pathways that build dendritic cells <a class="ref" href="#pub19">[19]</a>: Flt3L&ndash;p38&alpha; signaling keeps the ligase Nedd4 degrading the
+            M-CSF receptor CD115, so losing p38&alpha; unleashes the M-CSF route. That compensation restores dendritic cell numbers but not their
+            quality &mdash; the cells no longer produce interferons or IL-12, and the mice fail to prime CD8 T cells against a melanoma.</li>
       <li><span class="theme">Statistical detection of where a microbial genome breaks its own rules</span>
         Proposed <i>D<sub>2</sub><sup class="tight">R</sup></i> <a class="ref" href="#pub5">[5]</a>, a linear-time statistic for mining recurring subsequences from large-scale microbiome sequencing data, which helps
             identify programmable elements, mobile genetic elements, noncoding RNA systems, etc. It extends word-count statistics
             to 2<sup>nd</sup>-order self-matching (<i>handshake</i>) counts within a sequence. Advised by <a href="https://dornsife.usc.edu/msw/">Michael S. Waterman</a> and <a href="https://dornsife.usc.edu/fsun/">Fengzhu Sun</a>.
-            Also contributed to <i>nuMetaSim</i> <a class="ref" href="#pub25">[25]</a>, a platform for simulating microbiome sequencing data.</li>
+            Also contributed to <i>nuMetaSim</i> <a class="ref" href="#pub26">[25]</a>, a platform for simulating microbiome sequencing data.</li>
     </ul>
   </div>
 
@@ -224,8 +229,8 @@
     <div>Undergraduate Research Assistant, Advisor: <b><a href="https://idrblab.org/Peoples-PI.php">Prof. Feng Zhu</a></b></div>
     <ul class="d">
       <li>Built an end-to-end metabolomics analysis workflow and platform, from the core peak alignment algorithms in C<span class="pp">++</span> to the
-        user-facing web interface. Co-first author of MMEASE <a class="ref" href="#pub27">[27]</a>, a platform for metabolomics meta-analysis, and contributor to its companion benchmark study
-        <a class="ref" href="#pub26">[26]</a>.</li>
+        user-facing web interface. Co-first author of MMEASE <a class="ref" href="#pub28">[27]</a>, a platform for metabolomics meta-analysis, and contributor to its companion benchmark study
+        <a class="ref" href="#pub27">[26]</a>.</li>
     </ul>
   </div>
 </section>
@@ -271,23 +276,25 @@
       A generic reference defined by consensus peaks for single-cell ATAC-seq data analysis. <span class="venue">Nature Communications 2026</span>.</li>
     <li id="pub18">The MorPhiC Consortium.
       MorPhiC Consortium: towards functional characterization of all human genes. <span class="venue">Nature 2025</span>.</li>
-    <li id="pub19">Xiangyue Zhang, Christopher S. McGinnis, Guotao Yu, <span class="me">Sijie Chen</span>, et al., Edgar G. Engleman.
+    <li id="pub19">Yifan Zhou<sup>*</sup>, Jianfeng Wu<sup>*</sup>, Lihao Gong, Xinyi Zhu, Yuanhao Wang, Tao Wu, Lanqi Luo, Yixue You, <span class="me">Sijie Chen</span>, et al., Jiahuai Han, Li Wu, Chunxiao Liu.
+      p38&alpha; acts as a molecular switch to differentially regulate the Flt3 and CD115 pathways in dendritic cell development. <span class="venue">Cellular &amp; Molecular Immunology 2026</span>.</li>
+    <li id="pub20">Xiangyue Zhang, Christopher S. McGinnis, Guotao Yu, <span class="me">Sijie Chen</span>, et al., Edgar G. Engleman.
       Erythropoietin receptor on cDC1s dictates immune tolerance. <span class="venue">Nature 2025</span>.</li>
-    <li id="pub20">Xue Bai, <span class="me">Sijie Chen</span>, Xinxin Chi, Bowen Xie, Xinyi Guo, et al., Chen Dong.
+    <li id="pub21">Xue Bai, <span class="me">Sijie Chen</span>, Xinxin Chi, Bowen Xie, Xinyi Guo, et al., Chen Dong.
       Reciprocal regulation of T follicular helper cells and dendritic cells drives colitis development. <span class="venue">Nature Immunology 2024</span>.</li>
-    <li id="pub21">Tao Wu<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Xinyi Zhu<sup>*</sup>, Jie Ma<sup>*</sup>, Maocai Luo, et al., Xuegong Zhang, Yunping Zhu, Li Wu.
+    <li id="pub22">Tao Wu<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Xinyi Zhu<sup>*</sup>, Jie Ma<sup>*</sup>, Maocai Luo, et al., Xuegong Zhang, Yunping Zhu, Li Wu.
       Dynamic regulation of innate lymphoid cell development during ontogeny. <span class="venue">Mucosal Immunology 2024</span>.</li>
-    <li id="pub22">Jiachen Liu<sup>*</sup>, Jiaoyan Lv<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Jie Ma<sup>*</sup>, Jiaying Yao<sup>*</sup>, et al., Xuegong Zhang, Yunping Zhu, Jianhong Zhang, Li Wu.
+    <li id="pub23">Jiachen Liu<sup>*</sup>, Jiaoyan Lv<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Jie Ma<sup>*</sup>, Jiaying Yao<sup>*</sup>, et al., Xuegong Zhang, Yunping Zhu, Jianhong Zhang, Li Wu.
       Single-cell profiling highlight pathogenic myeloid features in house dust mite-induced murine model of airway inflammation. <span class="venue">Allergy 2025</span>.</li>
-    <li id="pub23">Yifan Zhou, Yusra B. Medik, Bhakti Patel, Daniel B. Zamler, <span class="me">Sijie Chen</span>, Thomas Chapman, et al.
+    <li id="pub24">Yifan Zhou, Yusra B. Medik, Bhakti Patel, Daniel B. Zamler, <span class="me">Sijie Chen</span>, Thomas Chapman, et al.
       Intestinal toxicity to CTLA-4 blockade driven by IL-6 and myeloid infiltration. <span class="venue">Journal of Experimental Medicine 2023</span>.</li>
-    <li id="pub24">Weili Fu<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Runze Yang, Chen Li, Haoxiang Gao, Jian Li, Xuegong Zhang.
+    <li id="pub25">Weili Fu<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Runze Yang, Chen Li, Haoxiang Gao, Jian Li, Xuegong Zhang.
       Cellular features of localized microenvironments in human meniscal degeneration: a single-cell transcriptomic study. <span class="venue">eLife 2022</span>.</li>
-    <li id="pub25">Shansong Liu, Kui Hua, <span class="me">Sijie Chen</span>, Xuegong Zhang.
+    <li id="pub26">Shansong Liu, Kui Hua, <span class="me">Sijie Chen</span>, Xuegong Zhang.
       Comprehensive simulation of metagenomic sequencing data with non-uniform sampling distribution. <span class="venue">Quantitative Biology 2018</span>.</li>
-    <li id="pub26">Bo Li, Jing Tang, Qingxia Yang, Xuejiao Cui, Shuang Li, <span class="me">Sijie Chen</span>, Quanxing Cao, Weiwei Xue, Na Chen, Feng Zhu.
+    <li id="pub27">Bo Li, Jing Tang, Qingxia Yang, Xuejiao Cui, Shuang Li, <span class="me">Sijie Chen</span>, Quanxing Cao, Weiwei Xue, Na Chen, Feng Zhu.
       Performance evaluation and online realization of data-driven normalization methods used in LC/MS based untargeted metabolomics analysis. <span class="venue">Scientific Reports 2016</span>.</li>
-    <li id="pub27">Qingxia Yang<sup>*</sup>, Bo Li<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Jing Tang<sup>*</sup>, Yinghong Li, Yi Li, Song Zhang, Cheng Shi, Ying Zhang, Minjie Mou, Weiwei Xue, Feng Zhu.
+    <li id="pub28">Qingxia Yang<sup>*</sup>, Bo Li<sup>*</sup>, <span class="me">Sijie Chen</span><sup>*</sup>, Jing Tang<sup>*</sup>, Yinghong Li, Yi Li, Song Zhang, Cheng Shi, Ying Zhang, Minjie Mou, Weiwei Xue, Feng Zhu.
       MMEASE: online meta-analysis of metabolomic data by enhanced metabolite annotation, marker selection and enrichment analysis. <span class="venue">Journal of Proteomics 2021</span>.</li>
   </ol>
 </section>

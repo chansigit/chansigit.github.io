@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" font-family="IBM Plex Sans, system-ui, sans-serif">
+  <title>The p38 alpha switch between the Flt3L and M-CSF pathways</title>
+  <desc>Left: with p38 alpha, Flt3L signaling keeps Nedd4 degrading the M-CSF receptor CD115, so the Flt3L route dominates. Right: without p38 alpha, Nedd4 falls, CD115 accumulates on the cell surface and the M-CSF route takes over.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1a2e30"/>
+    </marker>
+    <marker id="arL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#9fb0b0"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="480" fill="#ffffff"/>
+
+  <g>
+    <text x="235" y="30" text-anchor="middle" font-size="25" font-weight="600" fill="#1a2e30">With p38&#945;</text>
+    <text x="235" y="56" text-anchor="middle" font-size="19" fill="#556b6c">Flt3L is in charge</text>
+    <rect x="30" y="96" width="410" height="300" rx="10" fill="#f2f8f7" stroke="#d3dfde"/>
+    <line x1="30" y1="122" x2="440" y2="122" stroke="#9fb0b0" stroke-width="5"/>
+
+    <circle cx="110" cy="84" r="13" fill="#008080"/>
+    <text x="133" y="91" font-size="18" fill="#1a2e30">Flt3L</text>
+    <rect x="98" y="108" width="24" height="52" rx="4" fill="#008080"/>
+    <text x="110" y="182" text-anchor="middle" font-size="17" fill="#556b6c">Flt3</text>
+
+    <rect x="60" y="218" width="100" height="44" rx="8" fill="#008080"/>
+    <text x="110" y="247" text-anchor="middle" font-size="21" font-weight="600" fill="#ffffff">p38&#945;</text>
+    <line x1="110" y1="190" x2="110" y2="214" stroke="#1a2e30" stroke-width="2.5" marker-end="url(#ar)"/>
+
+    <rect x="60" y="310" width="100" height="44" rx="8" fill="#ffffff" stroke="#008080" stroke-width="2.5"/>
+    <text x="110" y="339" text-anchor="middle" font-size="21" font-weight="600" fill="#008080">Nedd4</text>
+    <line x1="110" y1="266" x2="110" y2="306" stroke="#1a2e30" stroke-width="2.5" marker-end="url(#ar)"/>
+
+    <line x1="164" y1="332" x2="316" y2="332" stroke="#1a2e30" stroke-width="2.5"/>
+    <line x1="316" y1="320" x2="316" y2="344" stroke="#1a2e30" stroke-width="4"/>
+    <text x="240" y="322" text-anchor="middle" font-size="17" fill="#556b6c">degrades</text>
+
+    <rect x="330" y="108" width="24" height="52" rx="4" fill="#9fb0b0" opacity="0.45"/>
+    <text x="342" y="182" text-anchor="middle" font-size="17" fill="#9fb0b0">CD115 low</text>
+    <text x="342" y="252" text-anchor="middle" font-size="19" fill="#9fb0b0">M-CSF route</text>
+    <text x="342" y="276" text-anchor="middle" font-size="19" fill="#9fb0b0">held down</text>
+
+    <text x="235" y="434" text-anchor="middle" font-size="22" fill="#1a2e30">pDCs develop normally</text>
+    <text x="235" y="462" text-anchor="middle" font-size="19" fill="#556b6c">and work: interferons, IL-12</text>
+  </g>
+
+  <line x1="492" y1="56" x2="492" y2="420" stroke="#d3dfde" stroke-width="2"/>
+
+  <g>
+    <text x="765" y="30" text-anchor="middle" font-size="25" font-weight="600" fill="#1a2e30">Without p38&#945;</text>
+    <text x="765" y="56" text-anchor="middle" font-size="19" fill="#556b6c">M-CSF takes over</text>
+    <rect x="560" y="96" width="410" height="300" rx="10" fill="#f2f8f7" stroke="#d3dfde"/>
+    <line x1="560" y1="122" x2="970" y2="122" stroke="#9fb0b0" stroke-width="5"/>
+
+    <circle cx="640" cy="84" r="13" fill="#9fb0b0" opacity="0.5"/>
+    <text x="663" y="91" font-size="18" fill="#9fb0b0">Flt3L</text>
+    <rect x="628" y="108" width="24" height="52" rx="4" fill="#9fb0b0" opacity="0.5"/>
+    <text x="640" y="182" text-anchor="middle" font-size="17" fill="#9fb0b0">Flt3</text>
+
+    <rect x="590" y="218" width="100" height="44" rx="8" fill="#ffffff" stroke="#c0cccc" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <text x="640" y="247" text-anchor="middle" font-size="21" font-weight="600" fill="#cfd9d9">p38&#945;</text>
+    <line x1="618" y1="226" x2="662" y2="254" stroke="#b3261e" stroke-width="3"/>
+    <line x1="662" y1="226" x2="618" y2="254" stroke="#b3261e" stroke-width="3"/>
+    <line x1="640" y1="190" x2="640" y2="214" stroke="#9fb0b0" stroke-width="2.5" marker-end="url(#arL)"/>
+
+    <rect x="590" y="310" width="100" height="44" rx="8" fill="#ffffff" stroke="#c0cccc" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <text x="640" y="339" text-anchor="middle" font-size="21" font-weight="600" fill="#b9c6c6">Nedd4</text>
+    <line x1="640" y1="266" x2="640" y2="306" stroke="#9fb0b0" stroke-width="2.5" marker-end="url(#arL)"/>
+    <text x="640" y="378" text-anchor="middle" font-size="18" fill="#b3261e">falls</text>
+
+    <line x1="694" y1="332" x2="840" y2="332" stroke="#c6d0d0" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <text x="770" y="322" text-anchor="middle" font-size="17" fill="#b9c6c6">no degradation</text>
+
+    <circle cx="900" cy="84" r="13" fill="#008080"/>
+    <text x="877" y="91" text-anchor="end" font-size="18" fill="#1a2e30">M-CSF</text>
+    <rect x="828" y="108" width="24" height="52" rx="4" fill="#008080"/>
+    <rect x="888" y="108" width="24" height="52" rx="4" fill="#008080"/>
+    <rect x="768" y="108" width="24" height="52" rx="4" fill="#008080"/>
+    <text x="840" y="182" text-anchor="middle" font-size="17" font-weight="600" fill="#008080">CD115 piles up</text>
+    <text x="840" y="252" text-anchor="middle" font-size="19" fill="#1a2e30">M-CSF route</text>
+    <text x="840" y="276" text-anchor="middle" font-size="19" fill="#1a2e30">unleashed</text>
+
+    <text x="765" y="434" text-anchor="middle" font-size="22" fill="#1a2e30">pDC numbers recover</text>
+    <text x="765" y="462" text-anchor="middle" font-size="19" fill="#b3261e">but the cells are hollow</text>
+  </g>
+</svg>
