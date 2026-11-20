@@ -200,6 +200,17 @@ details p { margin: 0.45rem 0 0; font-size: 0.95rem; max-width: 46rem; }
 .slide-body figure.tall > img { height: 47cqw; width: auto; max-width: 100%; margin: 0 auto; padding: 0; border: 0; }
 .slide-body figure.tall > figcaption { max-width: none; }
 .slide-body figure.mid { width: min(100%, 46cqw); }
+/* two-column mechanism diagram */
+.slide-body .mech { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9em 3cqw; align-self: stretch; margin: 0 0 0.9em; }
+.mech-col { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.mech-head { font-weight: 600; margin: 0 0 0.6em; max-width: none; }
+.mech-step, .mech-out { border: 1px solid var(--line); border-radius: 6px; padding: 0.35em 0.7em; width: 100%; box-sizing: border-box; }
+.mech-out { background: var(--surface); font-weight: 600; border-color: transparent; }
+.mech-step.accent, .mech-out.accent { border-color: var(--accent); color: var(--accent); }
+.mech-out.accent { background: color-mix(in srgb, var(--accent) 12%, var(--bg)); }
+.mech-arrow { color: var(--muted); line-height: 1; padding: 0.15em 0; }
+@container (max-width: 700px) { .slide-body .mech { grid-template-columns: 1fr; } }
+
 .slide-body figure.big { width: 100%; }
 .slide-body figure.big > img { width: min(100%, 72cqw); margin: 0 auto; }
 .slide-body figure.tall { width: 100%; }
